@@ -1,0 +1,618 @@
+'use client'
+
+import { useState, useTransition } from 'react'
+import Link from 'next/link'
+import { submitBooking } from '@/app/actions/submitBooking'
+
+const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+const CALENDAR_DAYS = [
+  { day: null }, { day: null }, { day: 1, available: false }, { day: 2, available: true },
+  { day: 3, available: true }, { day: 4, available: false }, { day: 5, available: false },
+  { day: 6, available: false }, { day: 7, available: false }, { day: 8, available: true },
+  { day: 9, available: true }, { day: 10, available: true }, { day: 11, available: false },
+  { day: 12, available: false }, { day: 13, available: false }, { day: 14, available: false },
+  { day: 15, available: true }, { day: 16, available: true }, { day: 17, available: true },
+  { day: 18, available: false }, { day: 19, available: false }, { day: 20, available: false },
+  { day: 21, available: false }, { day: 22, available: true }, { day: 23, available: true },
+  { day: 24, available: true }, { day: 25, available: false }, { day: 26, available: false },
+  { day: 27, available: false }, { day: 28, available: false }, { day: 29, available: true },
+  { day: 30, available: true }, { day: 31, available: false }, { day: null }, { day: null },
+]
+
+const TIME_SLOTS = ['09:00', '11:30', '14:00', '16:30']
+
+const FOCUS_OPTIONS = [
+  'AI Opportunity Audit',
+  'Enterprise Transformation Program',
+  'Academy Enrollment',
+  'Workforce Upskilling',
+  'Technical Architecture Review',
+  'Other',
+]
+
+export default function ContactPage() {
+  const [selectedDay, setSelectedDay] = useState<number | null>(15)
+  const [selectedTime, setSelectedTime] = useState<string>('11:30')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [company, setCompany] = useState('')
+  const [focus, setFocus] = useState(FOCUS_OPTIONS[0])
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [step, setStep] = useState(1)
+  const [isPending, startTransition] = useTransition()
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (!selectedDay || !selectedTime || !name.trim() || !email.trim() || !company.trim()) return
+    setError(null)
+    startTransition(async () => {
+      const result = await submitBooking({
+        name,
+        email,
+        company,
+        session_focus: focus,
+        booking_date: `April ${selectedDay}, 2026`,
+        booking_time: selectedTime,
+      })
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        setError(result.error ?? 'Something went wrong. Please try again.')
+      }
+    })
+  }
+
+  return (
+    <>
+      {/* ── MAIN SECTION ── */}
+      <section
+        className="pt-24 pb-16 grid-watermark"
+        style={{ backgroundColor: '#fff8f3' }}
+      >
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 py-8">
+
+            {/* ── LEFT: HERO TEXT (5 cols) ── */}
+            <div className="lg:col-span-5 flex flex-col gap-8">
+              {/* Circuit decoration */}
+              <div
+                className="absolute top-24 left-0 w-48 h-48 pointer-events-none"
+                aria-hidden="true"
+                style={{ opacity: 0.05 }}
+              >
+                <svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 0 L0 96 L64 96 L64 32 L128 32 L128 0" stroke="#001215" strokeWidth="1" fill="none" />
+                  <circle cx="64" cy="96" r="4" fill="#a14000" />
+                </svg>
+              </div>
+
+              <p
+                className="font-label text-xs font-semibold uppercase"
+                style={{ color: '#a14000', letterSpacing: '0.3em' }}
+              >
+                Systems Architected
+              </p>
+
+              <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-tight text-balance">Schedule Your Intelligence Protocol</h1>
+
+              <p className="font-body text-lg leading-relaxed" style={{ color: '#2d4a4d' }}>Your first session with Clinic of AI is a structured diagnostic — not a sales call. We will map your current state, identify the highest-leverage opportunities, and give you a clear picture of what transformation would look like for your organization.</p>
+
+              {/* Status badge */}
+              <div
+                className="inline-flex items-center gap-3 px-4 py-3 rounded-xl self-start"
+                style={{
+                  backgroundColor: 'rgba(0,42,46,0.06)',
+                  border: '1px solid rgba(0,42,46,0.1)',
+                }}
+              >
+                <span
+                  className="material-symbols-outlined"
+                  style={{ fontSize: '18px', color: '#a14000' }}
+                >
+                  verified
+                </span>
+                <span className="font-body text-body-sm" style={{ color: '#001215' }}>
+                  Availability confirmed for Q4.
+                </span>
+              </div>
+
+              {/* What to expect */}
+              <div className="flex flex-col gap-4 mt-2">
+                <p
+                  className="font-label text-xs uppercase font-semibold"
+                  style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.1em' }}
+                >
+                  What to expect
+                </p>
+                {[
+                  { icon: 'search_insights', text: 'Organizational AI readiness review' },
+                  { icon: 'map', text: 'High-ROI opportunity mapping' },
+                  { icon: 'description', text: 'Written diagnostic summary' },
+                  { icon: 'price_check', text: 'No commitment, no pitch' },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <span
+                      className="material-symbols-outlined shrink-0"
+                      style={{ fontSize: '18px', color: '#a14000' }}
+                    >
+                      {item.icon}
+                    </span>
+                    <span className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* ── RIGHT: BOOKING WIDGET (7 cols) ── */}
+            <div className="lg:col-span-7">
+              {submitted ? (
+                <div
+                  className="rounded-2xl p-12 text-center"
+                  style={{
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
+                    border: '1px solid rgba(200,168,130,0.15)',
+                  }}
+                >
+                  <div
+                    className="w-20 h-20 hex-clip flex items-center justify-center mx-auto mb-6"
+                    style={{ backgroundColor: '#a14000' }}
+                  >
+                    <span
+                      className="material-symbols-outlined"
+                      style={{ fontSize: '36px', color: '#fff' }}
+                    >
+                      check
+                    </span>
+                  </div>
+                  <h2
+                    className="font-headline font-bold text-3xl mb-4"
+                    style={{ color: '#001215' }}
+                  >
+                    Protocol Initiated.
+                  </h2>
+                  <p className="font-body text-body-md mb-3" style={{ color: '#2d4a4d' }}>
+                    Your session is scheduled for{' '}
+                    <strong style={{ color: '#001215' }}>
+                      April {selectedDay}, 2025 at {selectedTime}
+                    </strong>
+                    .
+                  </p>
+                  <p className="font-body text-body-sm mb-8" style={{ color: '#2d4a4d' }}>
+                    A calendar invitation and preparation brief will arrive in your inbox within the hour. We look forward to speaking with you, {name.split(' ')[0]}.
+                  </p>
+                  <Link href="/" className="btn-primary">
+                    Return Home
+                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
+                      arrow_forward
+                    </span>
+                  </Link>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="rounded-2xl overflow-hidden"
+                  style={{
+                    backgroundColor: '#ffffff',
+                    boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
+                    border: '1px solid rgba(200,168,130,0.15)',
+                  }}
+                >
+                  {/* Form header */}
+                  <div
+                    className="px-8 py-6"
+                    style={{ borderBottom: '1px solid rgba(200,168,130,0.12)' }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <h2
+                        className="font-headline font-bold text-xl"
+                        style={{ color: '#001215' }}
+                      >
+                        Intelligence Protocol Booking
+                      </h2>
+                      <div className="flex items-center gap-1.5">
+                        {[1, 2, 3].map((s) => (
+                          <div
+                            key={s}
+                            className="w-2 h-2 rounded-full transition-colors duration-200"
+                            style={{
+                              backgroundColor:
+                                s <= step ? '#a14000' : 'rgba(200,168,130,0.3)',
+                            }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-8 flex flex-col gap-10">
+                    {/* ── STEP 01: CALENDAR ── */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div
+                          className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
+                          style={{
+                            backgroundColor:
+                              step >= 1 ? '#a14000' : 'rgba(200,168,130,0.2)',
+                            color: step >= 1 ? '#fff' : '#c8a882',
+                          }}
+                        >
+                          01
+                        </div>
+                        <p
+                          className="font-body font-semibold text-body-md"
+                          style={{ color: '#001215' }}
+                        >
+                          Select Date Protocol
+                        </p>
+                        <span
+                          className="font-label text-xs ml-auto"
+                          style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.08em' }}
+                        >
+                          April 2025
+                        </span>
+                      </div>
+
+                      {/* Day-of-week headers */}
+                      <div className="grid grid-cols-7 gap-1 mb-1">
+                        {DAYS_OF_WEEK.map((d) => (
+                          <div
+                            key={d}
+                            className="text-center py-1 font-label text-xs"
+                            style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.06em' }}
+                          >
+                            {d}
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Calendar grid */}
+                      <div className="grid grid-cols-7 gap-1">
+                        {CALENDAR_DAYS.map((cell, idx) => {
+                          if (!cell.day) {
+                            return <div key={`empty-${idx}`} />
+                          }
+                          const isSelected = selectedDay === cell.day
+                          const isAvailable = cell.available
+
+                          return (
+                            <button
+                              key={cell.day}
+                              type="button"
+                              disabled={!isAvailable}
+                              onClick={() => {
+                                if (isAvailable) {
+                                  setSelectedDay(cell.day as number)
+                                  setStep(Math.max(step, 2))
+                                }
+                              }}
+                              className="aspect-square flex items-center justify-center rounded-lg font-body text-sm font-medium transition-all duration-150"
+                              style={{
+                                backgroundColor: isSelected
+                                  ? '#a14000'
+                                  : isAvailable
+                                  ? '#fff5e8'
+                                  : 'transparent',
+                                color: isSelected
+                                  ? '#ffffff'
+                                  : isAvailable
+                                  ? '#001215'
+                                  : 'rgba(45,74,77,0.25)',
+                                cursor: isAvailable ? 'pointer' : 'default',
+                              }}
+                            >
+                              {cell.day}
+                            </button>
+                          )
+                        })}
+                      </div>
+
+                      {selectedDay && (
+                        <p
+                          className="font-body text-body-sm mt-3 text-center"
+                          style={{ color: '#2d4a4d' }}
+                        >
+                          Selected: April {selectedDay}, 2025
+                        </p>
+                      )}
+                    </div>
+
+                    {/* ── STEP 02: TIME SLOTS ── */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div
+                          className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
+                          style={{
+                            backgroundColor:
+                              step >= 2 ? '#a14000' : 'rgba(200,168,130,0.2)',
+                            color: step >= 2 ? '#fff' : '#c8a882',
+                          }}
+                        >
+                          02
+                        </div>
+                        <p
+                          className="font-body font-semibold text-body-md"
+                          style={{ color: '#001215' }}
+                        >
+                          Define Logic Window
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        {TIME_SLOTS.map((slot) => {
+                          const isSelected = selectedTime === slot
+                          return (
+                            <button
+                              key={slot}
+                              type="button"
+                              onClick={() => {
+                                setSelectedTime(slot)
+                                setStep(Math.max(step, 3))
+                              }}
+                              className="py-3 px-4 rounded-xl font-body font-semibold text-body-sm transition-all duration-200"
+                              style={{
+                                backgroundColor: isSelected ? '#a14000' : '#fff5e8',
+                                color: isSelected ? '#ffffff' : '#001215',
+                                boxShadow: isSelected
+                                  ? '0 4px 12px rgba(161,64,0,0.25)'
+                                  : 'none',
+                              }}
+                            >
+                              {slot}
+                            </button>
+                          )
+                        })}
+                      </div>
+                    </div>
+
+                    {/* ── STEP 03: USER CREDENTIALS ── */}
+                    <div>
+                      <div className="flex items-center gap-3 mb-6">
+                        <div
+                          className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
+                          style={{
+                            backgroundColor:
+                              step >= 3 ? '#a14000' : 'rgba(200,168,130,0.2)',
+                            color: step >= 3 ? '#fff' : '#c8a882',
+                          }}
+                        >
+                          03
+                        </div>
+                        <p
+                          className="font-body font-semibold text-body-md"
+                          style={{ color: '#001215' }}
+                        >
+                          User Credentials
+                        </p>
+                      </div>
+
+                      <div className="flex flex-col gap-6">
+                        {/* Name */}
+                        <div>
+                          <label
+                            htmlFor="contact-name"
+                            className="font-label text-xs uppercase font-semibold block mb-2"
+                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                          >
+                            Full Name
+                          </label>
+                          <input
+                            id="contact-name"
+                            type="text"
+                            required
+                            placeholder="Your full name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="input-field"
+                          />
+                        </div>
+
+                        {/* Email */}
+                        <div>
+                          <label
+                            htmlFor="contact-email"
+                            className="font-label text-xs uppercase font-semibold block mb-2"
+                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                          >
+                            Work Email
+                          </label>
+                          <input
+                            id="contact-email"
+                            type="email"
+                            required
+                            placeholder="you@company.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="input-field"
+                          />
+                        </div>
+
+                        {/* Company */}
+                        <div>
+                          <label
+                            htmlFor="contact-company"
+                            className="font-label text-xs uppercase font-semibold block mb-2"
+                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                          >
+                            Organization
+                          </label>
+                          <input
+                            id="contact-company"
+                            type="text"
+                            required
+                            placeholder="Your organization name"
+                            value={company}
+                            onChange={(e) => setCompany(e.target.value)}
+                            className="input-field"
+                          />
+                        </div>
+
+                        {/* Session focus */}
+                        <div>
+                          <label
+                            htmlFor="contact-focus"
+                            className="font-label text-xs uppercase font-semibold block mb-2"
+                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                          >
+                            Session Focus
+                          </label>
+                          <div className="relative">
+                            <select
+                              id="contact-focus"
+                              value={focus}
+                              onChange={(e) => setFocus(e.target.value)}
+                              className="w-full bg-transparent font-body text-on-surface text-body-md py-3 outline-none appearance-none pr-8 cursor-pointer"
+                              style={{
+                                borderBottom: '2px solid rgba(200,168,130,0.4)',
+                                color: '#001215',
+                              }}
+                            >
+                              {FOCUS_OPTIONS.map((opt) => (
+                                <option key={opt} value={opt}>
+                                  {opt}
+                                </option>
+                              ))}
+                            </select>
+                            <span
+                              className="material-symbols-outlined absolute right-0 top-3 pointer-events-none"
+                              style={{ fontSize: '20px', color: '#2d4a4d' }}
+                            >
+                              expand_more
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* ── SUBMIT ── */}
+                    <div>
+                      {/* Summary */}
+                      {selectedDay && selectedTime && (
+                        <div
+                          className="rounded-xl p-4 mb-5 flex items-center gap-3"
+                          style={{
+                            backgroundColor: '#fff5e8',
+                          }}
+                        >
+                          <span
+                            className="material-symbols-outlined shrink-0"
+                            style={{ fontSize: '18px', color: '#a14000' }}
+                          >
+                            calendar_today
+                          </span>
+                          <p
+                            className="font-body text-body-sm"
+                            style={{ color: '#001215' }}
+                          >
+                            April {selectedDay} at {selectedTime} — 45-minute AI Diagnostic Session
+                          </p>
+                        </div>
+                      )}
+
+                      {error && (
+                        <p
+                          className="font-body text-body-sm text-center mb-3 px-4 py-3 rounded-xl"
+                          style={{
+                            color: '#a14000',
+                            backgroundColor: 'rgba(161,64,0,0.06)',
+                            border: '1px solid rgba(161,64,0,0.15)',
+                          }}
+                        >
+                          {error}
+                        </p>
+                      )}
+
+                      <button
+                        type="submit"
+                        disabled={isPending}
+                        className="w-full flex items-center justify-center gap-3 font-body font-bold text-base py-4 px-8 rounded-xl transition-all duration-200"
+                        style={{
+                          backgroundColor: isPending ? 'rgba(161,64,0,0.6)' : '#a14000',
+                          color: '#ffffff',
+                          boxShadow: isPending ? 'none' : '0 8px 24px rgba(161,64,0,0.3)',
+                          letterSpacing: '0.05em',
+                          cursor: isPending ? 'not-allowed' : 'pointer',
+                        }}
+                      >
+                        <span className="font-label uppercase tracking-widest text-sm">
+                          {isPending ? 'Sending…' : 'Initiate Booking Protocol'}
+                        </span>
+                        {!isPending && (
+                          <span
+                            className="material-symbols-outlined"
+                            style={{ fontSize: '20px' }}
+                          >
+                            arrow_forward
+                          </span>
+                        )}
+                      </button>
+
+                      <p
+                        className="font-body text-body-sm text-center mt-4"
+                        style={{ color: 'rgba(45,74,77,0.5)' }}
+                      >
+                        No credit card required. Free diagnostic session. Cancel anytime.
+                      </p>
+                    </div>
+                  </div>
+                </form>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER SUPPLEMENT ── */}
+      <section
+        className="py-16"
+        style={{ backgroundColor: '#fff5e8' }}
+      >
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {[
+              {
+                icon: 'schedule',
+                title: '45-minute sessions',
+                desc: 'Structured diagnostic — not a free-form call.',
+              },
+              {
+                icon: 'video_call',
+                title: 'Remote, anywhere',
+                desc: 'We work with organizations across Europe and beyond.',
+              },
+              {
+                icon: 'description',
+                title: 'Written summary',
+                desc: 'Delivered within 24 hours of your session.',
+              },
+            ].map((item) => (
+              <div key={item.title} className="flex items-start gap-4">
+                <span
+                  className="material-symbols-outlined shrink-0"
+                  style={{ fontSize: '22px', color: '#a14000' }}
+                >
+                  {item.icon}
+                </span>
+                <div>
+                  <p
+                    className="font-body font-semibold text-body-md mb-1"
+                    style={{ color: '#001215' }}
+                  >
+                    {item.title}
+                  </p>
+                  <p className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
