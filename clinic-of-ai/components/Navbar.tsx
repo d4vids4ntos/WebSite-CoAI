@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '/approach', label: 'Solutions' },
+  { href: '/approach', label: 'FDE Model' },
   { href: '/industries', label: 'Industries' },
-  { href: '/academy', label: 'Academy' },
-  { href: '/about', label: 'About' },
+  { href: '/academy', label: 'Executive Cohort' },
+  { href: '/about', label: 'Why Clinic of AI' },
 ]
 
 export default function Navbar() {
@@ -123,7 +123,7 @@ export default function Navbar() {
                   boxShadow: '0 4px 14px rgba(161,64,0,0.3)',
                 }}
               >
-                Book Audit
+                Book 20-min Call
               </Link>
             </div>
 
@@ -200,7 +200,7 @@ export default function Navbar() {
                 href="/contact"
                 className="btn-primary text-center"
               >
-                Book Audit
+                Book 20-min Call
               </Link>
             </div>
           </div>

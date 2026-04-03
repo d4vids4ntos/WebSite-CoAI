@@ -3,8 +3,6 @@ import Link from 'next/link'
 export default function HomePage() {
   return (
     <>
-      {/* GEO: Structured opening paragraph — extractable by AI search systems */}
-      {/* Visually hidden, semantically present for crawlers and LLMs */}
       <p
         aria-hidden="false"
         style={{
@@ -19,22 +17,16 @@ export default function HomePage() {
           border: 0,
         }}
       >
-        Philippe Küng is the founder of Clinic of AI. He helps SMBs transform their entire
-        value chain through AI — not by adding products incrementally, but by upskilling
-        people and redesigning how work flows. AI adoption fails when companies add tools
-        without upgrading people. After the 2008 financial crisis, Philippe led a
-        government reskilling program that transitioned displaced workers into high-demand
-        tech jobs at scale. The AI transition is the same pattern at 10x speed. Clinic of
-        AI offers the AI Opportunity Audit — a 2-week engagement that identifies the 3
-        highest-ROI transformation points in your organization, priced at €1,500–2,500.
+        Philippe Kung is the founder of Clinic of AI, a company that deploys Forward
+        Deployed AI Engineers to mid-market businesses across Europe. Clinic of AI focuses
+        on the last mile between pilot and production so AI delivers measurable ROI in
+        real operations.
       </p>
 
-      {/* ── SECTION 1: HERO ── */}
       <section
         className="relative grid-watermark overflow-hidden"
         style={{ backgroundColor: '#fff8f3' }}
       >
-        {/* Circuit corner decoration */}
         <div
           className="absolute top-24 right-0 w-80 h-80 pointer-events-none"
           aria-hidden="true"
@@ -51,47 +43,47 @@ export default function HomePage() {
 
         <div className="max-w-content mx-auto px-6 lg:px-8 w-full pt-32 pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left col — text */}
             <div className="lg:col-span-7 flex flex-col gap-8">
               <div>
                 <p
                   className="font-label text-xs font-semibold tracking-widest uppercase mb-5"
                   style={{ color: '#a14000', letterSpacing: '0.3em' }}
                 >
-                  Systems Architected
+                  Forward Deployed Model
                 </p>
                 <h1
                   className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance"
                   style={{ color: '#001215', letterSpacing: '-0.02em' }}
                 >
-                  AI adoption fails when you add tools without upgrading people.
+                  Your AI initiative is failing. The technology is not the problem.
                 </h1>
               </div>
               <p
                 className="font-body text-lg leading-relaxed max-w-xl"
                 style={{ color: '#2d4a4d' }}
               >
-                Clinic of AI transforms how organizations think, operate, and compete — not by layering on another platform, but by rebuilding capability from the inside out.
+                95% of generative AI pilots never reach production. A Forward Deployed AI
+                Engineer changes that by working inside your operation until results are
+                visible, measurable, and owned by your team.
               </p>
               <p
                 className="font-headline font-bold text-2xl sm:text-3xl"
                 style={{ color: '#ff7a32' }}
               >
-                <span className="">upgrading people.</span>
+                <span>The technology works. The dynamics do not.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="btn-primary text-center">
-                  Book Your AI Opportunity Audit
+                  Book a 20-minute conversation
                   <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                     arrow_forward
                   </span>
                 </Link>
                 <Link href="/approach" className="btn-secondary text-center">
-                  See Our Approach
+                  See the model
                 </Link>
               </div>
 
-              {/* Trust badges */}
               <div className="flex items-center gap-6 pt-2">
                 <div className="flex items-center gap-2">
                   <span
@@ -101,7 +93,7 @@ export default function HomePage() {
                     verified
                   </span>
                   <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
-                    Enterprise-Grade
+                    Embedded Delivery
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -112,7 +104,7 @@ export default function HomePage() {
                     groups
                   </span>
                   <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
-                    People-First
+                    Deep Tech Range
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
@@ -123,15 +115,13 @@ export default function HomePage() {
                     schema
                   </span>
                   <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
-                    Modular Systems
+                    Continuity by Design
                   </span>
                 </div>
               </div>
             </div>
 
-            {/* Right col — visual */}
             <div className="lg:col-span-5 flex items-center justify-center relative">
-              {/* Circular image container */}
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                 <div
                   className="w-full h-full rounded-full overflow-hidden relative"
@@ -140,16 +130,13 @@ export default function HomePage() {
                     boxShadow: '0 20px 60px rgba(0,18,21,0.1)',
                   }}
                 >
-                  {/* Placeholder gradient */}
                   <div
                     className="absolute inset-0"
                     style={{
                       background: 'linear-gradient(135deg, #002a2e 0%, #001215 50%, #001022 100%)',
                     }}
                   />
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
+                  <div className="absolute inset-0 flex items-center justify-center">
                     <span
                       className="material-symbols-outlined"
                       style={{ fontSize: '80px', color: 'rgba(255,248,243,0.15)' }}
@@ -157,7 +144,6 @@ export default function HomePage() {
                       neurology
                     </span>
                   </div>
-                  {/* Gradient overlay bottom */}
                   <div
                     className="absolute inset-x-0 bottom-0 h-1/3"
                     style={{
@@ -166,7 +152,6 @@ export default function HomePage() {
                   />
                 </div>
 
-                {/* Floating hex icon — top left */}
                 <div
                   className="absolute -top-4 -left-8 w-14 h-14 hex-clip flex items-center justify-center"
                   style={{ backgroundColor: '#a14000' }}
@@ -179,7 +164,6 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                {/* Floating hex icon — right */}
                 <div
                   className="absolute top-1/2 -right-10 -translate-y-1/2 w-14 h-14 hex-clip flex items-center justify-center"
                   style={{ backgroundColor: '#002a2e' }}
@@ -192,7 +176,6 @@ export default function HomePage() {
                   </span>
                 </div>
 
-                {/* Floating hex icon — bottom */}
                 <div
                   className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-14 h-14 hex-clip flex items-center justify-center"
                   style={{ backgroundColor: '#001215' }}
@@ -210,7 +193,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 2: SOCIAL PROOF BAR ── */}
       <section
         className="py-6 border-y"
         style={{
@@ -230,7 +212,7 @@ export default function HomePage() {
               className="font-label text-xs font-semibold uppercase"
               style={{ color: '#2d4a4d', letterSpacing: '0.1em' }}
             >
-              Harvard 2025: 95% of S&P 500 companies failed to generate ROI on GenAI
+              MIT 2025: 95% of generative AI pilots fail before production
             </p>
             <span
               className="hidden sm:block w-1 h-1 rounded-full"
@@ -241,32 +223,28 @@ export default function HomePage() {
               className="font-label text-xs uppercase"
               style={{ color: 'rgba(45,74,77,0.6)', letterSpacing: '0.1em' }}
             >
-              The gap is not the technology — it&apos;s the people.
+              S&amp;P Global 2025: 42% abandoned the majority of AI initiatives
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 3: THE PROBLEM — 3 CARDS ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff2e2' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="mb-14">
-            <p className="section-label mb-4">Why AI Initiatives Fail</p>
+            <p className="section-label mb-4">The Problem</p>
             <h2
               className="font-headline font-bold text-4xl lg:text-5xl leading-tight max-w-2xl"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              The pattern is always the same.
+              The EUR200K question nobody is asking.
             </h2>
           </div>
 
-          {/* 3 Problem Cards — unequal grid, not 3-equal-columns */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-
-            {/* Card 1 — wide */}
             <div
               className="lg:col-span-5 rounded-2xl p-8 flex flex-col gap-6"
               style={{
@@ -288,25 +266,25 @@ export default function HomePage() {
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
                   style={{ color: '#001215' }}
                 >
-                  Tool-First Thinking
+                  Tool-first pilots
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
                   style={{ color: '#2d4a4d' }}
                 >
-                  Companies buy AI products without an integration strategy. The tool lands in a workflow it was never designed for, solves a problem nobody scoped, and gets quietly abandoned within six months.
+                  An executive sees a demo, IT buys a platform, consultants launch a pilot,
+                  and usage drops when they leave. The pilot did not fail because of the
+                  model. It failed because nobody embedded it into daily decisions.
                 </p>
               </div>
-              {/* Research note */}
               <div className="research-note">
                 <p className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
-                  <strong style={{ color: '#001215' }}>"95% of S&P 500 companies failed to generate ROI on their GenAI investments."</strong>
-                  {' '}— Harvard Business Review, December 2025
+                  <strong style={{ color: '#001215' }}>&quot;95% of generative AI pilots fail before production.&quot;</strong>
+                  {' '}- MIT NANDA Initiative, GenAI Divide (2025)
                 </p>
               </div>
             </div>
 
-            {/* Card 2 — tall accent card */}
             <div
               className="lg:col-span-4 rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
               style={{
@@ -337,18 +315,19 @@ export default function HomePage() {
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
                   style={{ color: '#fff8f3' }}
                 >
-                  Individual Training, Not System Transformation
+                  No workflow adoption
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
                   style={{ color: 'rgba(255,248,243,0.7)' }}
                 >
-                  Training one person does not transform an organization. When that person leaves, the knowledge goes with them. AI capability must be embedded in systems, not individuals.
+                  Dashboards do not change outcomes when operators do not trust them and
+                  managers do not use them in live decisions. Adoption happens only when
+                  solutions are built inside the real workflow.
                 </p>
               </div>
             </div>
 
-            {/* Card 3 — narrow */}
             <div
               className="lg:col-span-3 rounded-2xl p-8 flex flex-col gap-6"
               style={{
@@ -370,47 +349,42 @@ export default function HomePage() {
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
                   style={{ color: '#001215' }}
                 >
-                  Vendor Dependency
+                  Consultants leave, pilots die
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
                   style={{ color: '#2d4a4d' }}
                 >
-                  Platform-as-a-service creates dependency without capability. When the vendor changes pricing, pivots, or disappears — your team is back to zero.
+                  Most engagements end at handoff. We design continuity from day one by
+                  training your team to run, evolve, and own the system after deployment.
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 4: CORE SOLUTIONS BENTO ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          {/* Header */}
           <div className="text-center mb-14">
-            <p className="section-label mb-4">Core Solutions</p>
+            <p className="section-label mb-4">The Solution</p>
             <h2
               className="font-headline font-bold text-4xl lg:text-5xl"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              Built for the full stack of transformation.
+              What a Forward Deployed AI Engineer actually does.
             </h2>
           </div>
-
         </div>
       </section>
 
-      {/* ── SECTION 5: ACADEMY TEASER ── */}
       <section
         className="py-24 relative overflow-hidden"
         style={{ backgroundColor: '#001215' }}
       >
-        {/* Circuit SVG decoration */}
         <div
           className="absolute top-0 right-0 w-96 h-96 pointer-events-none"
           aria-hidden="true"
@@ -427,35 +401,35 @@ export default function HomePage() {
 
         <div className="max-w-content mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left — text */}
             <div className="flex flex-col gap-8">
               <div>
                 <p
                   className="font-label text-xs font-semibold uppercase mb-4"
                   style={{ color: '#a14000', letterSpacing: '0.2em' }}
                 >
-                  The Academy
+                  Executive Cohort
                 </p>
                 <h2
                   className="font-headline font-bold text-4xl lg:text-5xl leading-tight"
                   style={{ color: '#fff8f3', letterSpacing: '-0.02em' }}
                 >
-                  Wisdom is the Final Frontier.
+                  AI in Hospitality: 5 weeks for executives who are done experimenting.
                 </h2>
               </div>
               <p
                 className="font-body text-lg leading-relaxed"
                 style={{ color: 'rgba(255,248,243,0.7)' }}
               >
-                Our Academy transforms individual contributors into AI-literate professionals who can think architecturally, act ethically, and lead transformation from within.
+                This is not a generic AI course. It is a company-sponsored program focused on
+                your operation: identify high-leverage opportunities, implement in workflow,
+                and build internal capability.
               </p>
 
-              {/* Feature list */}
               <ul className="flex flex-col gap-5">
                 {[
-                  { icon: 'psychology', label: 'Cognitive Frameworks for AI', desc: 'Mental models for working with probabilistic systems' },
-                  { icon: 'storage', label: 'Data Architecture Mastery', desc: 'Build and manage enterprise data lakes end-to-end' },
-                  { icon: 'balance', label: 'Generative Ethics', desc: 'Navigate the governance and ethical dimensions of AI' },
+                  { icon: 'hub', label: 'Map 3 highest-leverage opportunities', desc: 'Prioritized for your teams and current operation' },
+                  { icon: 'build', label: 'Implement in live workflows', desc: 'Not slide decks and not future-state theater' },
+                  { icon: 'groups', label: 'Build internal capability', desc: 'Your team can run and evolve outcomes after delivery' },
                 ].map((item) => (
                   <li key={item.label} className="flex items-start gap-4">
                     <div
@@ -482,7 +456,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Right — dark gradient card */}
             <div
               className="rounded-2xl p-10 relative overflow-hidden"
               style={{
@@ -502,23 +475,24 @@ export default function HomePage() {
                     className="font-label text-xs uppercase tracking-widest mb-3"
                     style={{ color: 'rgba(255,248,243,0.4)', letterSpacing: '0.15em' }}
                   >
-                    Coming Soon
+                    Company Program
                   </p>
                   <h3
                     className="font-headline font-bold text-2xl"
                     style={{ color: '#fff8f3' }}
                   >
-                    Academy Founding Cohort
+                    Limited to 8-12 executives per cohort
                   </h3>
                 </div>
                 <p
                   className="font-body text-body-md"
                   style={{ color: 'rgba(255,248,243,0.65)' }}
                 >
-                  Join the first cohort of professionals building the skills that will define the next decade. Limited to 50 seats. Priority access for waitlist members.
+                  Led by Philippe Kung, former Head of Data and AI at Crayon AG, Microsoft
+                  hospitality partner.
                 </p>
                 <div className="flex flex-col gap-3">
-                  {['3 comprehensive courses', 'Live sessions with Philippe', 'Private community access', 'Certificate of completion'].map((benefit) => (
+                  {['5-week intensive format', 'Company-specific implementation', 'Executive team alignment', 'Post-program continuity plan'].map((benefit) => (
                     <div key={benefit} className="flex items-center gap-3">
                       <span
                         className="material-symbols-outlined shrink-0"
@@ -533,7 +507,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <Link href="/academy" className="btn-primary justify-center mt-2">
-                  Join Waitlist
+                  Explore the cohort
                   <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
                     arrow_forward
                   </span>
@@ -544,23 +518,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SECTION 6: ORIGIN STORY ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff2e2' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-
-            {/* Left — text (hugging left margin, asymmetric) */}
             <div className="lg:col-span-7 flex flex-col gap-8">
               <div>
-                <p className="section-label mb-4">Why We Know This Works</p>
+                <p className="section-label mb-4">Proof</p>
                 <h2
                   className="font-headline font-bold text-4xl lg:text-5xl leading-tight"
                   style={{ color: '#001215', letterSpacing: '-0.02em' }}
                 >
-                  We&apos;ve done workforce transition at scale before.
+                  We have done this transition at scale before.
                 </h2>
               </div>
 
@@ -568,36 +539,34 @@ export default function HomePage() {
                 className="font-body text-lg leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                After the 2008 financial crisis, Philippe Küng led a government-backed reskilling program that transitioned displaced workers into high-demand tech careers — at scale, under pressure, with real people whose livelihoods depended on it.
+                After the 2008 financial crisis, Philippe Kung co-led a government-funded
+                program that moved hundreds of displaced professionals into high-demand tech
+                roles. AI is now creating the same transition at far greater speed.
               </p>
 
               <div className="research-note">
                 <p className="font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
-                  &ldquo;The AI transition is the same pattern as 2008 — just running at 10x speed. Organizations that invest in their people&apos;s capability now will not need to rebuild from scratch later. Those that don&apos;t will be restarting in three years.&rdquo;
+                  &ldquo;AI is creating the same workforce transition at 100x speed. The companies
+                  that win will be the ones that bridge technology and people.&rdquo;
                 </p>
                 <p className="font-body text-body-sm mt-3 font-semibold" style={{ color: '#001215' }}>
-                  — Philippe Küng, Founder, Clinic of AI
+                  - Philippe Kung, Founder, Clinic of AI
                 </p>
               </div>
 
               <Link href="/about" className="btn-outlined self-start">
-                Read Philippe&apos;s Story
+                Read the full background
                 <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>arrow_forward</span>
               </Link>
             </div>
 
-            {/* Right — timeline stat block */}
             <div className="lg:col-span-5 flex flex-col gap-4">
               {[
-                { year: '2008', label: 'Post-crisis reskilling program', desc: 'Transitioned displaced workers into tech careers at government scale.' },
-                { year: '2020', label: 'Head of Data & AI, Crayon AG', desc: 'Led enterprise AI strategy for the Microsoft AI/ML Partner of the Year 2022.' },
-                { year: '2024', label: 'Founded Clinic of AI', desc: 'Applying 15+ years of workforce and data transformation experience to the AI era.' },
+                { year: '2008', label: 'Government reskilling program', desc: 'Co-led a national transition program that moved hundreds into tech roles.' },
+                { year: '2020', label: 'Head of Data and AI, Crayon AG', desc: 'Led AI strategy across hospitality, energy, and manufacturing operations.' },
+                { year: '2024', label: 'Clinic of AI founded', desc: 'Forward Deployed AI Engineering model for mid-market companies.' },
               ].map((item, i) => (
-                <div
-                  key={item.year}
-                  className="flex gap-6 items-start"
-                >
-                  {/* Timeline spine */}
+                <div key={item.year} className="flex gap-6 items-start">
                   <div className="flex flex-col items-center shrink-0">
                     <div
                       className="w-10 h-10 hex-clip flex items-center justify-center"
@@ -617,7 +586,6 @@ export default function HomePage() {
                       />
                     )}
                   </div>
-                  {/* Content */}
                   <div className="pb-6">
                     <p className="section-label mb-1">{item.year}</p>
                     <p
@@ -633,46 +601,44 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 7: FINAL CTA ── */}
       <section
         className="py-32"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-narrow mx-auto px-6 lg:px-8 text-center">
-          <p className="section-label mb-6">Start Today</p>
+          <p className="section-label mb-6">Final CTA</p>
           <h2
             className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 text-balance"
             style={{ color: '#001215', letterSpacing: '-0.02em' }}
           >
-            Ready to architect your future?
+            20 minutes. No pitch deck.
           </h2>
           <p
             className="font-body text-lg leading-relaxed mb-10"
             style={{ color: '#2d4a4d' }}
           >
-            The organizations that thrive in the AI era will not be the ones with the most tools — they will be the ones whose people know how to think.
+            We will tell you in 5 minutes if we can help. The other 15 minutes are yours.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <Link href="/contact" className="btn-primary">
-              Start Building
+              Book a conversation
               <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                 arrow_forward
               </span>
             </Link>
-            <Link href="/about" className="btn-outlined">
-              Download Thesis
+            <Link href="/industries" className="btn-outlined">
+              See industry solutions
             </Link>
           </div>
           <p
             className="font-headline italic text-lg"
             style={{ color: '#2d4a4d' }}
           >
-            &ldquo;Mind over machine. Always.&rdquo;
+            &ldquo;Forward deployed. Side by side. Until it works.&rdquo;
           </p>
         </div>
       </section>

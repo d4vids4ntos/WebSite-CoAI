@@ -1,55 +1,54 @@
 'use client'
 
 import { useState, useTransition } from 'react'
-import Link from 'next/link'
 import { submitWaitlist } from '@/app/actions/submitWaitlist'
 
 const courses = [
   {
-    id: 'cognitive',
-    icon: 'psychology',
-    title: 'Cognitive Frameworks for AI',
-    level: 'Foundation',
-    modules: 8,
+    id: 'opportunity-mapping',
+    icon: 'hub',
+    title: 'Week 1-2: Opportunity Mapping',
+    level: 'Executive',
+    modules: 2,
     description:
-      'Develop the mental models required to work effectively alongside AI systems. Learn probabilistic thinking, how to evaluate AI outputs critically, and how to make decisions in high-uncertainty environments.',
+      'Map the 3 highest-leverage AI opportunities in your operation based on workflow reality, not org-chart assumptions.',
     topics: [
-      'Bayesian reasoning in practice',
-      'Recognizing AI failure modes',
-      'Prompt engineering as a thinking discipline',
-      'Building personal AI workflows',
+      'Workflow diagnostics by team',
+      'Decision-point analysis',
+      'ROI potential ranking',
+      'Priority sequence definition',
     ],
     highlight: false,
   },
   {
-    id: 'datalakes',
-    icon: 'storage',
-    title: 'Architecting Data Lakes',
-    level: 'Advanced',
-    modules: 12,
+    id: 'embedded-implementation',
+    icon: 'build',
+    title: 'Week 3-4: Embedded Implementation',
+    level: 'Hands-on',
+    modules: 2,
     description:
-      'From raw ingestion to production-grade pipelines. Build the data infrastructure that makes AI systems possible — and the governance frameworks that keep them trustworthy.',
+      'Implement selected use cases in live operations with side-by-side delivery so leadership and frontline teams see direct impact quickly.',
     topics: [
-      'Data lake design patterns',
-      'Vector stores and embeddings',
-      'ETL pipelines for AI workloads',
-      'Data governance and quality frameworks',
+      'Pilot build in real workflow context',
+      'Operational adoption loops',
+      'KPI tracking and iteration',
+      'Cross-functional execution rhythm',
     ],
     highlight: true,
   },
   {
-    id: 'ethics',
-    icon: 'balance',
-    title: 'Generative Ethics',
-    level: 'Practitioner',
-    modules: 6,
+    id: 'continuity-transfer',
+    icon: 'groups',
+    title: 'Week 5: Capability Transfer',
+    level: 'Leadership',
+    modules: 1,
     description:
-      'Navigate the governance, legal, and ethical dimensions of deploying AI in organizational contexts. Build internal frameworks for responsible AI development that withstand scrutiny.',
+      'Build governance, ownership, and continuity so the solution runs without ongoing external dependency.',
     topics: [
-      'EU AI Act and regulatory landscape',
-      'Bias detection and mitigation',
-      'AI incident response frameworks',
-      'Communicating AI decisions to stakeholders',
+      'Ownership model and governance',
+      'Team enablement playbook',
+      'Risk and security guardrails',
+      '90-day continuity roadmap',
     ],
     highlight: false,
   },
@@ -57,29 +56,29 @@ const courses = [
 
 const faqs = [
   {
-    question: 'Who is the Academy designed for?',
+    question: 'Who is this cohort for?',
     answer:
-      'The Academy is designed for professionals at all levels who want to develop genuine AI capability — not just tool familiarity. This includes executives who need strategic fluency, managers who need to lead AI-adjacent teams, and individual contributors who want to future-proof their careers.',
+      'This program is designed for executive teams and functional leaders in hospitality and service operations who are done experimenting and want measurable implementation outcomes.',
   },
   {
-    question: 'Are the courses self-paced or live?',
+    question: 'Is this a theory-based AI course?',
     answer:
-      'The founding cohort includes a blend of self-paced content and live sessions with Philippe. Live sessions allow for real-time Q&A, case study discussion, and community building. Recordings are made available for all cohort members.',
+      'No. It is an implementation program. We work on your specific operational workflows and deliver practical outcomes during the 5-week window.',
   },
   {
-    question: 'What is the time commitment?',
+    question: 'How large is each cohort?',
     answer:
-      'Each course requires approximately 4 to 6 hours per week over 8 to 12 weeks. The full Academy experience (all three courses) is designed to be completed over a six-month period without interfering with full-time professional commitments.',
+      'Each cohort is limited to 8-12 executives to ensure depth, speed, and hands-on execution quality.',
   },
   {
-    question: 'Will I receive a certificate?',
+    question: 'What does my team receive at the end?',
     answer:
-      'Yes. Completion of each course grants a verifiable digital certificate. Completing all three courses and passing the integrated assessment grants the Clinic of AI Practitioner designation.',
+      'You leave with implemented workflow improvements, a capability transfer plan, and a continuity roadmap so internal teams can keep momentum.',
   },
   {
-    question: 'When does the founding cohort begin?',
+    question: 'When does the next cohort start?',
     answer:
-      'The founding cohort is scheduled to begin in Q3 2025. Waitlist members receive priority enrollment, founding pricing, and early access to pre-course materials.',
+      'Start dates are released directly to waitlist members. Priority is given to teams ready for immediate implementation.',
   },
 ]
 
@@ -108,12 +107,10 @@ export default function AcademyPage() {
 
   return (
     <>
-      {/* ── HERO ── */}
       <section
         className="pt-32 pb-24 relative grid-watermark overflow-hidden"
         style={{ backgroundColor: '#fff8f3' }}
       >
-        {/* Decorative blob */}
         <div
           className="absolute -top-20 -right-20 w-96 h-96 rounded-full pointer-events-none"
           style={{ backgroundColor: 'rgba(161,64,0,0.04)' }}
@@ -121,18 +118,19 @@ export default function AcademyPage() {
         />
         <div className="max-w-content mx-auto px-6 lg:px-8 relative z-10">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">The Academy</p>
+            <p className="section-label mb-5">Industry Executive Cohort</p>
             <h1
               className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-8 text-balance"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              The AI Academy is open.
+              AI in Hospitality: 5 weeks for executives who are done experimenting.
             </h1>
             <p
               className="font-body text-lg leading-relaxed mb-10"
               style={{ color: '#2d4a4d' }}
             >
-              The Clinic of AI Academy is where professionals transform from AI-adjacent to AI-capable. Three deep courses. A founding community. The intellectual toolkit for the decade ahead.
+              This is not a generic AI course. It is a focused implementation program for your
+              operation: identify priorities, implement in workflow, and build internal capability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
@@ -142,7 +140,7 @@ export default function AcademyPage() {
                 }}
                 className="btn-primary"
               >
-                Join Waitlist
+                Reserve cohort conversation
                 <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                   arrow_downward
                 </span>
@@ -154,14 +152,13 @@ export default function AcademyPage() {
                 }}
                 className="btn-secondary"
               >
-                Explore Courses
+                Explore program
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── BENTO SHOWCASE ── */}
       <section
         className="py-16"
         style={{ backgroundColor: '#fff5e8' }}
@@ -169,10 +166,10 @@ export default function AcademyPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: 'school', label: '3 Courses', sub: 'Comprehensive curriculum' },
-              { icon: 'groups', label: '50 Seats', sub: 'Founding cohort' },
-              { icon: 'verified', label: 'Certificate', sub: 'Verifiable digital' },
-              { icon: 'live_tv', label: 'Live Sessions', sub: 'With Philippe' },
+              { icon: 'schedule', label: '5 Weeks', sub: 'Intensive delivery format' },
+              { icon: 'groups', label: '8-12 Seats', sub: 'Executive-only cohorts' },
+              { icon: 'build', label: 'Live Implementation', sub: 'In your real workflows' },
+              { icon: 'verified', label: 'Continuity Plan', sub: 'Ownership beyond the program' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -206,7 +203,6 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* ── COURSES ── */}
       <section
         id="courses"
         className="py-24"
@@ -214,12 +210,12 @@ export default function AcademyPage() {
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="section-label mb-4">Curriculum</p>
+            <p className="section-label mb-4">Program Structure</p>
             <h2
               className="font-headline font-bold text-3xl lg:text-4xl"
               style={{ color: '#001215', letterSpacing: '-0.01em' }}
             >
-              Three courses. One transformation.
+              Three blocks. One operational result.
             </h2>
           </div>
 
@@ -245,7 +241,6 @@ export default function AcademyPage() {
                 )}
 
                 <div className="relative z-10 flex flex-col gap-5 flex-1">
-                  {/* Icon + badges */}
                   <div className="flex items-start justify-between">
                     <div
                       className="w-12 h-12 hex-clip flex items-center justify-center"
@@ -286,7 +281,6 @@ export default function AcademyPage() {
                     </div>
                   </div>
 
-                  {/* Title + desc */}
                   <div>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
@@ -304,7 +298,6 @@ export default function AcademyPage() {
                     </p>
                   </div>
 
-                  {/* Topics */}
                   <ul className="flex flex-col gap-2 flex-1">
                     {course.topics.map((topic) => (
                       <li key={topic} className="flex items-start gap-2.5">
@@ -337,7 +330,6 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* ── GAMIFIED INTELLIGENCE TEASER ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#001215' }}
@@ -349,26 +341,27 @@ export default function AcademyPage() {
                 className="font-label text-xs uppercase mb-4 font-semibold"
                 style={{ color: '#ff7a32', letterSpacing: '0.15em' }}
               >
-                Coming Soon
+                Team Lead
               </p>
               <h2
                 className="font-headline font-bold text-3xl lg:text-4xl leading-tight mb-6"
                 style={{ color: '#fff8f3' }}
               >
-                Gamified Intelligence: Learning by Doing.
+                Led by Philippe Kung, former Head of Data and AI at Crayon AG.
               </h2>
               <p
                 className="font-body text-body-md leading-relaxed mb-8"
                 style={{ color: 'rgba(255,248,243,0.65)' }}
               >
-                We are building the most sophisticated AI learning environment ever created — where professionals solve real organizational challenges using AI tools in a safe, scored, and iterative environment. Challenges, leaderboards, team scenarios, and live case studies.
+                Program design draws on enterprise deployment experience, hospitality domain
+                expertise, and workforce transition experience from government-scale programs.
               </p>
               <div className="flex flex-col gap-3">
                 {[
-                  'Real-world organizational case challenges',
-                  'Team-based AI problem-solving scenarios',
-                  'Scored assessments with instant feedback',
-                  'Leaderboards and community recognition',
+                  'Hospitality-first operational framing',
+                  'Enterprise deployment background',
+                  'Executive alignment plus frontline adoption',
+                  'Continuity architecture beyond pilot stage',
                 ].map((feat) => (
                   <div key={feat} className="flex items-center gap-3">
                     <span
@@ -385,7 +378,6 @@ export default function AcademyPage() {
               </div>
             </div>
 
-            {/* Teaser visual */}
             <div
               className="rounded-2xl p-10 relative overflow-hidden"
               style={{
@@ -402,33 +394,33 @@ export default function AcademyPage() {
                     className="material-symbols-outlined"
                     style={{ fontSize: '36px', color: '#ff7a32' }}
                   >
-                    sports_esports
+                    groups
                   </span>
                 </div>
                 <p
                   className="font-headline font-bold text-2xl"
                   style={{ color: '#fff8f3' }}
                 >
-                  Gamified Intelligence
+                  Executive Cohort
                 </p>
                 <p
                   className="font-body text-body-sm"
                   style={{ color: 'rgba(255,248,243,0.5)' }}
                 >
-                  Beta launching with founding cohort
+                  Company-sponsored format for 8-12 leaders
                 </p>
                 <div
                   className="w-full h-px"
                   style={{ backgroundColor: 'rgba(255,248,243,0.08)' }}
                 />
                 <div className="grid grid-cols-3 gap-4 w-full">
-                  {['Challenges', 'Leaderboards', 'Teams'].map((item) => (
+                  {['Map', 'Build', 'Transfer'].map((item) => (
                     <div key={item} className="text-center">
                       <span
                         className="material-symbols-outlined block mb-2"
                         style={{ fontSize: '22px', color: 'rgba(255,248,243,0.3)' }}
                       >
-                        {item === 'Challenges' ? 'bolt' : item === 'Leaderboards' ? 'leaderboard' : 'group'}
+                        {item === 'Map' ? 'travel_explore' : item === 'Build' ? 'construction' : 'done_all'}
                       </span>
                       <p
                         className="font-label text-xs"
@@ -445,25 +437,25 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* ── WAITLIST FORM ── */}
       <section
         id="waitlist"
         className="py-24"
         style={{ backgroundColor: '#fff5e8' }}
       >
         <div className="max-w-narrow mx-auto px-6 lg:px-8 text-center">
-          <p className="section-label mb-4">Join Waitlist</p>
+          <p className="section-label mb-4">Reserve Conversation</p>
           <h2
             className="font-headline font-bold text-3xl lg:text-4xl mb-5"
             style={{ color: '#001215', letterSpacing: '-0.01em' }}
           >
-            Reserve your place in the founding cohort.
+            Join the executive cohort waitlist.
           </h2>
           <p
             className="font-body text-body-md leading-relaxed mb-10"
             style={{ color: '#2d4a4d' }}
           >
-            Founding members receive priority enrollment, founding pricing (up to 40% below public pricing), and early access to pre-course materials. 50 seats only.
+            Waitlist members get priority scheduling for upcoming cohorts and early access to
+            program briefing details.
           </p>
 
           {submitted ? (
@@ -488,8 +480,8 @@ export default function AcademyPage() {
               </h3>
               <p className="font-body text-body-md" style={{ color: '#2d4a4d' }}>
                 {duplicate
-                  ? 'This email is already registered. We will be in touch when the cohort opens.'
-                  : 'We will be in touch when the founding cohort opens. Watch your inbox.'}
+                  ? 'This email is already registered. We will be in touch when the next cohort opens.'
+                  : 'We will be in touch with upcoming cohort dates and next steps.'}
               </p>
             </div>
           ) : (
@@ -527,7 +519,7 @@ export default function AcademyPage() {
                 className="btn-primary w-full justify-center"
                 style={{ opacity: isPending ? 0.6 : 1, cursor: isPending ? 'not-allowed' : 'pointer' }}
               >
-                {isPending ? 'Submitting…' : 'Join Waitlist — 50 Seats'}
+                {isPending ? 'Submitting...' : 'Join waitlist'}
                 {!isPending && (
                   <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                     arrow_forward
@@ -545,7 +537,6 @@ export default function AcademyPage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff8f3' }}

@@ -6,83 +6,98 @@ const industries = [
   {
     id: 'hospitality',
     icon: 'hotel',
-    title: 'Hospitality',
-    subtitle: 'Where experience is everything.',
+    title: 'Hospitality and Service',
+    subtitle: 'Operations where guest experience and execution meet.',
     painPoints: [
-      'High operational costs from manual booking and guest management',
-      'Inconsistent service quality across properties and staff',
-      'Underutilized guest data preventing personalization at scale',
-      'Revenue leakage from inefficient dynamic pricing',
+      'Manual staff scheduling and last-minute shift chaos',
+      'Review data scattered across booking platforms',
+      'Revenue decisions made without integrated demand signals',
+      'Reactive maintenance disrupting guest operations',
     ],
     solution:
-      'We help hospitality groups deploy AI for demand forecasting, personalized guest communication, and operational optimization — while ensuring the human warmth that defines great hospitality remains central.',
-    stat: '23% average revenue uplift',
-    statSource: 'McKinsey Hospitality Report, 2024',
+      'Start with one door-opener product, then expand across the full value chain: scheduling, review intelligence, dynamic pricing, guest communication, and operations support.',
+    stat: '95% of AI pilots fail before production',
+    statSource: 'MIT NANDA Initiative (2025)',
     bg: '#fff8f3',
+  },
+  {
+    id: 'manufacturing',
+    icon: 'precision_manufacturing',
+    title: 'Manufacturing',
+    subtitle: 'From quality reporting to predictive operations.',
+    painPoints: [
+      'Quality reporting trapped in paper and spreadsheets',
+      'Unplanned downtime from reactive maintenance',
+      'Inventory and procurement blind spots',
+      'Production plans that break when orders change',
+    ],
+    solution:
+      'We embed AI where operations run every day: quality automation, predictive maintenance, inventory intelligence, and production planning that updates with real constraints.',
+    stat: '41% of cyberattacks hit manufacturing',
+    statSource: 'Industry reports, H1 2024',
+    bg: '#fff5e8',
   },
   {
     id: 'real-estate',
     icon: 'apartment',
     title: 'Real Estate',
-    subtitle: 'Data-driven decisions for every property.',
+    subtitle: 'Speed to lead, transaction control, client retention.',
     painPoints: [
-      'Manual property valuation processes prone to inconsistency',
-      'Slow lead qualification and follow-up losing potential buyers',
-      'Fragmented market data preventing accurate forecasting',
-      'High administrative overhead in lease and contract management',
+      'Leads lost outside business hours',
+      'Manual contract and document tracking overload',
+      'Market intelligence fragmented across portals',
+      'No lifecycle follow-up after closing',
     ],
     solution:
-      'We help real estate firms deploy AI for automated property valuation, intelligent lead scoring, market trend prediction, and document processing — enabling agents and managers to focus on relationships, not paperwork.',
-    stat: '28% faster deal closure',
-    statSource: 'Deloitte Real Estate AI Report, 2024',
-    bg: '#fff5e8',
+      'Automated lead response, transaction document workflows, market intelligence dashboards, and client lifecycle management designed for multilingual European operations.',
+    stat: 'Speed to lead wins deals',
+    statSource: 'Core market behavior across agencies',
+    bg: '#fff8f3',
   },
   {
-    id: 'catering',
-    icon: 'restaurant',
-    title: 'Catering',
-    subtitle: 'Precision at scale, flavor at every plate.',
+    id: 'agriculture',
+    icon: 'agriculture',
+    title: 'Agriculture',
+    subtitle: 'Practical systems for planning, compliance, and yield.',
     painPoints: [
-      'Food waste from inaccurate demand forecasting',
-      'Inconsistent quality when scaling across events and locations',
-      'Manual scheduling and logistics creating bottlenecks',
-      'Thin margins squeezed further by rising supply costs',
+      'CAP subsidy and compliance reporting is manual and risky',
+      'Crop planning decisions disconnected from live data',
+      'Equipment scheduling and maintenance managed by memory',
+      'Irrigation schedules not aligned with real field conditions',
     ],
     solution:
-      'We design AI systems for demand forecasting, menu optimization, supply chain intelligence, and workforce scheduling — helping catering operations reduce waste, improve consistency, and protect margins as they grow.',
-    stat: '31% reduction in food waste',
-    statSource: 'McKinsey Food Service Report, 2024',
-    bg: '#fff8f3',
+      'We connect field data, weather, and operations into practical workflows: subsidy reporting, crop planning, equipment scheduling, and water intelligence for mid-sized farms.',
+    stat: '20-30% water savings potential',
+    statSource: 'Smart irrigation benchmarks',
+    bg: '#fff5e8',
   },
 ]
 
 export default function IndustriesPage() {
   return (
     <>
-      {/* ── HERO ── */}
       <section
         className="pt-32 pb-20 relative grid-watermark"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">Domain Expertise</p>
-            <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-8 text-balance">Domain expertise that speaks your language.</h1>
-            <p className="font-body text-lg leading-relaxed mb-8" style={{ color: '#2d4a4d' }}>Generic AI consulting fails because every industry has different data structures, regulatory constraints, competitive dynamics, and cultural norms. We have gone deep in the sectors where the gaps between AI potential and organizational reality are widest.</p>
+            <p className="section-label mb-5">Industry Value Chains</p>
+            <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-8 text-balance">Industry-specific delivery for teams that need results, not demos.</h1>
+            <p className="font-body text-lg leading-relaxed mb-8" style={{ color: '#2d4a4d' }}>Most vendors sell one disconnected tool. Clinic of AI works across your operational value chain, starting with one high-impact use case and expanding into connected systems your team can run.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="btn-primary">
-                Book Sector Consultation
+                Book a 20-minute conversation
                 <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
               </Link>
               <Link href="/approach" className="btn-secondary">
-                Explore Our Methodology
+                See the FDE model
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── INDUSTRY CARDS ── */}
       <section className="py-24" style={{ backgroundColor: '#fff5e8' }}>
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col gap-6">
@@ -96,7 +111,6 @@ export default function IndustriesPage() {
                 }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                  {/* Icon + title */}
                   <div className="lg:col-span-3">
                     <div className="flex items-center gap-4 mb-4">
                       <div
@@ -121,7 +135,6 @@ export default function IndustriesPage() {
                     </div>
                   </div>
 
-                  {/* Pain points */}
                   <div className="lg:col-span-4">
                     <p className="font-label text-xs uppercase font-semibold mb-4" style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}>Common Challenges</p>
                     <ul className="flex flex-col gap-2.5">
@@ -134,9 +147,8 @@ export default function IndustriesPage() {
                     </ul>
                   </div>
 
-                  {/* Solution */}
                   <div className="lg:col-span-5">
-                    <p className="font-label text-xs uppercase font-semibold mb-4" style={{ color: '#a14000', letterSpacing: '0.08em' }}>Our Approach</p>
+                    <p className="font-label text-xs uppercase font-semibold mb-4" style={{ color: '#a14000', letterSpacing: '0.08em' }}>How We Work</p>
                     <p className="font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>{industry.solution}</p>
                     <Link
                       href="/contact"
@@ -154,20 +166,19 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* ── CTA BAND ── */}
       <section className="py-20" style={{ backgroundColor: '#001215' }}>
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="font-headline font-bold text-3xl lg:text-4xl mb-3" style={{ color: '#fff8f3' }}>
-                Ready to go deep in your sector?
+                One trusted partner across your value chain.
               </h2>
               <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                Book a sector-specific consultation and see exactly where AI creates value in your industry.
+                Start with one product. See the results. Then decide how far you want to go.
               </p>
             </div>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
-              Book Sector Consultation
+              Book a 20-minute conversation
               <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>arrow_forward</span>
             </Link>
           </div>

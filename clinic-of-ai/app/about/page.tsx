@@ -3,33 +3,33 @@ import Link from 'next/link'
 const timeline = [
   {
     year: '2008',
-    title: 'The Reskilling Program',
+    title: 'Government Reskilling Program',
     description:
-      'During the global financial crisis, Philippe led one of the first systematic AI-adjacent reskilling programs in Switzerland — helping 200+ workers develop analytical and digital capabilities as their industries contracted. This experience became the intellectual foundation of Clinic of AI.',
+      'Co-led a government-funded transition that moved hundreds of displaced professionals into high-demand technology roles through structured pathways.',
     icon: 'lightbulb',
     highlight: true,
   },
   {
-    year: '2012 – 2019',
-    title: 'Enterprise Data Architecture',
+    year: '2012 - 2019',
+    title: 'Founder, The Code Venture',
     description:
-      'A decade of senior data strategy and architecture roles across financial services and logistics. Built and scaled data platforms serving millions of daily transactions, developing a deep fluency in the infrastructure requirements of AI at enterprise scale.',
+      'Built and scaled a consulting firm to EUR1M revenue with 13 employees, serving 30+ Swiss startups in launch and growth operations.',
     icon: 'storage',
     highlight: false,
   },
   {
-    year: '2020 – 2023',
-    title: 'Head of Data & AI at Crayon AG',
+    year: '2020 - 2023',
+    title: 'Head of Data and AI at Crayon AG',
     description:
-      'Led the AI and data strategy function at Crayon AG, one of Europe\'s leading IT advisory firms. Designed and delivered AI transformation programs for enterprise clients across multiple sectors, scaling the practice from zero to a core service line.',
+      'Led AI strategy across hospitality, energy, and manufacturing, including predictive maintenance systems using 600+ sensors.',
     icon: 'corporate_fare',
     highlight: false,
   },
   {
     year: '2024',
-    title: 'Clinic of AI',
+    title: 'Clinic of AI Founded',
     description:
-      'Founded Clinic of AI to apply everything learned about what makes AI transformation actually work — and what consistently fails. The firm is built on the conviction that people are the leverage point, and that organizational independence is the only acceptable outcome.',
+      'Launched the Forward Deployed AI Engineer model for mid-market companies that need measurable ROI without building full in-house AI departments.',
     icon: 'neurology',
     highlight: true,
   },
@@ -38,30 +38,30 @@ const timeline = [
 const values = [
   {
     icon: 'handshake',
-    title: 'Trusted partner, not vendor.',
+    title: 'One trusted partner, not disconnected tools.',
     description:
-      'We do not sell products. We have no platform dependency, no license commissions, and no incentive to recommend anything that does not serve your organization\'s genuine needs. Our business model is built on repeat relationships and referrals — which requires actually delivering transformation.',
+      'Most mid-market businesses do not need an in-house AI department. They need one trusted partner who can connect solutions across the value chain and keep them running.',
     wide: true,
   },
   {
     icon: 'account_tree',
-    title: 'Systems thinking over tool adoption.',
+    title: 'Workflow-first implementation.',
     description:
-      'Every recommendation we make begins with understanding your organization as a system — its incentive structures, its information flows, its cultural dynamics. Tools are chosen to serve the system, never the other way around.',
+      'We map the real workflow, not the org chart version. Then we design solutions where teams already make daily decisions.',
     wide: false,
   },
   {
     icon: 'groups',
-    title: 'People-first transformation.',
+    title: 'Side-by-side delivery.',
     description:
-      'The hardest part of AI transformation is never the technology. It is changing how people think, make decisions, and collaborate. We invest disproportionately in the human layer because that is where transformation is won or lost.',
+      'Forward Deployed AI Engineers work inside operations teams so adoption happens in context, not in a slide deck handoff.',
     wide: false,
   },
   {
     icon: 'eco',
-    title: 'Sustainable capability, not dependency.',
+    title: 'Continuity by design.',
     description:
-      'Every engagement is designed to end with your organization stronger than when we arrived — and no longer needing us for the same problems. We build internal champions, transfer knowledge systematically, and document everything. Your capability is the measure of our success.',
+      'Every engagement includes transfer of ownership so your team can run, evolve, and govern the system without permanent vendor dependency.',
     wide: true,
   },
 ]
@@ -69,7 +69,6 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      {/* ── HERO ── */}
       <section
         className="pt-32 pb-24 relative grid-watermark overflow-hidden"
         style={{ backgroundColor: '#fff8f3' }}
@@ -81,26 +80,25 @@ export default function AboutPage() {
               className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance mb-8"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              The future belongs to applied polymaths.
+              Forward Deployed AI Engineers for the mid-market.
             </h1>
             <p
               className="font-body text-lg leading-relaxed"
               style={{ color: '#2d4a4d' }}
             >
-              Clinic of AI exists because transformation requires more than technical expertise. It requires someone who has sat with the complexity of real organizations, real people, and real constraints — and found a way through.
+              Clinic of AI closes the gap between AI capability and business outcomes by
+              working side by side with operating teams until adoption is real.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── FOUNDER STORY ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff5e8' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            {/* Portrait */}
             <div className="lg:col-span-4">
               <div
                 className="w-full aspect-square rounded-2xl overflow-hidden relative"
@@ -132,19 +130,19 @@ export default function AboutPage() {
                         className="font-headline font-bold italic text-2xl"
                         style={{ color: '#fff8f3' }}
                       >
-                        Philippe Küng
+                        Philippe Kung
                       </p>
                       <p
                         className="font-body text-body-sm mt-1"
                         style={{ color: 'rgba(255,248,243,0.6)' }}
                       >
-                        Founder, Clinic of AI
+                        Founder and AI Architect, Clinic of AI
                       </p>
                       <p
                         className="font-body text-body-sm"
                         style={{ color: 'rgba(255,248,243,0.4)' }}
                       >
-                        Former Head of Data & AI, Crayon AG
+                        Former Head of Data and AI, Crayon AG
                       </p>
                     </div>
                   </div>
@@ -152,15 +150,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Text */}
             <div className="lg:col-span-8 flex flex-col gap-8">
               <div>
-                <p className="section-label mb-4">The Founder</p>
+                <p className="section-label mb-4">Founder Background</p>
                 <h2
                   className="font-headline font-bold text-3xl lg:text-4xl leading-tight mb-6"
                   style={{ color: '#001215', letterSpacing: '-0.01em' }}
                 >
-                  Philippe Küng
+                  Philippe Kung
                 </h2>
               </div>
 
@@ -168,34 +165,41 @@ export default function AboutPage() {
                 className="font-body text-body-md leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                Philippe Küng has spent two decades at the intersection of human capability and organizational transformation. His career spans enterprise data architecture, AI strategy, and — at its origin — a reskilling program that shaped everything that followed.
+                Philippe Kung combines hospitality operations training at EHL Lausanne
+                with AI and machine learning training at MIT Sloan, then applied that
+                foundation to enterprise deployments across hospitality, energy, and
+                manufacturing.
               </p>
 
-              {/* 2008 story — research note */}
               <div className="research-note">
                 <p
                   className="font-label text-xs uppercase mb-3 font-semibold"
                   style={{ color: '#a14000', letterSpacing: '0.1em' }}
                 >
-                  The 2008 Program — The Origin Story
+                  2008 Government Program - Proof of Continuity
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed mb-4"
                   style={{ color: '#001215' }}
                 >
-                  In 2008, at the height of the financial crisis, Philippe was asked to design a retraining program for workers whose roles were being eliminated by automation and economic contraction. He was 26, and he had six months to help 200 people build new capabilities for roles that barely existed yet.
+                  After the 2008 financial crisis, Philippe co-led a government-funded
+                  reskilling program that transitioned hundreds of displaced professionals
+                  into high-demand technology careers through structured pathways.
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed"
                   style={{ color: '#001215' }}
                 >
-                  The program worked — not because of the curriculum, but because of how it was designed: around mental models first, tools second. Participants learned how to think differently before they learned any specific technology. Eighty-three percent of participants transitioned successfully into new roles within 12 months.
+                  That experience now informs Clinic of AI engagements: capability transfer
+                  is designed in from day one so solutions outlive initial implementation
+                  and teams can operate independently.
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed mt-4 italic font-headline"
                   style={{ color: '#001215' }}
                 >
-                  &ldquo;That program taught me that the hardest part of any technology transformation is never the technology. It is helping people believe they are capable of something new.&rdquo;
+                  &ldquo;The technology is rarely the blocker. The blocker is the gap between
+                  what AI can do and how teams actually operate.&rdquo;
                 </p>
               </div>
 
@@ -206,9 +210,10 @@ export default function AboutPage() {
                   color: '#001215',
                 }}
               >
-                &ldquo;I have seen what happens when organizations treat AI as a product instead of a capability. They get dashboards nobody uses, models nobody trusts, and transformation programs that fail at the culture layer. We do this differently.&rdquo;
+                &ldquo;Forward Deployed AI Engineering means we do not stop at deployment. We
+                stay until adoption is embedded and your team owns the system.&rdquo;
                 <footer className="mt-3 font-body not-italic text-sm" style={{ color: '#2d4a4d' }}>
-                  — Philippe Küng
+                  - Philippe Kung
                 </footer>
               </blockquote>
 
@@ -216,31 +221,31 @@ export default function AboutPage() {
                 className="font-body text-body-md leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                After Crayon AG, where he scaled the AI practice from zero to a core service line, Philippe founded Clinic of AI to do the same work at larger scale — and with a clearer mandate: build organizational independence, not consultant dependency.
+                Before Clinic of AI, Philippe founded and scaled The Code Venture, ran a
+                startup accelerator at Chainwork AG and Resilient Studios, and launched
+                PlasticMind AI, the predecessor to today&apos;s model.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── CAREER TIMELINE ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="section-label mb-4">Career Timeline</p>
+            <p className="section-label mb-4">Professional Timeline</p>
             <h2
               className="font-headline font-bold text-3xl lg:text-4xl"
               style={{ color: '#001215', letterSpacing: '-0.01em' }}
             >
-              The path to the Clinic.
+              Built across operations, AI, and workforce transition.
             </h2>
           </div>
 
           <div className="relative max-w-3xl mx-auto">
-            {/* Vertical line */}
             <div
               className="absolute left-8 top-0 bottom-0 w-px"
               style={{ backgroundColor: 'rgba(200,168,130,0.3)' }}
@@ -250,7 +255,6 @@ export default function AboutPage() {
             <div className="flex flex-col gap-10 pl-20">
               {timeline.map((item, index) => (
                 <div key={index} className="relative">
-                  {/* Timeline node */}
                   <div
                     className="absolute -left-12 top-1 w-8 h-8 rounded-full flex items-center justify-center"
                     style={{
@@ -307,25 +311,22 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── CORE VALUES ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff2e2' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="section-label mb-4">What We Believe</p>
+            <p className="section-label mb-4">Operating Principles</p>
             <h2
               className="font-headline font-bold text-3xl lg:text-4xl"
               style={{ color: '#001215', letterSpacing: '-0.01em' }}
             >
-              Core values, not slogans.
+              How we work inside client operations.
             </h2>
           </div>
 
-          {/* Staggered layout — NOT equal 3-col */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-            {/* Row 1: wide + narrow */}
             <div
               className="lg:col-span-7 rounded-2xl p-8"
               style={{
@@ -394,7 +395,6 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Row 2: narrow + wide */}
             <div
               className="lg:col-span-5 rounded-2xl p-8"
               style={{
@@ -467,7 +467,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── CTA TO CONTACT ── */}
       <section
         className="py-20"
         style={{ backgroundColor: '#001215' }}
@@ -479,15 +478,15 @@ export default function AboutPage() {
                 className="font-headline font-bold text-3xl lg:text-4xl mb-3"
                 style={{ color: '#fff8f3' }}
               >
-                Ready to start the conversation?
+                Ready to discuss your operation?
               </h2>
               <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                The first session is a diagnosis, not a pitch. We will tell you what we see — honestly.
+                20 minutes. No pitch deck. We will tell you in 5 minutes if we can help.
               </p>
             </div>
             <div className="shrink-0">
               <Link href="/contact" className="btn-primary whitespace-nowrap">
-                Schedule Your Audit
+                Book a 20-minute conversation
                 <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                   arrow_forward
                 </span>

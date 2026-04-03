@@ -6,7 +6,7 @@ const footerLinks = [
   { href: '/privacy', label: 'Privacy' },
   { href: '/terms', label: 'Terms' },
   { href: '/contact', label: 'Contact' },
-  { href: '/academy', label: 'Academy' },
+  { href: '/academy', label: 'Executive Cohort' },
 ]
 
 export default function Footer() {
@@ -40,7 +40,7 @@ export default function Footer() {
               className="font-label text-xs tracking-widest uppercase"
               style={{ color: 'rgba(255,248,243,0.4)', letterSpacing: '0.2em' }}
             >
-              Mind Over Machine
+              Forward Deployed AI Engineers
             </p>
           </div>
 
@@ -122,7 +122,7 @@ export default function Footer() {
             className="font-label text-xs tracking-widest uppercase"
             style={{ color: 'rgba(255,248,243,0.25)', letterSpacing: '0.15em' }}
           >
-            Systems Architected
+            20 minutes. No pitch deck.
           </p>
         </div>
       </div>

@@ -3,103 +3,103 @@ import Link from 'next/link'
 const phases = [
   {
     number: '01',
-    label: 'Diagnose',
-    title: 'We begin where others skip.',
+    label: 'Embed',
+    title: 'Map the real workflow, not the org chart version.',
     description:
-      'Before any technology recommendation, we conduct a deep organizational audit. We map your existing processes, identify automation opportunities, and — most critically — assess the human capability gaps that will determine whether AI investments generate return.',
+      'We start inside operations: shadowing teams, mapping decision points, and identifying where AI can improve outcomes in daily execution.',
     details: [
-      'Stakeholder interviews and workflow mapping',
-      'AI readiness assessment across departments',
-      'Identification of high-ROI automation targets',
-      'Cultural and capability baseline report',
-      'Prioritized transformation roadmap',
+      'Workflow observation and stakeholder interviews',
+      'Current systems and data flow mapping',
+      'Top 3 high-leverage opportunities selected',
+      'Quick-win implementation plan',
+      'Clear ownership model per team',
     ],
     icon: 'search_insights',
-    duration: '4 – 6 weeks',
+    duration: 'Weeks 1 - 2',
   },
   {
     number: '02',
-    label: 'Upskill',
-    title: 'People are the leverage point.',
+    label: 'Deploy',
+    title: 'Build side by side with the people who use it.',
     description:
-      'Technology without capability is waste. We design and deliver targeted learning programs that build genuine AI fluency — not surface-level awareness. Your teams learn to work with AI as a thinking partner, not just a tool.',
+      'Forward Deployed AI Engineers implement in live workflows and iterate with frontline teams so adoption is immediate, measurable, and durable.',
     details: [
-      'Role-specific AI curriculum design',
-      'Live workshops and hands-on labs',
-      'Mental model development for probabilistic thinking',
-      'Ethical decision-making frameworks',
-      'Competency certification tracks',
+      'Pilot implementation in operational context',
+      'Integration with existing tools and routines',
+      'Role-based enablement for daily use',
+      'KPI tracking for time, quality, and cost',
+      'Iteration based on field feedback',
     ],
-    icon: 'school',
-    duration: '8 – 12 weeks',
+    icon: 'construction',
+    duration: 'Weeks 3 - 6',
   },
   {
     number: '03',
-    label: 'Transform',
-    title: 'Systems that sustain themselves.',
+    label: 'Transfer',
+    title: 'Design continuity so the solution outlives the engagement.',
     description:
-      'With diagnosis complete and capability built, we architect and implement modular AI systems designed for organizational independence — not vendor dependency. Every solution we build includes knowledge transfer, governance frameworks, and internal champions.',
+      'We do not hand over a dashboard and disappear. We transfer capability, governance, and operating rhythm so your team can run and evolve the system independently.',
     details: [
-      'Modular AI system design and deployment',
-      'Internal AI governance structure',
-      'Knowledge transfer to in-house teams',
-      'Performance monitoring and iteration',
-      'Long-term capability roadmap',
+      'Operational playbooks and handover guides',
+      'Internal champions and owner training',
+      'Governance and escalation structure',
+      'Post-deployment optimization cadence',
+      'Independence roadmap',
     ],
-    icon: 'construction',
-    duration: '12 – 20 weeks',
+    icon: 'school',
+    duration: 'Weeks 7 - 8+',
   },
 ]
 
 const comparisonRows = [
-  { traditional: 'Sells tools and platforms', clinic: 'Builds organizational capability' },
-  { traditional: 'Individual training sessions', clinic: 'System-wide transformation programs' },
-  { traditional: 'Vendor dependency built in', clinic: 'Organizational independence by design' },
-  { traditional: 'Deploy and disappear', clinic: 'Knowledge transfer and internal champions' },
-  { traditional: 'Technology-first thinking', clinic: 'People-first, then systems' },
-  { traditional: 'One-size-fits-all methodology', clinic: 'Modular, context-specific approach' },
+  { traditional: 'Platform-first recommendation', clinic: 'Workflow-first implementation' },
+  { traditional: 'Pilot delivery and handoff', clinic: 'Side-by-side deployment' },
+  { traditional: 'Generic enablement sessions', clinic: 'Role-based capability transfer' },
+  { traditional: 'Short-term output focus', clinic: 'Long-term continuity architecture' },
+  { traditional: 'Vendor dependency over time', clinic: 'Team ownership over time' },
+  { traditional: 'Deck-driven transformation', clinic: 'Operational transformation' },
 ]
 
 export default function ApproachPage() {
   return (
     <>
-      {/* ── HERO ── */}
       <section
         className="pt-32 pb-24 relative grid-watermark"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">Our Methodology</p>
+            <p className="section-label mb-5">Forward Deployed Model</p>
             <h1
               className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance mb-8"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              We don&apos;t install AI. We transform how your organization thinks.
+              We do not sell AI. We sit inside your operation and make it work.
             </h1>
             <p
               className="font-body text-lg leading-relaxed"
               style={{ color: '#2d4a4d' }}
             >
-              Most AI consulting ends when the implementation is live. Ours ends when your organization no longer needs us — because your people have the knowledge, structures, and confidence to continue independently.
+              MIT reports 95% of generative AI pilots fail before production. The missing
+              piece is not another tool. It is embedded delivery that bridges technology
+              and how teams actually operate.
             </p>
           </div>
         </div>
       </section>
 
-      {/* ── 3-PHASE METHODOLOGY ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff5e8' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="section-label mb-4">The Protocol</p>
+            <p className="section-label mb-4">The Model</p>
             <h2
               className="font-headline font-bold text-3xl lg:text-4xl"
               style={{ color: '#001215', letterSpacing: '-0.01em' }}
             >
-              Three phases. One transformation.
+              Three phases. One operational outcome.
             </h2>
           </div>
 
@@ -115,7 +115,6 @@ export default function ApproachPage() {
               >
                 <div className="p-8 lg:p-10">
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                    {/* Phase number + icon */}
                     <div className="lg:col-span-3 flex items-start gap-5">
                       <div
                         className="shrink-0 w-16 h-16 flex items-center justify-center rounded-xl font-label font-bold text-xl"
@@ -137,7 +136,6 @@ export default function ApproachPage() {
                       </div>
                     </div>
 
-                    {/* Content */}
                     <div className="lg:col-span-5 flex flex-col gap-4">
                       <h3
                         className="font-headline font-bold text-2xl"
@@ -153,7 +151,6 @@ export default function ApproachPage() {
                       </p>
                     </div>
 
-                    {/* Details list */}
                     <div className="lg:col-span-4">
                       <ul className="flex flex-col gap-2.5">
                         {phase.details.map((detail) => (
@@ -182,7 +179,6 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* ── AI ARCHITECT CONCEPT ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff8f3' }}
@@ -191,52 +187,54 @@ export default function ApproachPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="flex flex-col gap-8">
               <div>
-                <p className="section-label mb-4">The AI Architect</p>
+                <p className="section-label mb-4">Why It Works</p>
                 <h2
                   className="font-headline font-bold text-3xl lg:text-4xl leading-tight"
                   style={{ color: '#001215', letterSpacing: '-0.01em' }}
                 >
-                  Every transformation needs someone who can see the whole system.
+                  Deep tech range. Embedded delivery. Continuity by design.
                 </h2>
               </div>
               <p
                 className="font-body text-body-md leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                The AI Architect is not a job title — it is a capability profile we help organizations develop internally. This is the person who understands both the technical landscape and the human factors. Who can translate between the boardroom and the engineering team. Who knows that the hardest part of AI transformation is never the technology.
+                Forward Deployed AI Engineers combine technical breadth from legacy ML to
+                generative AI and autonomous agents, then apply it directly in operational
+                context where adoption decisions happen every day.
               </p>
               <p
                 className="font-body text-body-md leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                Our programs develop AI Architects at multiple levels — from individual contributors who can work alongside AI systems intelligently, to senior leaders who can build and govern AI strategy with confidence.
+                The goal is measurable improvement now and organizational ownership later.
+                No recurring dependency. No handoff theater.
               </p>
             </div>
 
             <div className="flex flex-col gap-5">
-              {/* Research note */}
               <div className="research-note">
                 <p
                   className="font-label text-xs uppercase mb-3"
                   style={{ color: '#a14000', letterSpacing: '0.1em' }}
                 >
-                  Research Insight
+                  Data Anchor
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed italic"
                   style={{ color: '#001215' }}
                 >
-                  &ldquo;Organizations that invested in AI literacy programs saw 3.4x greater return on AI initiatives than those that focused exclusively on technology procurement. The differentiator was not the model — it was the team.&rdquo;
+                  &ldquo;42% of companies have abandoned the majority of their AI initiatives,
+                  up from 17%.&rdquo;
                 </p>
                 <p
                   className="font-body text-body-sm mt-3"
                   style={{ color: '#2d4a4d' }}
                 >
-                  MIT Sloan Management Review, 2024
+                  S&amp;P Global Market Intelligence (2025)
                 </p>
               </div>
 
-              {/* Capability pillars */}
               <div
                 className="rounded-2xl p-8"
                 style={{
@@ -245,14 +243,14 @@ export default function ApproachPage() {
                 }}
               >
                 <p className="font-body font-semibold text-body-md mb-5" style={{ color: '#001215' }}>
-                  The AI Architect profile includes:
+                  Core capability pillars:
                 </p>
                 <div className="grid grid-cols-2 gap-4">
                   {[
-                    { icon: 'psychology', label: 'Systems Thinking' },
-                    { icon: 'data_exploration', label: 'Data Literacy' },
-                    { icon: 'groups', label: 'Change Leadership' },
-                    { icon: 'balance', label: 'AI Ethics' },
+                    { icon: 'precision_manufacturing', label: 'Technical Breadth' },
+                    { icon: 'groups', label: 'Embedded Delivery' },
+                    { icon: 'account_tree', label: 'Systems Integration' },
+                    { icon: 'verified', label: 'Continuity Architecture' },
                   ].map((item) => (
                     <div key={item.label} className="flex items-center gap-3">
                       <span
@@ -273,7 +271,6 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* ── COMPARISON TABLE ── */}
       <section
         className="py-24"
         style={{ backgroundColor: '#fff2e2' }}
@@ -290,7 +287,6 @@ export default function ApproachPage() {
           </div>
 
           <div className="max-w-3xl mx-auto">
-            {/* Table header */}
             <div className="grid grid-cols-2 gap-0 mb-2">
               <div className="p-4">
                 <p
@@ -310,7 +306,6 @@ export default function ApproachPage() {
               </div>
             </div>
 
-            {/* Rows — alternating bg, no borders */}
             {comparisonRows.map((row, i) => (
               <div
                 key={i}
@@ -353,7 +348,6 @@ export default function ApproachPage() {
         </div>
       </section>
 
-      {/* ── CTA BAND ── */}
       <section
         className="py-20"
         style={{ backgroundColor: '#001215' }}
@@ -365,21 +359,21 @@ export default function ApproachPage() {
                 className="font-headline font-bold text-3xl lg:text-4xl mb-3"
                 style={{ color: '#fff8f3' }}
               >
-                Ready to begin the diagnosis?
+                20 minutes. No pitch deck.
               </h2>
               <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                The first conversation is free. We will tell you exactly where you stand.
+                We will tell you in 5 minutes if we can help. The other 15 minutes are yours.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
               <Link href="/contact" className="btn-primary whitespace-nowrap">
-                Book Free Audit
+                Book a conversation
                 <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
                   arrow_forward
                 </span>
               </Link>
               <Link
-                href="/academy"
+                href="/industries"
                 className="inline-flex items-center justify-center gap-2 font-body font-semibold px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap"
                 style={{
                   backgroundColor: 'rgba(255,248,243,0.08)',
@@ -387,7 +381,7 @@ export default function ApproachPage() {
                   border: '1px solid rgba(255,248,243,0.12)',
                 }}
               >
-                Explore Academy
+                Explore industries
               </Link>
             </div>
           </div>

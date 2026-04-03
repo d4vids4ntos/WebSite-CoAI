@@ -24,10 +24,10 @@ const TIME_SLOTS = ['09:00', '11:30', '14:00', '16:30']
 
 const FOCUS_OPTIONS = [
   'AI Opportunity Audit',
-  'Enterprise Transformation Program',
-  'Academy Enrollment',
-  'Workforce Upskilling',
-  'Technical Architecture Review',
+  'Forward Deployed Implementation',
+  'Industry Executive Cohort',
+  'Hospitality Operations',
+  'Manufacturing Operations',
   'Other',
 ]
 
@@ -66,7 +66,6 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* ── MAIN SECTION ── */}
       <section
         className="pt-24 pb-16 grid-watermark"
         style={{ backgroundColor: '#fff8f3' }}
@@ -74,9 +73,7 @@ export default function ContactPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 py-8">
 
-            {/* ── LEFT: HERO TEXT (5 cols) ── */}
             <div className="lg:col-span-5 flex flex-col gap-8">
-              {/* Circuit decoration */}
               <div
                 className="absolute top-24 left-0 w-48 h-48 pointer-events-none"
                 aria-hidden="true"
@@ -92,14 +89,13 @@ export default function ContactPage() {
                 className="font-label text-xs font-semibold uppercase"
                 style={{ color: '#a14000', letterSpacing: '0.3em' }}
               >
-                Systems Architected
+                20 Minutes. No Pitch Deck.
               </p>
 
-              <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-tight text-balance">Schedule Your Intelligence Protocol</h1>
+              <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-tight text-balance">Book a conversation about your operation</h1>
 
-              <p className="font-body text-lg leading-relaxed" style={{ color: '#2d4a4d' }}>Your first session with Clinic of AI is a structured diagnostic — not a sales call. We will map your current state, identify the highest-leverage opportunities, and give you a clear picture of what transformation would look like for your organization.</p>
+              <p className="font-body text-lg leading-relaxed" style={{ color: '#2d4a4d' }}>This is a structured operational conversation, not a sales call. We will tell you in 5 minutes whether we can help and where the highest-leverage opportunities are in your value chain.</p>
 
-              {/* Status badge */}
               <div
                 className="inline-flex items-center gap-3 px-4 py-3 rounded-xl self-start"
                 style={{
@@ -114,11 +110,10 @@ export default function ContactPage() {
                   verified
                 </span>
                 <span className="font-body text-body-sm" style={{ color: '#001215' }}>
-                  Availability confirmed for Q4.
+                  Working with teams across Europe.
                 </span>
               </div>
 
-              {/* What to expect */}
               <div className="flex flex-col gap-4 mt-2">
                 <p
                   className="font-label text-xs uppercase font-semibold"
@@ -127,10 +122,10 @@ export default function ContactPage() {
                   What to expect
                 </p>
                 {[
-                  { icon: 'search_insights', text: 'Organizational AI readiness review' },
-                  { icon: 'map', text: 'High-ROI opportunity mapping' },
-                  { icon: 'description', text: 'Written diagnostic summary' },
-                  { icon: 'price_check', text: 'No commitment, no pitch' },
+                  { icon: 'travel_explore', text: 'Workflow and bottleneck review' },
+                  { icon: 'map', text: 'Top 3 opportunity mapping' },
+                  { icon: 'construction', text: 'Implementation fit assessment' },
+                  { icon: 'price_check', text: 'Clear next steps, no pressure' },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <span
@@ -147,7 +142,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* ── RIGHT: BOOKING WIDGET (7 cols) ── */}
             <div className="lg:col-span-7">
               {submitted ? (
                 <div
@@ -173,17 +167,17 @@ export default function ContactPage() {
                     className="font-headline font-bold text-3xl mb-4"
                     style={{ color: '#001215' }}
                   >
-                    Protocol Initiated.
+                    Conversation Scheduled.
                   </h2>
                   <p className="font-body text-body-md mb-3" style={{ color: '#2d4a4d' }}>
                     Your session is scheduled for{' '}
                     <strong style={{ color: '#001215' }}>
-                      April {selectedDay}, 2025 at {selectedTime}
+                      April {selectedDay}, 2026 at {selectedTime}
                     </strong>
                     .
                   </p>
                   <p className="font-body text-body-sm mb-8" style={{ color: '#2d4a4d' }}>
-                    A calendar invitation and preparation brief will arrive in your inbox within the hour. We look forward to speaking with you, {name.split(' ')[0]}.
+                    A calendar invitation and prep note will arrive in your inbox shortly. We look forward to speaking with you, {name.split(' ')[0]}.
                   </p>
                   <Link href="/" className="btn-primary">
                     Return Home
@@ -202,7 +196,6 @@ export default function ContactPage() {
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
                 >
-                  {/* Form header */}
                   <div
                     className="px-8 py-6"
                     style={{ borderBottom: '1px solid rgba(200,168,130,0.12)' }}
@@ -212,7 +205,7 @@ export default function ContactPage() {
                         className="font-headline font-bold text-xl"
                         style={{ color: '#001215' }}
                       >
-                        Intelligence Protocol Booking
+                        Book your 20-minute session
                       </h2>
                       <div className="flex items-center gap-1.5">
                         {[1, 2, 3].map((s) => (
@@ -230,7 +223,6 @@ export default function ContactPage() {
                   </div>
 
                   <div className="p-8 flex flex-col gap-10">
-                    {/* ── STEP 01: CALENDAR ── */}
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <div
@@ -247,17 +239,16 @@ export default function ContactPage() {
                           className="font-body font-semibold text-body-md"
                           style={{ color: '#001215' }}
                         >
-                          Select Date Protocol
+                          Select date
                         </p>
                         <span
                           className="font-label text-xs ml-auto"
                           style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.08em' }}
                         >
-                          April 2025
+                          April 2026
                         </span>
                       </div>
 
-                      {/* Day-of-week headers */}
                       <div className="grid grid-cols-7 gap-1 mb-1">
                         {DAYS_OF_WEEK.map((d) => (
                           <div
@@ -270,7 +261,6 @@ export default function ContactPage() {
                         ))}
                       </div>
 
-                      {/* Calendar grid */}
                       <div className="grid grid-cols-7 gap-1">
                         {CALENDAR_DAYS.map((cell, idx) => {
                           if (!cell.day) {
@@ -316,12 +306,11 @@ export default function ContactPage() {
                           className="font-body text-body-sm mt-3 text-center"
                           style={{ color: '#2d4a4d' }}
                         >
-                          Selected: April {selectedDay}, 2025
+                          Selected: April {selectedDay}, 2026
                         </p>
                       )}
                     </div>
 
-                    {/* ── STEP 02: TIME SLOTS ── */}
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <div
@@ -338,7 +327,7 @@ export default function ContactPage() {
                           className="font-body font-semibold text-body-md"
                           style={{ color: '#001215' }}
                         >
-                          Define Logic Window
+                          Select time
                         </p>
                       </div>
 
@@ -369,7 +358,6 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* ── STEP 03: USER CREDENTIALS ── */}
                     <div>
                       <div className="flex items-center gap-3 mb-6">
                         <div
@@ -386,12 +374,11 @@ export default function ContactPage() {
                           className="font-body font-semibold text-body-md"
                           style={{ color: '#001215' }}
                         >
-                          User Credentials
+                          Your details
                         </p>
                       </div>
 
                       <div className="flex flex-col gap-6">
-                        {/* Name */}
                         <div>
                           <label
                             htmlFor="contact-name"
@@ -411,7 +398,6 @@ export default function ContactPage() {
                           />
                         </div>
 
-                        {/* Email */}
                         <div>
                           <label
                             htmlFor="contact-email"
@@ -431,14 +417,13 @@ export default function ContactPage() {
                           />
                         </div>
 
-                        {/* Company */}
                         <div>
                           <label
                             htmlFor="contact-company"
                             className="font-label text-xs uppercase font-semibold block mb-2"
                             style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
                           >
-                            Organization
+                            Company
                           </label>
                           <input
                             id="contact-company"
@@ -451,7 +436,6 @@ export default function ContactPage() {
                           />
                         </div>
 
-                        {/* Session focus */}
                         <div>
                           <label
                             htmlFor="contact-focus"
@@ -488,9 +472,7 @@ export default function ContactPage() {
                       </div>
                     </div>
 
-                    {/* ── SUBMIT ── */}
                     <div>
-                      {/* Summary */}
                       {selectedDay && selectedTime && (
                         <div
                           className="rounded-xl p-4 mb-5 flex items-center gap-3"
@@ -508,7 +490,7 @@ export default function ContactPage() {
                             className="font-body text-body-sm"
                             style={{ color: '#001215' }}
                           >
-                            April {selectedDay} at {selectedTime} — 45-minute AI Diagnostic Session
+                            April {selectedDay} at {selectedTime} - 20-minute conversation
                           </p>
                         </div>
                       )}
@@ -539,7 +521,7 @@ export default function ContactPage() {
                         }}
                       >
                         <span className="font-label uppercase tracking-widest text-sm">
-                          {isPending ? 'Sending…' : 'Initiate Booking Protocol'}
+                          {isPending ? 'Sending...' : 'Book conversation'}
                         </span>
                         {!isPending && (
                           <span
@@ -555,7 +537,7 @@ export default function ContactPage() {
                         className="font-body text-body-sm text-center mt-4"
                         style={{ color: 'rgba(45,74,77,0.5)' }}
                       >
-                        No credit card required. Free diagnostic session. Cancel anytime.
+                        No commitment. No sales pressure. Clear next steps.
                       </p>
                     </div>
                   </div>
@@ -566,7 +548,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* ── FOOTER SUPPLEMENT ── */}
       <section
         className="py-16"
         style={{ backgroundColor: '#fff5e8' }}
@@ -576,18 +557,18 @@ export default function ContactPage() {
             {[
               {
                 icon: 'schedule',
-                title: '45-minute sessions',
-                desc: 'Structured diagnostic — not a free-form call.',
+                title: '20-minute sessions',
+                desc: 'Fast qualification with clear implementation fit.',
               },
               {
                 icon: 'video_call',
-                title: 'Remote, anywhere',
-                desc: 'We work with organizations across Europe and beyond.',
+                title: 'Remote, Europe-wide',
+                desc: 'Built for teams operating across multiple locations.',
               },
               {
                 icon: 'description',
-                title: 'Written summary',
-                desc: 'Delivered within 24 hours of your session.',
+                title: 'Clear recommendations',
+                desc: 'Immediate next-step guidance after the call.',
               },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
