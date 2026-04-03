@@ -1,53 +1,53 @@
-import Link from 'next/link'
+'use client'
 
-const phases = [
+import Link from 'next/link'
+import SplitText from '@/components/animations/SplitText'
+
+const capabilities = [
   {
     number: '01',
-    label: 'Embed',
-    title: 'Map the real workflow, not the org chart version.',
+    label: 'Technical Breadth',
+    title: 'The full technology landscape — not just the latest model.',
     description:
-      'We start inside operations: shadowing teams, mapping decision points, and identifying where AI can improve outcomes in daily execution.',
+      'From legacy machine learning and data engineering to cutting-edge generative AI, autonomous agents, and on-premise deployment. A Forward Deployed AI Engineer selects the right solution for the problem, not the trendy one.',
     details: [
-      'Workflow observation and stakeholder interviews',
-      'Current systems and data flow mapping',
-      'Top 3 high-leverage opportunities selected',
-      'Quick-win implementation plan',
-      'Clear ownership model per team',
+      'Industrial ML and predictive maintenance',
+      'Generative AI application development',
+      'Multi-agent architectures',
+      'Data engineering and pipeline design',
+      'On-premise and cloud deployment',
     ],
-    icon: 'search_insights',
-    duration: 'Weeks 1 - 2',
+    icon: 'precision_manufacturing',
   },
   {
     number: '02',
-    label: 'Deploy',
-    title: 'Build side by side with the people who use it.',
+    label: 'Embedded Delivery',
+    title: 'Built side by side with the people who use it.',
     description:
-      'Forward Deployed AI Engineers implement in live workflows and iterate with frontline teams so adoption is immediate, measurable, and durable.',
+      'Forward Deployed AI Engineers learn the workflow from the inside — the real one, not the org chart version. Solutions are built close to the people who use them, which is why they get adopted instead of abandoned.',
     details: [
-      'Pilot implementation in operational context',
+      'Workflow observation from inside operations',
+      'Solutions built with frontline teams',
       'Integration with existing tools and routines',
-      'Role-based enablement for daily use',
-      'KPI tracking for time, quality, and cost',
-      'Iteration based on field feedback',
+      'Immediate adoption, not post-handoff training',
+      '67% higher success rate vs. internal builds',
     ],
-    icon: 'construction',
-    duration: 'Weeks 3 - 6',
+    icon: 'groups',
   },
   {
     number: '03',
-    label: 'Transfer',
-    title: 'Design continuity so the solution outlives the engagement.',
+    label: 'Continuity Architecture',
+    title: 'The solution outlives the engagement.',
     description:
-      'We do not hand over a dashboard and disappear. We transfer capability, governance, and operating rhythm so your team can run and evolve the system independently.',
+      'We do not hand over a dashboard and disappear. We transfer capability, governance, and operating rhythm so your team can run, evolve, and own the system independently. No permanent dependency. No recurring vendor lock-in.',
     details: [
-      'Operational playbooks and handover guides',
+      'Role-based capability transfer',
       'Internal champions and owner training',
       'Governance and escalation structure',
-      'Post-deployment optimization cadence',
       'Independence roadmap',
+      'Post-engagement optimization cadence',
     ],
-    icon: 'school',
-    duration: 'Weeks 7 - 8+',
+    icon: 'verified',
   },
 ]
 
@@ -69,21 +69,37 @@ export default function ApproachPage() {
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">Forward Deployed Model</p>
-            <h1
-              className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance mb-8"
-              style={{ color: '#001215', letterSpacing: '-0.02em' }}
-            >
-              We do not sell AI. We sit inside your operation and make it work.
-            </h1>
-            <p
-              className="font-body text-lg leading-relaxed"
-              style={{ color: '#2d4a4d' }}
-            >
-              MIT reports 95% of generative AI pilots fail before production. The missing
-              piece is not another tool. It is embedded delivery that bridges technology
-              and how teams actually operate.
-            </p>
+            <p className="section-label mb-5">Forward Deployed AI Engineers</p>
+            <div className="overflow-hidden mb-8">
+              <SplitText
+                text="Why 95% of AI Projects Fail — and What Actually Fixes It"
+                tag="h1"
+                splitType="words"
+                delay={20}
+                duration={1.1}
+                ease="expo.out"
+                from={{ opacity: 0, y: 80 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+                className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance"
+              />
+            </div>
+            <div className="overflow-hidden">
+              <SplitText
+                text="The gap between AI capability and business results is not a technology problem. It is a dynamics problem. Clinic of AI deploys Forward Deployed AI Engineers who work side-by-side with mid-market businesses to make AI deliver real ROI."
+                tag="p"
+                splitType="lines"
+                delay={80}
+                duration={0.8}
+                ease="power2.out"
+                from={{ opacity: 0, y: 20 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+                className="font-body text-lg leading-relaxed"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -95,18 +111,34 @@ export default function ApproachPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-label mb-4">The Model</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
+            <div className="overflow-hidden">
+              <SplitText
+                text="What a Forward Deployed AI Engineer Does"
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
+            <p
+              className="font-body text-body-md leading-relaxed mt-4 max-w-2xl mx-auto"
+              style={{ color: '#2d4a4d' }}
             >
-              Three phases. One operational outcome.
-            </h2>
+              A Forward Deployed AI Engineer is not a consultant who delivers slide decks.
+              They are an operator who sits inside your business and makes AI work.
+            </p>
           </div>
 
           <div className="flex flex-col gap-5">
-            {phases.map((phase, index) => (
+            {capabilities.map((cap, index) => (
               <div
-                key={phase.number}
+                key={cap.number}
                 className="rounded-2xl overflow-hidden"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
@@ -123,16 +155,16 @@ export default function ApproachPage() {
                           color: '#a14000',
                         }}
                       >
-                        {phase.number}
+                        {cap.number}
                       </div>
                       <div>
-                        <p className="section-label mb-1">{phase.label}</p>
-                        <p
-                          className="font-body text-body-sm"
-                          style={{ color: 'rgba(45,74,77,0.6)' }}
+                        <p className="section-label mb-1">{cap.label}</p>
+                        <span
+                          className="material-symbols-outlined"
+                          style={{ fontSize: '20px', color: '#a14000' }}
                         >
-                          {phase.duration}
-                        </p>
+                          {cap.icon}
+                        </span>
                       </div>
                     </div>
 
@@ -141,19 +173,19 @@ export default function ApproachPage() {
                         className="font-headline font-bold text-2xl"
                         style={{ color: '#001215' }}
                       >
-                        {phase.title}
+                        {cap.title}
                       </h3>
                       <p
                         className="font-body text-body-md leading-relaxed"
                         style={{ color: '#2d4a4d' }}
                       >
-                        {phase.description}
+                        {cap.description}
                       </p>
                     </div>
 
                     <div className="lg:col-span-4">
                       <ul className="flex flex-col gap-2.5">
-                        {phase.details.map((detail) => (
+                        {cap.details.map((detail) => (
                           <li key={detail} className="flex items-start gap-3">
                             <span
                               className="material-symbols-outlined shrink-0 mt-0.5"
@@ -187,32 +219,80 @@ export default function ApproachPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="flex flex-col gap-8">
               <div>
-                <p className="section-label mb-4">Why It Works</p>
-                <h2
-                  className="font-headline font-bold text-3xl lg:text-4xl leading-tight"
-                  style={{ color: '#001215', letterSpacing: '-0.01em' }}
-                >
-                  Deep tech range. Embedded delivery. Continuity by design.
-                </h2>
+                <p className="section-label mb-4">Why This Model</p>
+                <div className="overflow-hidden">
+                  <SplitText
+                    text="You Don't Need an AI Team. You Need One Trusted Partner."
+                    tag="h2"
+                    splitType="words"
+                    delay={50}
+                    duration={0.9}
+                    ease="power3.out"
+                    from={{ opacity: 0, y: 40 }}
+                    to={{ opacity: 1, y: 0 }}
+                    threshold={0.1}
+                    textAlign="left"
+                    className="font-headline font-bold text-3xl lg:text-4xl leading-tight"
+                  />
+                </div>
               </div>
               <p
                 className="font-body text-body-md leading-relaxed"
                 style={{ color: '#2d4a4d' }}
               >
-                Forward Deployed AI Engineers combine technical breadth from legacy ML to
-                generative AI and autonomous agents, then apply it directly in operational
-                context where adoption decisions happen every day.
+                80% of businesses outside the enterprise bubble will never hire an in-house
+                AI department. They shouldn&rsquo;t have to. But buying disconnected tools from
+                different vendors is how companies end up with systems that don&rsquo;t communicate,
+                data that doesn&rsquo;t flow, and a bigger operational mess than they started with.
               </p>
-              <p
-                className="font-body text-body-md leading-relaxed"
-                style={{ color: '#2d4a4d' }}
-              >
-                The goal is measurable improvement now and organizational ownership later.
-                No recurring dependency. No handoff theater.
-              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  'Start with one product that solves one specific pain point (from €190)',
+                  'See the results in your operation within 2 weeks',
+                  'Expand across your value chain through subscription-based solutions',
+                  'Every solution connects to the others — no duct tape, no disconnected tools',
+                ].map((step, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <span
+                      className="material-symbols-outlined shrink-0 mt-0.5"
+                      style={{ fontSize: '16px', color: '#a14000' }}
+                    >
+                      arrow_forward
+                    </span>
+                    <span
+                      className="font-body text-body-sm"
+                      style={{ color: '#2d4a4d' }}
+                    >
+                      {step}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col gap-5">
+              <div className="research-note">
+                <p
+                  className="font-label text-xs uppercase mb-3"
+                  style={{ color: '#a14000', letterSpacing: '0.1em' }}
+                >
+                  Data Anchor
+                </p>
+                <p
+                  className="font-body text-body-md leading-relaxed italic"
+                  style={{ color: '#001215' }}
+                >
+                  &ldquo;95% of generative AI pilots at companies fail before reaching
+                  production.&rdquo;
+                </p>
+                <p
+                  className="font-body text-body-sm mt-3"
+                  style={{ color: '#2d4a4d' }}
+                >
+                  MIT NANDA Initiative (2025)
+                </p>
+              </div>
+
               <div className="research-note">
                 <p
                   className="font-label text-xs uppercase mb-3"
@@ -235,36 +315,26 @@ export default function ApproachPage() {
                 </p>
               </div>
 
-              <div
-                className="rounded-2xl p-8"
-                style={{
-                  backgroundColor: '#fff5e8',
-                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
-                }}
-              >
-                <p className="font-body font-semibold text-body-md mb-5" style={{ color: '#001215' }}>
-                  Core capability pillars:
+              <div className="research-note">
+                <p
+                  className="font-label text-xs uppercase mb-3"
+                  style={{ color: '#a14000', letterSpacing: '0.1em' }}
+                >
+                  Data Anchor
                 </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { icon: 'precision_manufacturing', label: 'Technical Breadth' },
-                    { icon: 'groups', label: 'Embedded Delivery' },
-                    { icon: 'account_tree', label: 'Systems Integration' },
-                    { icon: 'verified', label: 'Continuity Architecture' },
-                  ].map((item) => (
-                    <div key={item.label} className="flex items-center gap-3">
-                      <span
-                        className="material-symbols-outlined"
-                        style={{ fontSize: '18px', color: '#a14000' }}
-                      >
-                        {item.icon}
-                      </span>
-                      <span className="font-body text-body-sm font-medium" style={{ color: '#001215' }}>
-                        {item.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <p
+                  className="font-body text-body-md leading-relaxed italic"
+                  style={{ color: '#001215' }}
+                >
+                  &ldquo;Enterprise-wide AI initiatives achieve only 5.9% ROI despite requiring
+                  10% capital investment.&rdquo;
+                </p>
+                <p
+                  className="font-body text-body-sm mt-3"
+                  style={{ color: '#2d4a4d' }}
+                >
+                  IBM Institute for Business Value (2025)
+                </p>
               </div>
             </div>
           </div>
@@ -278,12 +348,21 @@ export default function ApproachPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-label mb-4">The Difference</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
-            >
-              Traditional consulting vs. Clinic of AI
-            </h2>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Traditional consulting vs. Clinic of AI"
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
           </div>
 
           <div className="max-w-3xl mx-auto">
@@ -355,14 +434,24 @@ export default function ApproachPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
-              <h2
-                className="font-headline font-bold text-3xl lg:text-4xl mb-3"
-                style={{ color: '#fff8f3' }}
-              >
-                20 minutes. No pitch deck.
-              </h2>
+              <div className="overflow-hidden mb-3">
+                <SplitText
+                  text="20 minutes. No pitch deck."
+                  tag="h2"
+                  splitType="words"
+                  delay={50}
+                  duration={0.9}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  textAlign="left"
+                  className="font-headline font-bold text-3xl lg:text-4xl"
+                />
+              </div>
               <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                We will tell you in 5 minutes if we can help. The other 15 minutes are yours.
+                Tell us about your operation. We&rsquo;ll tell you in 5 minutes if we can
+                help — and exactly where the highest-leverage opportunities are in your value chain.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">

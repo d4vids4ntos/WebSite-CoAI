@@ -1,27 +1,73 @@
+'use client'
+
 import Link from 'next/link'
+import SplitText from '@/components/animations/SplitText'
+
+const team = [
+  {
+    name: 'Philippe Küng',
+    archetype: 'The Polymath',
+    role: 'Founder & AI Architect',
+    description:
+      'EHL Lausanne and MIT Sloan trained. Former Head of Data & AI at Crayon AG — deployed production ML across hospitality, energy, and manufacturing. Founded and scaled The Code Venture to €1M revenue serving 30+ Swiss startups. Co-led a government reskilling program that transitioned hundreds into tech careers after the 2008 crisis.',
+    capability: 'Strategy & Domain Expertise',
+    icon: 'neurology',
+    featured: true,
+  },
+  {
+    name: 'David Santos',
+    archetype: 'The Builder',
+    role: 'Lead AI/ML Engineer',
+    description:
+      'Graduated from the top polytechnical university in Portugal in computer science. Devoted his career not just to using AI tools but to creating new ones and contributing to research in the AI/ML community. The person who turns strategic vision into production systems.',
+    capability: 'Engineering',
+    icon: 'code',
+    featured: false,
+  },
+  {
+    name: 'Daria',
+    archetype: 'The Communicator',
+    role: 'AI & Linguistics Specialist',
+    description:
+      'Deep expertise in linguistics and the intersection of AI and natural language. Understands how humans communicate with machines, how to design interfaces that feel natural, and how to bridge the gap between technical capability and human understanding.',
+    capability: 'Human-AI Interaction',
+    icon: 'translate',
+    featured: false,
+  },
+  {
+    name: 'Bruno Reis',
+    archetype: 'The Guardian',
+    role: 'Cybersecurity Specialist',
+    description:
+      'Ensures every solution Clinic of AI deploys is secure by design. Critical for manufacturing environments (41% of all cyberattacks), real estate data privacy, and any client handling sensitive operational data. GDPR compliance expertise for European clients.',
+    capability: 'Security',
+    icon: 'shield',
+    featured: false,
+  },
+]
 
 const timeline = [
   {
     year: '2008',
     title: 'Government Reskilling Program',
     description:
-      'Co-led a government-funded transition that moved hundreds of displaced professionals into high-demand technology roles through structured pathways.',
+      'Philippe co-led a government-funded transition that moved hundreds of displaced professionals into high-demand technology roles through structured pathways.',
     icon: 'lightbulb',
     highlight: true,
   },
   {
     year: '2012 - 2019',
-    title: 'Founder, The Code Venture',
+    title: 'The Code Venture',
     description:
-      'Built and scaled a consulting firm to EUR1M revenue with 13 employees, serving 30+ Swiss startups in launch and growth operations.',
+      'Philippe built and scaled a consulting firm to €1M revenue with 13 employees, serving 30+ Swiss startups in launch and growth operations.',
     icon: 'storage',
     highlight: false,
   },
   {
     year: '2020 - 2023',
-    title: 'Head of Data and AI at Crayon AG',
+    title: 'Crayon AG — Head of Data and AI',
     description:
-      'Led AI strategy across hospitality, energy, and manufacturing, including predictive maintenance systems using 600+ sensors.',
+      'Led AI strategy across hospitality, energy, and manufacturing at one of Microsoft\'s top AI/ML partners, including predictive maintenance using 600+ sensors.',
     icon: 'corporate_fare',
     highlight: false,
   },
@@ -29,7 +75,7 @@ const timeline = [
     year: '2024',
     title: 'Clinic of AI Founded',
     description:
-      'Launched the Forward Deployed AI Engineer model for mid-market companies that need measurable ROI without building full in-house AI departments.',
+      'Philippe, David, Daria, and Bruno come together to launch the Forward Deployed AI Engineer model for mid-market companies across Europe.',
     icon: 'neurology',
     highlight: true,
   },
@@ -76,19 +122,36 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
             <p className="section-label mb-5">About</p>
-            <h1
-              className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance mb-8"
-              style={{ color: '#001215', letterSpacing: '-0.02em' }}
-            >
-              Forward Deployed AI Engineers for the mid-market.
-            </h1>
-            <p
-              className="font-body text-lg leading-relaxed"
-              style={{ color: '#2d4a4d' }}
-            >
-              Clinic of AI closes the gap between AI capability and business outcomes by
-              working side by side with operating teams until adoption is real.
-            </p>
+            <div className="overflow-hidden mb-8">
+              <SplitText
+                text="Four people who will work on your business."
+                tag="h1"
+                splitType="words"
+                delay={20}
+                duration={1.1}
+                ease="expo.out"
+                from={{ opacity: 0, y: 80 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+                className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance"
+              />
+            </div>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Not a wall of headshots. Each person covers a critical capability: strategy and domain expertise, engineering, human-AI interaction, and security. This is the Forward Deployed AI Engineer model in action."
+                tag="p"
+                splitType="lines"
+                delay={80}
+                duration={0.8}
+                ease="power2.out"
+                from={{ opacity: 0, y: 20 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+                className="font-body text-lg leading-relaxed"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -98,134 +161,120 @@ export default function AboutPage() {
         style={{ backgroundColor: '#fff5e8' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-4">
+          <div className="text-center mb-14">
+            <p className="section-label mb-4">The Team</p>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Deep tech. Embedded delivery. Continuity."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+            {team.map((member) => (
               <div
-                className="w-full aspect-square rounded-2xl overflow-hidden relative"
+                key={member.name}
+                className="rounded-2xl overflow-hidden"
                 style={{
-                  boxShadow: '0 20px 60px rgba(0,18,21,0.1)',
-                  maxWidth: '380px',
+                  backgroundColor: member.featured ? '#001215' : '#ffffff',
+                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
                 }}
               >
-                <div
-                  className="w-full h-full flex items-end"
-                  style={{
-                    background: 'linear-gradient(160deg, #002a2e 0%, #001215 70%, #001022 100%)',
-                  }}
-                >
-                  <div className="p-8 relative z-10">
+                <div className="p-8 lg:p-10 flex flex-col gap-6">
+                  <div className="flex items-start gap-5">
                     <div
-                      className="w-full h-full absolute inset-0 flex items-center justify-center opacity-10"
-                      style={{ top: '-20px' }}
+                      className="shrink-0 w-14 h-14 rounded-xl flex items-center justify-center"
+                      style={{
+                        backgroundColor: member.featured
+                          ? 'rgba(161,64,0,0.3)'
+                          : '#001215',
+                      }}
                     >
                       <span
                         className="material-symbols-outlined"
-                        style={{ fontSize: '200px', color: '#fff8f3' }}
+                        style={{
+                          fontSize: '24px',
+                          color: member.featured ? '#ff7a32' : '#fff8f3',
+                        }}
                       >
-                        person
+                        {member.icon}
                       </span>
                     </div>
-                    <div className="relative z-10">
+                    <div>
                       <p
-                        className="font-headline font-bold italic text-2xl"
-                        style={{ color: '#fff8f3' }}
+                        className="font-headline font-bold text-xl"
+                        style={{ color: member.featured ? '#fff8f3' : '#001215' }}
                       >
-                        Philippe Kung
-                      </p>
-                      <p
-                        className="font-body text-body-sm mt-1"
-                        style={{ color: 'rgba(255,248,243,0.6)' }}
-                      >
-                        Founder and AI Architect, Clinic of AI
+                        {member.name}
                       </p>
                       <p
                         className="font-body text-body-sm"
-                        style={{ color: 'rgba(255,248,243,0.4)' }}
+                        style={{
+                          color: member.featured
+                            ? 'rgba(255,248,243,0.6)'
+                            : '#2d4a4d',
+                        }}
                       >
-                        Former Head of Data and AI, Crayon AG
+                        {member.role}
                       </p>
                     </div>
                   </div>
+
+                  <div
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg self-start"
+                    style={{
+                      backgroundColor: member.featured
+                        ? 'rgba(161,64,0,0.2)'
+                        : 'rgba(161,64,0,0.08)',
+                    }}
+                  >
+                    <span
+                      className="font-label text-xs uppercase font-semibold"
+                      style={{
+                        color: member.featured ? '#ff7a32' : '#a14000',
+                        letterSpacing: '0.08em',
+                      }}
+                    >
+                      {member.archetype}
+                    </span>
+                    <span className="font-body text-xs" style={{ color: member.featured ? 'rgba(255,248,243,0.4)' : 'rgba(45,74,77,0.4)' }}>
+                      &mdash;
+                    </span>
+                    <span
+                      className="font-body text-xs"
+                      style={{
+                        color: member.featured
+                          ? 'rgba(255,248,243,0.6)'
+                          : 'rgba(45,74,77,0.6)',
+                      }}
+                    >
+                      {member.capability}
+                    </span>
+                  </div>
+
+                  <p
+                    className="font-body text-body-sm leading-relaxed"
+                    style={{
+                      color: member.featured
+                        ? 'rgba(255,248,243,0.75)'
+                        : '#2d4a4d',
+                    }}
+                  >
+                    {member.description}
+                  </p>
                 </div>
               </div>
-            </div>
-
-            <div className="lg:col-span-8 flex flex-col gap-8">
-              <div>
-                <p className="section-label mb-4">Founder Background</p>
-                <h2
-                  className="font-headline font-bold text-3xl lg:text-4xl leading-tight mb-6"
-                  style={{ color: '#001215', letterSpacing: '-0.01em' }}
-                >
-                  Philippe Kung
-                </h2>
-              </div>
-
-              <p
-                className="font-body text-body-md leading-relaxed"
-                style={{ color: '#2d4a4d' }}
-              >
-                Philippe Kung combines hospitality operations training at EHL Lausanne
-                with AI and machine learning training at MIT Sloan, then applied that
-                foundation to enterprise deployments across hospitality, energy, and
-                manufacturing.
-              </p>
-
-              <div className="research-note">
-                <p
-                  className="font-label text-xs uppercase mb-3 font-semibold"
-                  style={{ color: '#a14000', letterSpacing: '0.1em' }}
-                >
-                  2008 Government Program - Proof of Continuity
-                </p>
-                <p
-                  className="font-body text-body-md leading-relaxed mb-4"
-                  style={{ color: '#001215' }}
-                >
-                  After the 2008 financial crisis, Philippe co-led a government-funded
-                  reskilling program that transitioned hundreds of displaced professionals
-                  into high-demand technology careers through structured pathways.
-                </p>
-                <p
-                  className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#001215' }}
-                >
-                  That experience now informs Clinic of AI engagements: capability transfer
-                  is designed in from day one so solutions outlive initial implementation
-                  and teams can operate independently.
-                </p>
-                <p
-                  className="font-body text-body-md leading-relaxed mt-4 italic font-headline"
-                  style={{ color: '#001215' }}
-                >
-                  &ldquo;The technology is rarely the blocker. The blocker is the gap between
-                  what AI can do and how teams actually operate.&rdquo;
-                </p>
-              </div>
-
-              <blockquote
-                className="font-headline italic text-xl leading-relaxed pl-6"
-                style={{
-                  borderLeft: '4px solid #a14000',
-                  color: '#001215',
-                }}
-              >
-                &ldquo;Forward Deployed AI Engineering means we do not stop at deployment. We
-                stay until adoption is embedded and your team owns the system.&rdquo;
-                <footer className="mt-3 font-body not-italic text-sm" style={{ color: '#2d4a4d' }}>
-                  - Philippe Kung
-                </footer>
-              </blockquote>
-
-              <p
-                className="font-body text-body-md leading-relaxed"
-                style={{ color: '#2d4a4d' }}
-              >
-                Before Clinic of AI, Philippe founded and scaled The Code Venture, ran a
-                startup accelerator at Chainwork AG and Resilient Studios, and launched
-                PlasticMind AI, the predecessor to today&apos;s model.
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -236,13 +285,22 @@ export default function AboutPage() {
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
-            <p className="section-label mb-4">Professional Timeline</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
-            >
-              Built across operations, AI, and workforce transition.
-            </h2>
+            <p className="section-label mb-4">Origin Story</p>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Built across operations, AI, and workforce transition."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
           </div>
 
           <div className="relative max-w-3xl mx-auto">
@@ -318,12 +376,21 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="section-label mb-4">Operating Principles</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
-            >
-              How we work inside client operations.
-            </h2>
+            <div className="overflow-hidden">
+              <SplitText
+                text="How we work inside client operations."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
@@ -474,12 +541,21 @@ export default function AboutPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
             <div>
-              <h2
-                className="font-headline font-bold text-3xl lg:text-4xl mb-3"
-                style={{ color: '#fff8f3' }}
-              >
-                Ready to discuss your operation?
-              </h2>
+              <div className="overflow-hidden mb-3">
+                <SplitText
+                  text="Ready to discuss your operation?"
+                  tag="h2"
+                  splitType="words"
+                  delay={50}
+                  duration={0.9}
+                  ease="power3.out"
+                  from={{ opacity: 0, y: 40 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  textAlign="left"
+                  className="font-headline font-bold text-3xl lg:text-4xl"
+                />
+              </div>
               <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
                 20 minutes. No pitch deck. We will tell you in 5 minutes if we can help.
               </p>
