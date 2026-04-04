@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import SplitText from '@/components/animations/SplitText'
+import Icon from '@/components/icons/Icon'
 
 const team = [
   {
@@ -86,29 +87,25 @@ const values = [
     icon: 'handshake',
     title: 'One trusted partner, not disconnected tools.',
     description:
-      'Most mid-market businesses do not need an in-house AI department. They need one trusted partner who can connect solutions across the value chain and keep them running.',
-    wide: true,
+      'One partner who connects solutions across the value chain and keeps them running.',
   },
   {
     icon: 'account_tree',
     title: 'Workflow-first implementation.',
     description:
-      'We map the real workflow, not the org chart version. Then we design solutions where teams already make daily decisions.',
-    wide: false,
+      'We map the real workflow, not the org chart version. Solutions go where teams already make daily decisions.',
   },
   {
     icon: 'groups',
     title: 'Side-by-side delivery.',
     description:
-      'Forward Deployed AI Engineers work inside operations teams so adoption happens in context, not in a slide deck handoff.',
-    wide: false,
+      'We work inside operations teams so adoption happens in context, not in a slide deck handoff.',
   },
   {
     icon: 'eco',
     title: 'Continuity by design.',
     description:
-      'Every engagement includes transfer of ownership so your team can run, evolve, and govern the system without permanent vendor dependency.',
-    wide: true,
+      'Transfer of ownership is built in so your team can run the system without permanent vendor dependency.',
   },
 ]
 
@@ -134,7 +131,7 @@ export default function AboutPage() {
                 to={{ opacity: 1, y: 0 }}
                 threshold={0.1}
                 textAlign="left"
-                className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance"
+                className="page-title"
               />
             </div>
             <div className="overflow-hidden">
@@ -200,15 +197,13 @@ export default function AboutPage() {
                           : '#001215',
                       }}
                     >
-                      <span
-                        className="material-symbols-outlined"
+                      <Icon
+                        name={member.icon}
                         style={{
                           fontSize: '24px',
                           color: member.featured ? '#ff7a32' : '#fff8f3',
                         }}
-                      >
-                        {member.icon}
-                      </span>
+                      />
                     </div>
                     <div>
                       <p
@@ -322,12 +317,10 @@ export default function AboutPage() {
                         : '0 0 0 4px rgba(0,18,21,0.08)',
                     }}
                   >
-                    <span
-                      className="material-symbols-outlined"
+                    <Icon
+                      name={item.icon}
                       style={{ fontSize: '14px', color: '#fff8f3' }}
-                    >
-                      {item.icon}
-                    </span>
+                    />
                   </div>
 
                   <div
@@ -393,181 +386,51 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-            <div
-              className="lg:col-span-7 rounded-2xl p-8"
-              style={{
-                backgroundColor: '#ffffff',
-                boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
-              }}
-            >
-              <div className="flex items-start gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-3xl mx-auto">
+            {values.map((value) => (
+              <div key={value.title} className="flex items-start gap-4">
                 <div
-                  className="w-12 h-12 hex-clip flex items-center justify-center shrink-0"
+                  className="w-10 h-10 hex-clip flex items-center justify-center shrink-0 mt-0.5"
                   style={{ backgroundColor: '#001215' }}
                 >
-                  <span
-                    className="material-symbols-outlined"
-                    style={{ fontSize: '20px', color: '#fff8f3' }}
-                  >
-                    {values[0].icon}
-                  </span>
+                  <Icon
+                    name={value.icon}
+                    style={{ fontSize: '18px', color: '#fff8f3' }}
+                  />
                 </div>
                 <div>
                   <h3
-                    className="font-headline font-bold text-xl mb-3"
+                    className="font-headline font-bold text-lg mb-1"
                     style={{ color: '#001215' }}
                   >
-                    {values[0].title}
+                    {value.title}
                   </h3>
                   <p
-                    className="font-body text-body-md leading-relaxed"
+                    className="font-body text-body-sm leading-relaxed"
                     style={{ color: '#2d4a4d' }}
                   >
-                    {values[0].description}
+                    {value.description}
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div
-              className="lg:col-span-5 rounded-2xl p-8"
-              style={{
-                backgroundColor: '#002a2e',
-                boxShadow: '0 4px 16px rgba(0,18,21,0.08)',
-              }}
-            >
-              <div
-                className="w-12 h-12 hex-clip flex items-center justify-center mb-5"
-                style={{ backgroundColor: 'rgba(161,64,0,0.3)' }}
-              >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontSize: '20px', color: '#ff7a32' }}
-                >
-                  {values[1].icon}
-                </span>
-              </div>
-              <h3
-                className="font-headline font-bold text-xl mb-3"
-                style={{ color: '#fff8f3' }}
-              >
-                {values[1].title}
-              </h3>
-              <p
-                className="font-body text-body-sm leading-relaxed"
-                style={{ color: 'rgba(255,248,243,0.7)' }}
-              >
-                {values[1].description}
-              </p>
-            </div>
-
-            <div
-              className="lg:col-span-5 rounded-2xl p-8"
-              style={{
-                backgroundColor: '#fff8f3',
-                boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
-                border: '1px solid rgba(200,168,130,0.2)',
-              }}
-            >
-              <div
-                className="w-12 h-12 hex-clip flex items-center justify-center mb-5"
-                style={{ backgroundColor: '#a14000' }}
-              >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontSize: '20px', color: '#fff' }}
-                >
-                  {values[2].icon}
-                </span>
-              </div>
-              <h3
-                className="font-headline font-bold text-xl mb-3"
-                style={{ color: '#001215' }}
-              >
-                {values[2].title}
-              </h3>
-              <p
-                className="font-body text-body-sm leading-relaxed"
-                style={{ color: '#2d4a4d' }}
-              >
-                {values[2].description}
-              </p>
-            </div>
-
-            <div
-              className="lg:col-span-7 rounded-2xl p-8"
-              style={{
-                backgroundColor: '#ffffff',
-                boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
-              }}
-            >
-              <div className="flex items-start gap-5">
-                <div
-                  className="w-12 h-12 hex-clip flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: '#001215' }}
-                >
-                  <span
-                    className="material-symbols-outlined"
-                    style={{ fontSize: '20px', color: '#fff8f3' }}
-                  >
-                    {values[3].icon}
-                  </span>
-                </div>
-                <div>
-                  <h3
-                    className="font-headline font-bold text-xl mb-3"
-                    style={{ color: '#001215' }}
-                  >
-                    {values[3].title}
-                  </h3>
-                  <p
-                    className="font-body text-body-md leading-relaxed"
-                    style={{ color: '#2d4a4d' }}
-                  >
-                    {values[3].description}
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       <section
-        className="py-20"
-        style={{ backgroundColor: '#001215' }}
+        className="py-10"
+        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div>
-              <div className="overflow-hidden mb-3">
-                <SplitText
-                  text="Ready to discuss your operation?"
-                  tag="h2"
-                  splitType="words"
-                  delay={50}
-                  duration={0.9}
-                  ease="power3.out"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  textAlign="left"
-                  className="font-headline font-bold text-3xl lg:text-4xl"
-                />
-              </div>
-              <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                20 minutes. No pitch deck. We will tell you in 5 minutes if we can help.
-              </p>
-            </div>
-            <div className="shrink-0">
-              <Link href="/contact" className="btn-primary whitespace-nowrap">
-                Book a 20-minute conversation
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                  arrow_forward
-                </span>
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+              Ready to discuss your operation? 20 minutes, no pitch deck.
+            </p>
+            <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
+              Book a conversation
+              <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
+            </Link>
           </div>
         </div>
       </section>

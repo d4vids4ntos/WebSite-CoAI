@@ -19,7 +19,7 @@ export default function NotFound() {
           404 — Not Found
         </p>
         <h1
-          className="font-headline font-bold text-5xl lg:text-6xl mb-6"
+          className="page-title mb-6"
           style={{ color: '#001215', letterSpacing: '-0.02em' }}
         >
           This path does not exist.

@@ -15,7 +15,7 @@ export default async function PrivacyPage() {
       <div className="max-w-narrow mx-auto px-6 lg:px-8">
         <p className="section-label mb-4">Legal</p>
         <h1
-          className="font-headline font-bold text-4xl lg:text-5xl mb-8"
+          className="page-title mb-8"
           style={{ color: '#001215', letterSpacing: '-0.02em' }}
         >
           Privacy Policy

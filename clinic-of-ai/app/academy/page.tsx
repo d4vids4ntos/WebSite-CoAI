@@ -1,7 +1,11 @@
 'use client'
 
 import { useState, useTransition } from 'react'
+import Link from 'next/link'
 import { submitWaitlist } from '@/app/actions/submitWaitlist'
+import SplitText from '@/components/animations/SplitText'
+import TextType from '@/components/animations/TextType'
+import Icon from '@/components/icons/Icon'
 
 const courses = [
   {
@@ -120,10 +124,19 @@ export default function AcademyPage() {
           <div className="max-w-3xl">
             <p className="section-label mb-5">Industry Executive Cohort</p>
             <h1
-              className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-8 text-balance"
+              className="page-title mb-8"
               style={{ color: '#001215', letterSpacing: '-0.02em' }}
             >
-              AI in Hospitality: 5 weeks for executives who are done experimenting.
+              <TextType
+                text="AI in Hospitality: 5 weeks for executives who are done experimenting."
+                as="span"
+                typingSpeed={40}
+                loop={false}
+                showCursor={true}
+                cursorCharacter="|"
+                startOnVisible={true}
+                className=""
+              />
             </h1>
             <p
               className="font-body text-lg leading-relaxed mb-10"
@@ -141,9 +154,7 @@ export default function AcademyPage() {
                 className="btn-primary"
               >
                 Reserve cohort conversation
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                  arrow_downward
-                </span>
+                <Icon name="arrow_downward" style={{ fontSize: '18px' }} />
               </button>
               <button
                 onClick={() => {
@@ -160,50 +171,6 @@ export default function AcademyPage() {
       </section>
 
       <section
-        className="py-16"
-        style={{ backgroundColor: '#fff5e8' }}
-      >
-        <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { icon: 'schedule', label: '5 Weeks', sub: 'Intensive delivery format' },
-              { icon: 'groups', label: '8-12 Seats', sub: 'Executive-only cohorts' },
-              { icon: 'build', label: 'Live Implementation', sub: 'In your real workflows' },
-              { icon: 'verified', label: 'Continuity Plan', sub: 'Ownership beyond the program' },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-2xl p-6 text-center"
-                style={{
-                  backgroundColor: '#ffffff',
-                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
-                }}
-              >
-                <span
-                  className="material-symbols-outlined block mb-3"
-                  style={{ fontSize: '28px', color: '#a14000' }}
-                >
-                  {item.icon}
-                </span>
-                <p
-                  className="font-headline font-bold text-lg mb-1"
-                  style={{ color: '#001215' }}
-                >
-                  {item.label}
-                </p>
-                <p
-                  className="font-body text-body-sm"
-                  style={{ color: '#2d4a4d' }}
-                >
-                  {item.sub}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
         id="courses"
         className="py-24"
         style={{ backgroundColor: '#fff8f3' }}
@@ -211,12 +178,21 @@ export default function AcademyPage() {
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <p className="section-label mb-4">Program Structure</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
-            >
-              Three blocks. One operational result.
-            </h2>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Three blocks. One operational result."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -246,12 +222,10 @@ export default function AcademyPage() {
                       className="w-12 h-12 hex-clip flex items-center justify-center"
                       style={{ backgroundColor: course.highlight ? '#a14000' : '#001215' }}
                     >
-                      <span
-                        className="material-symbols-outlined"
+                      <Icon
+                        name={course.icon}
                         style={{ fontSize: '20px', color: '#fff8f3' }}
-                      >
-                        {course.icon}
-                      </span>
+                      />
                     </div>
                     <div className="flex items-center gap-2 flex-wrap justify-end">
                       <span
@@ -301,15 +275,14 @@ export default function AcademyPage() {
                   <ul className="flex flex-col gap-2 flex-1">
                     {course.topics.map((topic) => (
                       <li key={topic} className="flex items-start gap-2.5">
-                        <span
-                          className="material-symbols-outlined shrink-0 mt-0.5"
+                        <Icon
+                          name="check_small"
+                          className="shrink-0 mt-0.5"
                           style={{
                             fontSize: '14px',
                             color: course.highlight ? '#ff7a32' : '#a14000',
                           }}
-                        >
-                          check_small
-                        </span>
+                        />
                         <span
                           className="font-body text-body-sm"
                           style={{
@@ -331,108 +304,20 @@ export default function AcademyPage() {
       </section>
 
       <section
-        className="py-24"
-        style={{ backgroundColor: '#001215' }}
+        className="py-10"
+        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <p
-                className="font-label text-xs uppercase mb-4 font-semibold"
-                style={{ color: '#ff7a32', letterSpacing: '0.15em' }}
-              >
-                Team Lead
-              </p>
-              <h2
-                className="font-headline font-bold text-3xl lg:text-4xl leading-tight mb-6"
-                style={{ color: '#fff8f3' }}
-              >
-                Led by Philippe Kung, former Head of Data and AI at Crayon AG.
-              </h2>
-              <p
-                className="font-body text-body-md leading-relaxed mb-8"
-                style={{ color: 'rgba(255,248,243,0.65)' }}
-              >
-                Program design draws on enterprise deployment experience, hospitality domain
-                expertise, and workforce transition experience from government-scale programs.
-              </p>
-              <div className="flex flex-col gap-3">
-                {[
-                  'Hospitality-first operational framing',
-                  'Enterprise deployment background',
-                  'Executive alignment plus frontline adoption',
-                  'Continuity architecture beyond pilot stage',
-                ].map((feat) => (
-                  <div key={feat} className="flex items-center gap-3">
-                    <span
-                      className="material-symbols-outlined shrink-0"
-                      style={{ fontSize: '16px', color: '#ff7a32' }}
-                    >
-                      stars
-                    </span>
-                    <span className="font-body text-body-sm" style={{ color: 'rgba(255,248,243,0.75)' }}>
-                      {feat}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div
-              className="rounded-2xl p-10 relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(160deg, #002a2e 0%, #001022 100%)',
-                border: '1px solid rgba(255,248,243,0.08)',
-              }}
-            >
-              <div className="flex flex-col items-center text-center gap-6">
-                <div
-                  className="w-20 h-20 hex-clip flex items-center justify-center"
-                  style={{ backgroundColor: 'rgba(161,64,0,0.25)' }}
-                >
-                  <span
-                    className="material-symbols-outlined"
-                    style={{ fontSize: '36px', color: '#ff7a32' }}
-                  >
-                    groups
-                  </span>
-                </div>
-                <p
-                  className="font-headline font-bold text-2xl"
-                  style={{ color: '#fff8f3' }}
-                >
-                  Executive Cohort
-                </p>
-                <p
-                  className="font-body text-body-sm"
-                  style={{ color: 'rgba(255,248,243,0.5)' }}
-                >
-                  Company-sponsored format for 8-12 leaders
-                </p>
-                <div
-                  className="w-full h-px"
-                  style={{ backgroundColor: 'rgba(255,248,243,0.08)' }}
-                />
-                <div className="grid grid-cols-3 gap-4 w-full">
-                  {['Map', 'Build', 'Transfer'].map((item) => (
-                    <div key={item} className="text-center">
-                      <span
-                        className="material-symbols-outlined block mb-2"
-                        style={{ fontSize: '22px', color: 'rgba(255,248,243,0.3)' }}
-                      >
-                        {item === 'Map' ? 'travel_explore' : item === 'Build' ? 'construction' : 'done_all'}
-                      </span>
-                      <p
-                        className="font-label text-xs"
-                        style={{ color: 'rgba(255,248,243,0.4)', letterSpacing: '0.08em' }}
-                      >
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+              <span className="font-label text-xs font-semibold uppercase" style={{ color: '#ff7a32', letterSpacing: '0.15em' }}>Team Lead</span>
+              <span style={{ color: 'rgba(255,248,243,0.2)' }}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              Led by Philippe Kung, former Head of Data and AI at Crayon AG.
+            </p>
+            <Link href="/about" className="btn-primary whitespace-nowrap shrink-0">
+              Meet the team
+              <Icon name="arrow_forward" style={{ fontSize: '16px' }} />
+            </Link>
           </div>
         </div>
       </section>
@@ -444,12 +329,21 @@ export default function AcademyPage() {
       >
         <div className="max-w-narrow mx-auto px-6 lg:px-8 text-center">
           <p className="section-label mb-4">Reserve Conversation</p>
-          <h2
-            className="font-headline font-bold text-3xl lg:text-4xl mb-5"
-            style={{ color: '#001215', letterSpacing: '-0.01em' }}
-          >
-            Join the executive cohort waitlist.
-          </h2>
+          <div className="overflow-hidden mb-5">
+            <SplitText
+              text="Join the executive cohort waitlist."
+              tag="h2"
+              splitType="words"
+              delay={50}
+              duration={0.9}
+              ease="power3.out"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0.1}
+              textAlign="center"
+              className="font-headline font-bold text-3xl lg:text-4xl"
+            />
+          </div>
           <p
             className="font-body text-body-md leading-relaxed mb-10"
             style={{ color: '#2d4a4d' }}
@@ -466,12 +360,11 @@ export default function AcademyPage() {
                 boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
               }}
             >
-              <span
-                className="material-symbols-outlined block mb-4"
+              <Icon
+                name="check_circle"
+                className="block mb-4"
                 style={{ fontSize: '48px', color: '#a14000' }}
-              >
-                check_circle
-              </span>
+              />
               <h3
                 className="font-headline font-bold text-2xl mb-3"
                 style={{ color: '#001215' }}
@@ -521,9 +414,7 @@ export default function AcademyPage() {
               >
                 {isPending ? 'Submitting...' : 'Join waitlist'}
                 {!isPending && (
-                  <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                    arrow_forward
-                  </span>
+                  <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
                 )}
               </button>
               <p
@@ -544,12 +435,21 @@ export default function AcademyPage() {
         <div className="max-w-narrow mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="section-label mb-4">FAQ</p>
-            <h2
-              className="font-headline font-bold text-3xl lg:text-4xl"
-              style={{ color: '#001215', letterSpacing: '-0.01em' }}
-            >
-              Common questions.
-            </h2>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Common questions."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="center"
+                className="font-headline font-bold text-3xl lg:text-4xl"
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-2">
@@ -573,16 +473,15 @@ export default function AcademyPage() {
                   >
                     {faq.question}
                   </span>
-                  <span
-                    className="material-symbols-outlined shrink-0 transition-transform duration-200"
+                  <Icon
+                    name="expand_more"
+                    className="shrink-0 transition-transform duration-200"
                     style={{
                       fontSize: '20px',
                       color: '#a14000',
                       transform: openFaq === index ? 'rotate(180deg)' : 'rotate(0deg)',
                     }}
-                  >
-                    expand_more
-                  </span>
+                  />
                 </button>
                 {openFaq === index && (
                   <div className="px-6 pb-6">

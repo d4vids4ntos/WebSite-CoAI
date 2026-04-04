@@ -3,6 +3,8 @@
 import { useState, useTransition } from 'react'
 import Link from 'next/link'
 import { submitBooking } from '@/app/actions/submitBooking'
+import SplitText from '@/components/animations/SplitText'
+import Icon from '@/components/icons/Icon'
 
 const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
@@ -92,9 +94,37 @@ export default function ContactPage() {
                 20 Minutes. No Pitch Deck.
               </p>
 
-              <h1 className="font-headline font-bold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-tight text-balance">Book a conversation about your operation</h1>
+              <div className="overflow-hidden">
+                <SplitText
+                  text="Book a conversation about your operation"
+                  tag="h1"
+                  splitType="words"
+                  delay={20}
+                  duration={1.1}
+                  ease="expo.out"
+                  from={{ opacity: 0, y: 80 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  textAlign="left"
+                  className="page-title"
+                />
+              </div>
 
-              <p className="font-body text-lg leading-relaxed" style={{ color: '#2d4a4d' }}>This is a structured operational conversation, not a sales call. We will tell you in 5 minutes whether we can help and where the highest-leverage opportunities are in your value chain.</p>
+              <div className="overflow-hidden">
+                <SplitText
+                  text="This is a structured operational conversation, not a sales call. We will tell you in 5 minutes whether we can help and where the highest-leverage opportunities are in your value chain."
+                  tag="p"
+                  splitType="lines"
+                  delay={80}
+                  duration={0.8}
+                  ease="power2.out"
+                  from={{ opacity: 0, y: 20 }}
+                  to={{ opacity: 1, y: 0 }}
+                  threshold={0.1}
+                  textAlign="left"
+                  className="font-body text-lg leading-relaxed"
+                />
+              </div>
 
               <div
                 className="inline-flex items-center gap-3 px-4 py-3 rounded-xl self-start"
@@ -103,12 +133,7 @@ export default function ContactPage() {
                   border: '1px solid rgba(0,42,46,0.1)',
                 }}
               >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ fontSize: '18px', color: '#a14000' }}
-                >
-                  verified
-                </span>
+                <Icon name="verified" style={{ fontSize: '18px', color: '#a14000' }} />
                 <span className="font-body text-body-sm" style={{ color: '#001215' }}>
                   Working with teams across Europe.
                 </span>
@@ -128,12 +153,7 @@ export default function ContactPage() {
                   { icon: 'price_check', text: 'Clear next steps, no pressure' },
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
-                    <span
-                      className="material-symbols-outlined shrink-0"
-                      style={{ fontSize: '18px', color: '#a14000' }}
-                    >
-                      {item.icon}
-                    </span>
+                    <Icon name={item.icon} className="shrink-0" style={{ fontSize: '18px', color: '#a14000' }} />
                     <span className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
                       {item.text}
                     </span>
@@ -156,12 +176,7 @@ export default function ContactPage() {
                     className="w-20 h-20 hex-clip flex items-center justify-center mx-auto mb-6"
                     style={{ backgroundColor: '#a14000' }}
                   >
-                    <span
-                      className="material-symbols-outlined"
-                      style={{ fontSize: '36px', color: '#fff' }}
-                    >
-                      check
-                    </span>
+                    <Icon name="check" style={{ fontSize: '36px', color: '#fff' }} />
                   </div>
                   <h2
                     className="font-headline font-bold text-3xl mb-4"
@@ -181,9 +196,7 @@ export default function ContactPage() {
                   </p>
                   <Link href="/" className="btn-primary">
                     Return Home
-                    <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                      arrow_forward
-                    </span>
+                    <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
                   </Link>
                 </div>
               ) : (

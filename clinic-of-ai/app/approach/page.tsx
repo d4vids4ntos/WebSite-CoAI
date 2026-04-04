@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import SplitText from '@/components/animations/SplitText'
+import Icon from '@/components/icons/Icon'
 
 const capabilities = [
   {
@@ -82,7 +83,7 @@ export default function ApproachPage() {
                 to={{ opacity: 1, y: 0 }}
                 threshold={0.1}
                 textAlign="left"
-                className="font-headline font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight text-balance"
+                className="page-title"
               />
             </div>
             <div className="overflow-hidden">
@@ -159,12 +160,10 @@ export default function ApproachPage() {
                       </div>
                       <div>
                         <p className="section-label mb-1">{cap.label}</p>
-                        <span
-                          className="material-symbols-outlined"
+                        <Icon
+                          name={cap.icon}
                           style={{ fontSize: '20px', color: '#a14000' }}
-                        >
-                          {cap.icon}
-                        </span>
+                        />
                       </div>
                     </div>
 
@@ -187,12 +186,11 @@ export default function ApproachPage() {
                       <ul className="flex flex-col gap-2.5">
                         {cap.details.map((detail) => (
                           <li key={detail} className="flex items-start gap-3">
-                            <span
-                              className="material-symbols-outlined shrink-0 mt-0.5"
+                            <Icon
+                              name="arrow_right"
+                              className="shrink-0 mt-0.5"
                               style={{ fontSize: '16px', color: '#a14000' }}
-                            >
-                              arrow_right
-                            </span>
+                            />
                             <span
                               className="font-body text-body-sm"
                               style={{ color: '#2d4a4d' }}
@@ -253,12 +251,11 @@ export default function ApproachPage() {
                   'Every solution connects to the others — no duct tape, no disconnected tools',
                 ].map((step, i) => (
                   <div key={i} className="flex items-start gap-3">
-                    <span
-                      className="material-symbols-outlined shrink-0 mt-0.5"
+                    <Icon
+                      name="arrow_forward"
+                      className="shrink-0 mt-0.5"
                       style={{ fontSize: '16px', color: '#a14000' }}
-                    >
-                      arrow_forward
-                    </span>
+                    />
                     <span
                       className="font-body text-body-sm"
                       style={{ color: '#2d4a4d' }}
@@ -394,12 +391,11 @@ export default function ApproachPage() {
                 }}
               >
                 <div className="p-4 flex items-center gap-3">
-                  <span
-                    className="material-symbols-outlined shrink-0"
+                  <Icon
+                    name="close"
+                    className="shrink-0"
                     style={{ fontSize: '16px', color: 'rgba(45,74,77,0.4)' }}
-                  >
-                    close
-                  </span>
+                  />
                   <span
                     className="font-body text-body-sm"
                     style={{ color: 'rgba(45,74,77,0.7)' }}
@@ -408,12 +404,11 @@ export default function ApproachPage() {
                   </span>
                 </div>
                 <div className="p-4 flex items-center gap-3">
-                  <span
-                    className="material-symbols-outlined shrink-0"
+                  <Icon
+                    name="check"
+                    className="shrink-0"
                     style={{ fontSize: '16px', color: '#a14000' }}
-                  >
-                    check
-                  </span>
+                  />
                   <span
                     className="font-body text-body-sm font-medium"
                     style={{ color: '#001215' }}
@@ -428,51 +423,18 @@ export default function ApproachPage() {
       </section>
 
       <section
-        className="py-20"
-        style={{ backgroundColor: '#001215' }}
+        className="py-10"
+        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div>
-              <div className="overflow-hidden mb-3">
-                <SplitText
-                  text="20 minutes. No pitch deck."
-                  tag="h2"
-                  splitType="words"
-                  delay={50}
-                  duration={0.9}
-                  ease="power3.out"
-                  from={{ opacity: 0, y: 40 }}
-                  to={{ opacity: 1, y: 0 }}
-                  threshold={0.1}
-                  textAlign="left"
-                  className="font-headline font-bold text-3xl lg:text-4xl"
-                />
-              </div>
-              <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
-                Tell us about your operation. We&rsquo;ll tell you in 5 minutes if we can
-                help — and exactly where the highest-leverage opportunities are in your value chain.
-              </p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <Link href="/contact" className="btn-primary whitespace-nowrap">
-                Book a conversation
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                  arrow_forward
-                </span>
-              </Link>
-              <Link
-                href="/industries"
-                className="inline-flex items-center justify-center gap-2 font-body font-semibold px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap"
-                style={{
-                  backgroundColor: 'rgba(255,248,243,0.08)',
-                  color: '#fff8f3',
-                  border: '1px solid rgba(255,248,243,0.12)',
-                }}
-              >
-                Explore industries
-              </Link>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+              20 minutes. No pitch deck. We&rsquo;ll tell you in 5 if we can help.
+            </p>
+            <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
+              Book a conversation
+              <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
+            </Link>
           </div>
         </div>
       </section>
