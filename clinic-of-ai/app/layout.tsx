@@ -1,4 +1,5 @@
-﻿import type { Metadata } from 'next'
+import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { Newsreader, Manrope, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -126,13 +127,20 @@ export default function RootLayout({
     >
       <head />
       <body className="text-on-surface font-body antialiased" style={{ backgroundColor: '#001215' }}>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
         <Navbar />
-        <main style={{ backgroundColor: '#001215' }}>{children}</main>
+        <main id="main-content" style={{ backgroundColor: '#001215' }}>
+          {children}
+        </main>
         <Footer />
         <CookieConsentBanner />
       </body>

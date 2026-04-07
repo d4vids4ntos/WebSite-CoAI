@@ -5,6 +5,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { SplitText as GSAPSplitText } from 'gsap/SplitText'
 import { useGSAP } from '@gsap/react'
+import { useMotionPreference } from '@/components/animations/useMotionPreference'
 
 gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP)
 
@@ -43,6 +44,8 @@ const SplitText: React.FC<SplitTextProps> = ({
   const animationCompletedRef = useRef(false)
   const onCompleteRef = useRef(onLetterAnimationComplete)
   const [fontsLoaded, setFontsLoaded] = useState<boolean>(false)
+  const { reduceMotion, lowPowerDevice } = useMotionPreference()
+  const disableAnimation = reduceMotion || lowPowerDevice
 
   useEffect(() => {
     onCompleteRef.current = onLetterAnimationComplete
@@ -58,7 +61,13 @@ const SplitText: React.FC<SplitTextProps> = ({
 
   useGSAP(
     () => {
-      if (!ref.current || !text || !fontsLoaded) return
+      if (!ref.current || !text || !fontsLoaded || disableAnimation) {
+        if (disableAnimation && !animationCompletedRef.current) {
+          animationCompletedRef.current = true
+          onCompleteRef.current?.()
+        }
+        return
+      }
       if (animationCompletedRef.current) return
 
       const el = ref.current as HTMLElement & { _rbsplitInstance?: GSAPSplitText }
@@ -129,7 +138,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       dependencies: [
         text, delay, duration, ease, splitType,
         JSON.stringify(from), JSON.stringify(to),
-        threshold, rootMargin, fontsLoaded,
+        threshold, rootMargin, fontsLoaded, disableAnimation,
       ],
       scope: ref,
     }
@@ -139,7 +148,11 @@ const SplitText: React.FC<SplitTextProps> = ({
   return (
     <Tag
       ref={ref}
-      style={{ textAlign, wordWrap: 'break-word', willChange: 'transform, opacity' }}
+      style={{
+        textAlign,
+        wordWrap: 'break-word',
+        willChange: disableAnimation ? 'auto' : 'transform, opacity',
+      }}
       className={`split-parent inline-block whitespace-normal ${className}`}
     >
       {text}

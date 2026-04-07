@@ -110,7 +110,7 @@ export default function ContactPage() {
 
               <div className="overflow-hidden">
                 <SplitText
-                  text="Book a conversation about your operation"
+                  text="Book a 20-minute conversation about your operation"
                   tag="h1"
                   splitType="words"
                   delay={20}
@@ -310,6 +310,8 @@ export default function ContactPage() {
                                 }
                               }}
                               className="aspect-square flex items-center justify-center rounded-lg font-body text-sm font-medium transition-all duration-150"
+                              aria-label={`April ${cell.day}, 2026${isAvailable ? '' : ' unavailable'}`}
+                              aria-pressed={isSelected}
                               style={{
                                 backgroundColor: isSelected
                                   ? '#a14000'
@@ -372,6 +374,8 @@ export default function ContactPage() {
                                 setStep(Math.max(step, 3))
                               }}
                               className="py-3 px-4 rounded-xl font-body font-semibold text-body-sm transition-all duration-200"
+                              aria-label={`Select ${slot}`}
+                              aria-pressed={isSelected}
                               style={{
                                 backgroundColor: isSelected ? '#a14000' : '#fff5e8',
                                 color: isSelected ? '#ffffff' : '#001215',
@@ -460,6 +464,7 @@ export default function ContactPage() {
                             id="contact-name"
                             type="text"
                             required
+                            autoComplete="name"
                             placeholder="Your full name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -479,6 +484,7 @@ export default function ContactPage() {
                             id="contact-email"
                             type="email"
                             required
+                            autoComplete="email"
                             placeholder="you@company.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -498,6 +504,7 @@ export default function ContactPage() {
                             id="contact-company"
                             type="text"
                             required
+                            autoComplete="organization"
                             placeholder="Your organization name"
                             value={company}
                             onChange={(e) => setCompany(e.target.value)}
@@ -582,7 +589,7 @@ export default function ContactPage() {
                         }}
                       >
                         <span className="font-label uppercase tracking-widest text-sm">
-                          {isPending ? 'Sending...' : 'Book conversation'}
+                          {isPending ? 'Sending...' : 'Book a 20-minute conversation'}
                         </span>
                         {!isPending && (
                           <Icon name="arrow_forward" style={{ fontSize: '20px' }} />

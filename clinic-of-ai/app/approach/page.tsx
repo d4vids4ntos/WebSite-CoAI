@@ -432,7 +432,7 @@ export default function ApproachPage() {
               20 minutes. No pitch deck. We&rsquo;ll tell you in 5 if we can help.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
-              Book a conversation
+              Book a 20-minute conversation
               <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
             </Link>
           </div>

@@ -114,7 +114,7 @@ export default function LoginPage() {
         <p className="font-body text-body-sm text-center mt-6" style={{ color: '#2d4a4d' }}>
           Don&apos;t have an account?{' '}
           <Link href="/contact" className="font-semibold hover:underline" style={{ color: '#a14000' }}>
-            Book an Audit
+            Book a 20-minute conversation
           </Link>
         </p>
       </div>

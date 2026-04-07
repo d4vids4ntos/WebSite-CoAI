@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Icon from '@/components/icons/Icon'
@@ -15,6 +15,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const menuButtonRef = useRef<HTMLButtonElement | null>(null)
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -35,6 +37,54 @@ export default function Navbar() {
     }
     return () => {
       document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (!menuOpen) {
+      return
+    }
+
+    const menuElement = mobileMenuRef.current
+    if (!menuElement) {
+      return
+    }
+
+    const focusableSelector = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    const focusableElements = Array.from(menuElement.querySelectorAll<HTMLElement>(focusableSelector))
+    const firstFocusable = focusableElements[0]
+    const lastFocusable = focusableElements[focusableElements.length - 1]
+
+    firstFocusable?.focus()
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault()
+        setMenuOpen(false)
+        menuButtonRef.current?.focus()
+        return
+      }
+
+      if (event.key !== 'Tab' || focusableElements.length === 0) {
+        return
+      }
+
+      const activeElement = document.activeElement as HTMLElement | null
+      if (event.shiftKey && activeElement === firstFocusable) {
+        event.preventDefault()
+        lastFocusable?.focus()
+        return
+      }
+
+      if (!event.shiftKey && activeElement === lastFocusable) {
+        event.preventDefault()
+        firstFocusable?.focus()
+      }
+    }
+
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.removeEventListener('keydown', onKeyDown)
     }
   }, [menuOpen])
 
@@ -120,16 +170,19 @@ export default function Navbar() {
                   boxShadow: '0 4px 14px rgba(161,64,0,0.3)',
                 }}
               >
-                Book 20-min Call
+                Book a 20-minute conversation
               </Link>
             </div>
 
             {/* Hamburger — mobile */}
             <button
+              ref={menuButtonRef}
               className="ml-auto lg:hidden flex flex-col gap-1.5 p-2 z-10"
               onClick={() => setMenuOpen(!menuOpen)}
+              type="button"
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={menuOpen}
+              aria-controls="mobile-main-menu"
             >
               <span
                 className={`block h-0.5 w-6 transition-all duration-300 ${
@@ -157,12 +210,17 @@ export default function Navbar() {
       {/* Mobile overlay */}
       {menuOpen && (
         <div
+          id="mobile-main-menu"
+          ref={mobileMenuRef}
           className="fixed inset-0 z-40 flex flex-col pt-16"
           style={{
             backgroundColor: 'rgba(255, 248, 243, 0.98)',
             backdropFilter: 'blur(20px)',
             WebkitBackdropFilter: 'blur(20px)',
           }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation menu"
         >
           <div className="flex flex-col gap-1 p-6 mt-8">
             {navLinks.map((link) => {
@@ -198,7 +256,7 @@ export default function Navbar() {
                 data-cta="navbar_book_call_mobile"
                 className="btn-primary text-center"
               >
-                Book 20-min Call
+                Book a 20-minute conversation
               </Link>
             </div>
           </div>

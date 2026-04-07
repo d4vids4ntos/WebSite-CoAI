@@ -10,6 +10,7 @@ import {
   useCallback,
 } from 'react'
 import { gsap } from 'gsap'
+import { useMotionPreference } from '@/components/animations/useMotionPreference'
 
 interface TextTypeProps {
   className?: string
@@ -60,8 +61,10 @@ const TextType = ({
   const [isVisible, setIsVisible] = useState(!startOnVisible)
   const cursorRef = useRef<HTMLSpanElement>(null)
   const containerRef = useRef<HTMLElement>(null)
+  const { reduceMotion, lowPowerDevice } = useMotionPreference()
 
   const textArray = useMemo(() => (Array.isArray(text) ? text : [text]), [text])
+  const disableTypewriter = reduceMotion || lowPowerDevice
 
   const getRandomSpeed = useCallback(() => {
     if (!variableSpeed) return typingSpeed
@@ -85,6 +88,11 @@ const TextType = ({
   }, [startOnVisible])
 
   useEffect(() => {
+    if (disableTypewriter) {
+      setDisplayedText(textArray[currentTextIndex] ?? '')
+      return
+    }
+
     if (showCursor && cursorRef.current) {
       gsap.set(cursorRef.current, { opacity: 1 })
       gsap.to(cursorRef.current, {
@@ -95,9 +103,13 @@ const TextType = ({
         ease: 'power2.inOut',
       })
     }
-  }, [showCursor, cursorBlinkDuration])
+  }, [showCursor, cursorBlinkDuration, disableTypewriter, textArray, currentTextIndex])
 
   useEffect(() => {
+    if (disableTypewriter) {
+      return
+    }
+
     if (!isVisible) return
 
     let timeout: ReturnType<typeof setTimeout>
@@ -143,7 +155,7 @@ const TextType = ({
   }, [
     currentCharIndex, displayedText, isDeleting, typingSpeed, deletingSpeed,
     pauseDuration, textArray, currentTextIndex, loop, initialDelay, isVisible,
-    reverseMode, variableSpeed, onSentenceComplete,
+    reverseMode, variableSpeed, onSentenceComplete, disableTypewriter,
   ])
 
   const shouldHideCursor =
@@ -160,7 +172,7 @@ const TextType = ({
     <span className="inline" style={{ color: getCurrentTextColor() || 'inherit' }}>
       {displayedText}
     </span>,
-    showCursor && (
+    showCursor && !disableTypewriter && (
       <span
         ref={cursorRef}
         className={`ml-1 inline-block opacity-100 ${shouldHideCursor ? 'hidden' : ''} ${cursorClassName}`}

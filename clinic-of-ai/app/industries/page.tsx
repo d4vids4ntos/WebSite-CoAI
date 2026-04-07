@@ -162,7 +162,7 @@ export default function IndustriesPage() {
                       className="inline-flex items-center gap-2 mt-4 font-body font-semibold text-body-sm transition-colors duration-200 hover:underline"
                       style={{ color: '#a14000' }}
                     >
-                      Start a conversation
+                      Book a 20-minute conversation
                       <Icon name="arrow_forward" style={{ fontSize: '16px' }} />
                     </Link>
                   </div>
@@ -183,7 +183,7 @@ export default function IndustriesPage() {
               One trusted partner across your value chain. Start with one product.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
-              Book a conversation
+              Book a 20-minute conversation
               <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
             </Link>
           </div>

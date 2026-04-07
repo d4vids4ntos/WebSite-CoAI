@@ -56,6 +56,11 @@
     background-color: rgba(161, 64, 0, 0.15);
     color: #001215;
   }
+
+  :focus-visible {
+    outline: 2px solid #a14000;
+    outline-offset: 2px;
+  }
 }
 
 @layer components {
@@ -199,6 +204,26 @@
     text-wrap: balance;
   }
 
+  .skip-link {
+    position: fixed;
+    top: -48px;
+    left: 12px;
+    z-index: 2000;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    background-color: #a14000;
+    color: #ffffff;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus-visible {
+    top: 12px;
+  }
+
 }
 
 @layer utilities {
@@ -314,6 +339,20 @@
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Scrollbar */

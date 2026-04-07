@@ -419,6 +419,54 @@ export default function AboutPage() {
       </section>
 
       <section
+        className="py-16"
+        style={{ backgroundColor: '#fff8f3' }}
+      >
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div
+            className="rounded-2xl p-8 lg:p-10"
+            style={{
+              backgroundColor: '#ffffff',
+              boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+            }}
+          >
+            <p className="section-label mb-4">Client and Partner Proof</p>
+            <h2
+              className="font-headline font-bold text-2xl mb-4"
+              style={{ color: '#001215' }}
+            >
+              References can be shared in qualified conversations.
+            </h2>
+            <p
+              className="font-body text-body-md leading-relaxed mb-6"
+              style={{ color: '#2d4a4d' }}
+            >
+              Some engagements include confidential operational data. We share named references,
+              implementation evidence, and contactable proof during qualification and NDA-aligned
+              calls when needed.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              {[
+                'Hospitality operations teams',
+                'Manufacturing plants',
+                'Professional services firms',
+                'Swiss startup ecosystem',
+                'Public workforce transition programs',
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="font-body text-body-sm px-3 py-1.5 rounded-lg"
+                  style={{ backgroundColor: '#fff2e2', color: '#2d4a4d' }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         className="py-10"
         style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
@@ -428,7 +476,7 @@ export default function AboutPage() {
               Ready to discuss your operation? 20 minutes, no pitch deck.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
-              Book a conversation
+              Book a 20-minute conversation
               <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
             </Link>
           </div>

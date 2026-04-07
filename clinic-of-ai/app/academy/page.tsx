@@ -166,6 +166,7 @@ export default function AcademyPage() {
                   const el = document.getElementById('waitlist')
                   if (el) el.scrollIntoView({ behavior: 'smooth' })
                 }}
+                type="button"
                 className="btn-primary"
               >
                 Reserve cohort conversation
@@ -176,6 +177,7 @@ export default function AcademyPage() {
                   const el = document.getElementById('courses')
                   if (el) el.scrollIntoView({ behavior: 'smooth' })
                 }}
+                type="button"
                 className="btn-secondary"
               >
                 Explore program
@@ -523,6 +525,8 @@ export default function AcademyPage() {
                   className="w-full flex items-center justify-between p-6 text-left"
                   onClick={() => setOpenFaq(openFaq === index ? null : index)}
                   aria-expanded={openFaq === index}
+                  aria-controls={`faq-panel-${index}`}
+                  id={`faq-trigger-${index}`}
                 >
                   <span
                     className="font-body font-semibold text-body-md pr-6"
@@ -541,7 +545,12 @@ export default function AcademyPage() {
                   />
                 </button>
                 {openFaq === index && (
-                  <div className="px-6 pb-6">
+                  <div
+                    id={`faq-panel-${index}`}
+                    className="px-6 pb-6"
+                    role="region"
+                    aria-labelledby={`faq-trigger-${index}`}
+                  >
                     <p
                       className="font-body text-body-md leading-relaxed"
                       style={{ color: '#2d4a4d' }}
