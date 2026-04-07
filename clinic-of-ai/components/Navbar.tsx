@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import Icon from '@/components/icons/Icon'
 
 const navLinks = [
   { href: '/approach', label: 'FDE Model' },
@@ -60,12 +61,7 @@ export default function Navbar() {
                 className="w-8 h-8 flex items-center justify-center rounded-lg"
                 style={{ backgroundColor: '#001215' }}
               >
-                <span
-                  className="material-symbols-outlined text-sm"
-                  style={{ color: '#fff8f3', fontSize: '18px' }}
-                >
-                  neurology
-                </span>
+                <Icon name="neurology" style={{ color: '#fff8f3', fontSize: '18px' }} />
               </div>
               <span
                 className="font-headline font-bold text-xl tracking-tight"

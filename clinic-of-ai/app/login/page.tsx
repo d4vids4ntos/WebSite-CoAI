@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Icon from '@/components/icons/Icon'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -104,9 +105,7 @@ export default function LoginPage() {
             >
               {loading ? 'Signing in…' : 'Sign In'}
               {!loading && (
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-                  arrow_forward
-                </span>
+                <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
               )}
             </button>
           </form>

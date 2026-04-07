@@ -40,6 +40,7 @@ export default function ContactPage() {
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('')
   const [focus, setFocus] = useState(FOCUS_OPTIONS[0])
+  const [website, setWebsite] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [step, setStep] = useState(1)
@@ -57,6 +58,7 @@ export default function ContactPage() {
         session_focus: focus,
         booking_date: `April ${selectedDay}, 2026`,
         booking_time: selectedTime,
+        website,
       })
       if (result.success) {
         setSubmitted(true)
@@ -394,6 +396,46 @@ export default function ContactPage() {
                       <div className="flex flex-col gap-6">
                         <div>
                           <label
+                            htmlFor="contact-website"
+                            aria-hidden="true"
+                            style={{
+                              position: 'absolute',
+                              width: 1,
+                              height: 1,
+                              padding: 0,
+                              margin: -1,
+                              overflow: 'hidden',
+                              clip: 'rect(0,0,0,0)',
+                              whiteSpace: 'nowrap',
+                              border: 0,
+                            }}
+                          >
+                            Company Website
+                          </label>
+                          <input
+                            id="contact-website"
+                            type="text"
+                            tabIndex={-1}
+                            autoComplete="off"
+                            value={website}
+                            onChange={(e) => setWebsite(e.target.value)}
+                            aria-hidden="true"
+                            style={{
+                              position: 'absolute',
+                              width: 1,
+                              height: 1,
+                              padding: 0,
+                              margin: -1,
+                              overflow: 'hidden',
+                              clip: 'rect(0,0,0,0)',
+                              whiteSpace: 'nowrap',
+                              border: 0,
+                            }}
+                          />
+                        </div>
+
+                        <div>
+                          <label
                             htmlFor="contact-name"
                             className="font-label text-xs uppercase font-semibold block mb-2"
                             style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
@@ -474,12 +516,7 @@ export default function ContactPage() {
                                 </option>
                               ))}
                             </select>
-                            <span
-                              className="material-symbols-outlined absolute right-0 top-3 pointer-events-none"
-                              style={{ fontSize: '20px', color: '#2d4a4d' }}
-                            >
-                              expand_more
-                            </span>
+                            <Icon name="expand_more" className="absolute right-0 top-3 pointer-events-none" style={{ fontSize: '20px', color: '#2d4a4d' }} />
                           </div>
                         </div>
                       </div>
@@ -493,12 +530,7 @@ export default function ContactPage() {
                             backgroundColor: '#fff5e8',
                           }}
                         >
-                          <span
-                            className="material-symbols-outlined shrink-0"
-                            style={{ fontSize: '18px', color: '#a14000' }}
-                          >
-                            calendar_today
-                          </span>
+                          <Icon name="calendar_today" className="shrink-0" style={{ fontSize: '18px', color: '#a14000' }} />
                           <p
                             className="font-body text-body-sm"
                             style={{ color: '#001215' }}
@@ -537,12 +569,7 @@ export default function ContactPage() {
                           {isPending ? 'Sending...' : 'Book conversation'}
                         </span>
                         {!isPending && (
-                          <span
-                            className="material-symbols-outlined"
-                            style={{ fontSize: '20px' }}
-                          >
-                            arrow_forward
-                          </span>
+                          <Icon name="arrow_forward" style={{ fontSize: '20px' }} />
                         )}
                       </button>
 
@@ -585,12 +612,7 @@ export default function ContactPage() {
               },
             ].map((item) => (
               <div key={item.title} className="flex items-start gap-4">
-                <span
-                  className="material-symbols-outlined shrink-0"
-                  style={{ fontSize: '22px', color: '#a14000' }}
-                >
-                  {item.icon}
-                </span>
+                <Icon name={item.icon} className="shrink-0" style={{ fontSize: '22px', color: '#a14000' }} />
                 <div>
                   <p
                     className="font-body font-semibold text-body-md mb-1"

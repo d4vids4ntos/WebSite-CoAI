@@ -89,6 +89,7 @@ const faqs = [
 export default function AcademyPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [duplicate, setDuplicate] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -99,7 +100,7 @@ export default function AcademyPage() {
     if (!email.trim()) return
     setError(null)
     startTransition(async () => {
-      const result = await submitWaitlist(email)
+      const result = await submitWaitlist(email, website)
       if (result.success) {
         setDuplicate(result.duplicate ?? false)
         setSubmitted(true)
@@ -380,6 +381,44 @@ export default function AcademyPage() {
           ) : (
             <form onSubmit={handleSubmit} className="max-w-md mx-auto">
               <div className="mb-6">
+                <label
+                  htmlFor="waitlist-website"
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    width: 1,
+                    height: 1,
+                    padding: 0,
+                    margin: -1,
+                    overflow: 'hidden',
+                    clip: 'rect(0,0,0,0)',
+                    whiteSpace: 'nowrap',
+                    border: 0,
+                  }}
+                >
+                  Company Website
+                </label>
+                <input
+                  id="waitlist-website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    width: 1,
+                    height: 1,
+                    padding: 0,
+                    margin: -1,
+                    overflow: 'hidden',
+                    clip: 'rect(0,0,0,0)',
+                    whiteSpace: 'nowrap',
+                    border: 0,
+                  }}
+                />
+
                 <label htmlFor="waitlist-email" className="sr-only">
                   Email address
                 </label>

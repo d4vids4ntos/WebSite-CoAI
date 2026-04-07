@@ -1,8 +1,9 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
 import { Newsreader, Manrope, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import { SITE_DESCRIPTION, SITE_NAME, getSiteUrl } from '@/lib/site'
 
 const newsreader = Newsreader({
   subsets: ['latin'],
@@ -26,16 +27,18 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
-// GEO-optimised metadata — opening 60 tokens are structured for AI extraction
-// (Perplexity, ChatGPT Search, Gemini). See Skill_CoAI_Strategy.md Kit 1.
+const siteUrl = getSiteUrl()
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'Clinic of AI — Systems Architected',
-    template: '%s | Clinic of AI',
+    default: `${SITE_NAME} - Systems Architected`,
+    template: `%s | ${SITE_NAME}`,
   },
-  // First ~60 tokens: role framing + atomic claim + proof point (GEO Kit 1)
-  description:
-    'Philippe Küng, founder of Clinic of AI, helps SMBs transform their entire value chain through AI — not by adding products incrementally, but by upskilling people and redesigning how work flows. After the 2008 financial crisis, Philippe led a government reskilling program that transitioned displaced workers into tech careers at scale. The AI transition is the same pattern at 10x speed.',
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'AI consulting',
     'AI transformation',
@@ -45,30 +48,68 @@ export const metadata: Metadata = {
     'enterprise AI strategy',
     'AI Architect',
     'workforce AI upskilling',
-    'Philippe Küng',
+    'Philippe Kung',
     'Clinic of AI',
   ],
-  authors: [{ name: 'Philippe Küng' }],
-  creator: 'Clinic of AI',
+  authors: [{ name: 'Philippe Kung' }],
+  creator: SITE_NAME,
+  category: 'AI Consulting',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://clinicofai.com',
-    siteName: 'Clinic of AI',
-    title: 'Clinic of AI — AI adoption fails when you add tools without upgrading people',
-    description:
-      'Philippe Küng helps SMBs adopt AI systematically by upskilling their people — not adding another tool. Book the AI Opportunity Audit: 2 weeks, 3 highest-ROI transformation points.',
+    url: '/',
+    siteName: SITE_NAME,
+    title: 'Clinic of AI - AI adoption fails when you add tools without upgrading people',
+    description: SITE_DESCRIPTION,
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: SITE_NAME,
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Clinic of AI — Systems Architected',
-    description:
-      'AI adoption fails when you add tools without upgrading people. Philippe Küng helps SMBs transform their value chain through systematic AI upskilling.',
+    title: `${SITE_NAME} - Systems Architected`,
+    description: SITE_DESCRIPTION,
+    images: ['/twitter-image'],
   },
   robots: {
     index: true,
     follow: true,
   },
+}
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${siteUrl}/#organization`,
+      name: SITE_NAME,
+      url: siteUrl,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: siteUrl,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
+      publisher: {
+        '@id': `${siteUrl}/#organization`,
+      },
+    },
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${siteUrl}/#service`,
+      name: SITE_NAME,
+      url: siteUrl,
+      areaServed: 'Europe',
+      description: SITE_DESCRIPTION,
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -81,13 +122,12 @@ export default function RootLayout({
       lang="en"
       className={`${newsreader.variable} ${manrope.variable} ${spaceGrotesk.variable}`}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-        />
-      </head>
+      <head />
       <body className="text-on-surface font-body antialiased" style={{ backgroundColor: '#001215' }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Navbar />
         <main style={{ backgroundColor: '#001215' }}>{children}</main>
         <Footer />

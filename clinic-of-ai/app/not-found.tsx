@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Icon from '@/components/icons/Icon'
 
 export const metadata: Metadata = {
   title: 'Page Not Found',
@@ -33,9 +34,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/" className="btn-primary">
             Return Home
-            <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-              arrow_forward
-            </span>
+            <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
           </Link>
           <Link href="/contact" className="btn-secondary">
             Contact Us

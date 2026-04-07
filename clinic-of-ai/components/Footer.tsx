@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Icon from '@/components/icons/Icon'
 
 const footerLinks = [
   { href: '/privacy', label: 'Privacy' },
@@ -22,12 +23,7 @@ export default function Footer() {
                 className="w-8 h-8 flex items-center justify-center rounded-lg"
                 style={{ backgroundColor: 'rgba(255,248,243,0.1)' }}
               >
-                <span
-                  className="material-symbols-outlined"
-                  style={{ color: '#fff8f3', fontSize: '18px' }}
-                >
-                  neurology
-                </span>
+                <Icon name="neurology" style={{ color: '#fff8f3', fontSize: '18px' }} />
               </div>
               <span
                 className="font-headline font-bold italic text-xl"
@@ -77,12 +73,7 @@ export default function Footer() {
                   className="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200"
                   style={{ backgroundColor: 'rgba(255,248,243,0.08)' }}
                 >
-                  <span
-                    className="material-symbols-outlined"
-                    style={{ color: 'rgba(255,248,243,0.7)', fontSize: '18px' }}
-                  >
-                    {icon}
-                  </span>
+                  <Icon name={icon} style={{ color: 'rgba(255,248,243,0.7)', fontSize: '18px' }} />
                 </a>
               ))}
             </div>

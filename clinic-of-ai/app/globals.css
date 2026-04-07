@@ -199,14 +199,6 @@
     text-wrap: balance;
   }
 
-  .material-symbols-outlined {
-    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-  }
 }
 
 @layer utilities {
