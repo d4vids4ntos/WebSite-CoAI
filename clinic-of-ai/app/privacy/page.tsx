@@ -54,7 +54,16 @@ export default async function PrivacyPage() {
           </div>
           <div>
             <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
-              4. Contact
+              4. Data Retention
+            </h2>
+            <p>
+              Booking and waitlist records are retained for up to 24 months from your last interaction,
+              unless a longer period is required by law. You can request deletion earlier by contacting us.
+            </p>
+          </div>
+          <div>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
+              5. Contact
             </h2>
             <p>
               For any privacy-related questions, contact us at privacy@clinicofai.com or via our{' '}

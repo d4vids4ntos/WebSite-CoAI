@@ -3,6 +3,8 @@ import { Newsreader, Manrope, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Analytics from '@/components/Analytics'
+import CookieConsentBanner from '@/components/CookieConsentBanner'
 import { SITE_DESCRIPTION, SITE_NAME, getSiteUrl } from '@/lib/site'
 
 const newsreader = Newsreader({
@@ -128,9 +130,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <Analytics />
         <Navbar />
         <main style={{ backgroundColor: '#001215' }}>{children}</main>
         <Footer />
+        <CookieConsentBanner />
       </body>
     </html>
   )

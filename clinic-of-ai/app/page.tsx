@@ -334,6 +334,98 @@ export default function HomePage() {
       </section>
 
       <section
+        className="py-24"
+        style={{ backgroundColor: '#fff2e2' }}
+      >
+        <div className="max-w-content mx-auto px-6 lg:px-8">
+          <div className="mb-14 max-w-3xl">
+            <p className="section-label mb-4">Evidence From Operations</p>
+            <div className="overflow-hidden">
+              <SplitText
+                text="Three implementation outcomes from real operating teams."
+                tag="h2"
+                splitType="words"
+                delay={50}
+                duration={0.9}
+                ease="power3.out"
+                from={{ opacity: 0, y: 40 }}
+                to={{ opacity: 1, y: 0 }}
+                threshold={0.1}
+                textAlign="left"
+                className="font-headline font-bold text-3xl lg:text-4xl leading-tight"
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            {[
+              {
+                industry: 'Hospitality Group',
+                metric: '4 hrs',
+                metricLabel: 'saved per scheduling cycle',
+                summary:
+                  'Manual roster generation replaced with role-aware scheduling automation across multiple shifts.',
+              },
+              {
+                industry: 'Manufacturing Unit',
+                metric: '30%',
+                metricLabel: 'fewer emergency repairs',
+                summary:
+                  'Predictive maintenance scheduling introduced before peak load windows to reduce reactive downtime.',
+              },
+              {
+                industry: 'Professional Services Team',
+                metric: '67%',
+                metricLabel: 'higher implementation success',
+                summary:
+                  'Embedded delivery model increased adoption by integrating AI workflows directly into daily operations.',
+              },
+            ].map((item) => (
+              <div
+                key={item.industry}
+                className="rounded-2xl p-8 flex flex-col gap-5"
+                style={{
+                  backgroundColor: '#ffffff',
+                  boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+                }}
+              >
+                <p
+                  className="font-label text-xs uppercase font-semibold"
+                  style={{ color: '#2d4a4d', letterSpacing: '0.12em' }}
+                >
+                  {item.industry}
+                </p>
+                <p className="font-headline font-bold text-4xl" style={{ color: '#001215' }}>
+                  {item.metric}
+                </p>
+                <p className="font-body text-body-sm" style={{ color: '#a14000' }}>
+                  {item.metricLabel}
+                </p>
+                <p className="font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
+                  {item.summary}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            <span className="font-label text-xs uppercase font-semibold" style={{ color: '#2d4a4d', letterSpacing: '0.12em' }}>
+              Operating contexts
+            </span>
+            {['Hospitality', 'Manufacturing', 'Professional Services', 'Real Estate', 'Agriculture'].map((context) => (
+              <span
+                key={context}
+                className="font-body text-body-sm px-3 py-1.5 rounded-lg"
+                style={{ backgroundColor: '#fff8f3', color: '#2d4a4d' }}
+              >
+                {context}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
         className="py-10"
         style={{ backgroundColor: '#fff8f3', borderTop: '1px solid rgba(200,168,130,0.2)' }}
       >

@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import Link from 'next/link'
 import { submitBooking } from '@/app/actions/submitBooking'
 import SplitText from '@/components/animations/SplitText'
 import Icon from '@/components/icons/Icon'
+import { trackEvent } from '@/lib/analytics'
 
 const DAYS_OF_WEEK = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
 
@@ -45,6 +46,17 @@ export default function ContactPage() {
   const [error, setError] = useState<string | null>(null)
   const [step, setStep] = useState(1)
   const [isPending, startTransition] = useTransition()
+
+  useEffect(() => {
+    if (!submitted) {
+      return
+    }
+
+    trackEvent('goal_booking_submitted', {
+      focus,
+      time_slot: selectedTime,
+    })
+  }, [focus, selectedTime, submitted])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -173,6 +185,8 @@ export default function ContactPage() {
                     boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
+                  role="status"
+                  aria-live="polite"
                 >
                   <div
                     className="w-20 h-20 hex-clip flex items-center justify-center mx-auto mb-6"
@@ -548,6 +562,8 @@ export default function ContactPage() {
                             backgroundColor: 'rgba(161,64,0,0.06)',
                             border: '1px solid rgba(161,64,0,0.15)',
                           }}
+                          role="alert"
+                          aria-live="polite"
                         >
                           {error}
                         </p>

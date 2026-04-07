@@ -1,11 +1,12 @@
 'use client'
 
-import { useState, useTransition } from 'react'
+import { useEffect, useState, useTransition } from 'react'
 import Link from 'next/link'
 import { submitWaitlist } from '@/app/actions/submitWaitlist'
 import SplitText from '@/components/animations/SplitText'
 import TextType from '@/components/animations/TextType'
 import Icon from '@/components/icons/Icon'
+import { trackEvent } from '@/lib/analytics'
 
 const courses = [
   {
@@ -94,6 +95,19 @@ export default function AcademyPage() {
   const [duplicate, setDuplicate] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
+
+  useEffect(() => {
+    if (!submitted) {
+      return
+    }
+
+    if (duplicate) {
+      trackEvent('goal_waitlist_duplicate', { source: 'academy' })
+      return
+    }
+
+    trackEvent('goal_waitlist_submitted', { source: 'academy' })
+  }, [duplicate, submitted])
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -360,6 +374,8 @@ export default function AcademyPage() {
                 backgroundColor: '#ffffff',
                 boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
               }}
+              role="status"
+              aria-live="polite"
             >
               <Icon
                 name="check_circle"
@@ -441,6 +457,8 @@ export default function AcademyPage() {
                     backgroundColor: 'rgba(161,64,0,0.06)',
                     border: '1px solid rgba(161,64,0,0.15)',
                   }}
+                  role="alert"
+                  aria-live="polite"
                 >
                   {error}
                 </p>

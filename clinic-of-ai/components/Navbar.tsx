@@ -113,6 +113,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/contact"
+                data-cta="navbar_book_call_desktop"
                 className="font-body font-semibold text-body-sm text-white px-5 py-2.5 rounded-full transition-all duration-200"
                 style={{
                   backgroundColor: '#a14000',
@@ -194,6 +195,7 @@ export default function Navbar() {
               </Link>
               <Link
                 href="/contact"
+                data-cta="navbar_book_call_mobile"
                 className="btn-primary text-center"
               >
                 Book 20-min Call

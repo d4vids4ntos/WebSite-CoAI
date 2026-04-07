@@ -5,6 +5,7 @@ import Icon from '@/components/icons/Icon'
 
 const footerLinks = [
   { href: '/privacy', label: 'Privacy' },
+  { href: '/cookies', label: 'Cookies' },
   { href: '/terms', label: 'Terms' },
   { href: '/contact', label: 'Contact' },
   { href: '/academy', label: 'Executive Cohort' },
