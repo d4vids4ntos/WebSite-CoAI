@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import SplitText from '@/components/animations/SplitText'
 import TextType from '@/components/animations/TextType'
+import Image from 'next/image'
 import Icon from '@/components/icons/Icon'
 
 export default function HomePage() {
@@ -150,7 +151,7 @@ export default function HomePage() {
                     }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <Icon name="neurology" style={{ fontSize: '80px', color: 'rgba(255,248,243,0.15)' }} />
+                    <Image src="/logo.png" alt="Clinic of AI" width={80} height={80} className="opacity-15" />
                   </div>
                   <div
                     className="absolute inset-x-0 bottom-0 h-1/3"

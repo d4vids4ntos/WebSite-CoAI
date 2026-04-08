@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import Icon from '@/components/icons/Icon'
 
 const navLinks = [
   { href: '/approach', label: 'FDE Model' },
@@ -100,19 +100,20 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="flex items-center h-16 relative">
+          <div className="flex items-center h-16">
             {/* Logo */}
             <Link
               href="/"
               className="flex items-center gap-2 shrink-0 z-10"
               aria-label="Clinic of AI — home"
             >
-              <div
-                className="w-8 h-8 flex items-center justify-center rounded-lg"
-                style={{ backgroundColor: '#001215' }}
-              >
-                <Icon name="neurology" style={{ color: '#fff8f3', fontSize: '18px' }} />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Clinic of AI logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               <span
                 className="font-headline font-bold text-xl tracking-tight"
                 style={{ color: '#001215' }}
@@ -122,14 +123,14 @@ export default function Navbar() {
             </Link>
 
             {/* Centered links — desktop */}
-            <div className="hidden lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-7 ml-8 xl:ml-10 mr-4 xl:mr-6 flex-1">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className={`font-body font-medium text-body-md transition-colors duration-200 relative pb-1 ${
+                    className={`font-body font-medium text-body-sm xl:text-body-md whitespace-nowrap transition-colors duration-200 relative pb-1 ${
                       isActive
                         ? 'text-secondary'
                         : 'text-on-surface-variant hover:text-secondary'
@@ -148,23 +149,23 @@ export default function Navbar() {
             </div>
 
             {/* Right actions — desktop */}
-            <div className="hidden lg:flex items-center gap-4 ml-auto z-10">
+            <div className="hidden lg:flex items-center gap-3 ml-auto shrink-0 z-10">
               <Link
                 href="/signin"
-                className="font-body font-medium text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200"
+                className="font-body font-medium text-sm whitespace-nowrap text-on-surface-variant hover:text-secondary transition-colors duration-200"
               >
                 Sign In
               </Link>
               <Link
                 href="/login"
-                className="font-body font-medium text-body-md text-on-surface-variant hover:text-secondary transition-colors duration-200"
+                className="font-body font-medium text-sm whitespace-nowrap text-on-surface-variant hover:text-secondary transition-colors duration-200"
               >
                 Login
               </Link>
               <Link
                 href="/contact"
                 data-cta="navbar_book_call_desktop"
-                className="font-body font-semibold text-body-sm text-white px-5 py-2.5 rounded-full transition-all duration-200"
+                className="font-body font-semibold text-xs xl:text-body-sm text-white px-4 xl:px-5 py-2 xl:py-2.5 rounded-full whitespace-nowrap transition-all duration-200"
                 style={{
                   backgroundColor: '#a14000',
                   boxShadow: '0 4px 14px rgba(161,64,0,0.3)',

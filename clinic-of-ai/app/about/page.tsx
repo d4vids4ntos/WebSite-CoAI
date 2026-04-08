@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import SplitText from '@/components/animations/SplitText'
+import Image from 'next/image'
 import Icon from '@/components/icons/Icon'
 
 const team = [
@@ -197,13 +198,17 @@ export default function AboutPage() {
                           : '#001215',
                       }}
                     >
-                      <Icon
-                        name={member.icon}
-                        style={{
-                          fontSize: '24px',
-                          color: member.featured ? '#ff7a32' : '#fff8f3',
-                        }}
-                      />
+                      {member.icon === 'neurology' ? (
+                        <Image src="/logo.png" alt="Clinic of AI" width={24} height={24} />
+                      ) : (
+                        <Icon
+                          name={member.icon}
+                          style={{
+                            fontSize: '24px',
+                            color: member.featured ? '#ff7a32' : '#fff8f3',
+                          }}
+                        />
+                      )}
                     </div>
                     <div>
                       <p
@@ -317,10 +322,14 @@ export default function AboutPage() {
                         : '0 0 0 4px rgba(0,18,21,0.08)',
                     }}
                   >
-                    <Icon
-                      name={item.icon}
-                      style={{ fontSize: '14px', color: '#fff8f3' }}
-                    />
+                    {item.icon === 'neurology' ? (
+                      <Image src="/logo.png" alt="Clinic of AI" width={14} height={14} />
+                    ) : (
+                      <Icon
+                        name={item.icon}
+                        style={{ fontSize: '14px', color: '#fff8f3' }}
+                      />
+                    )}
                   </div>
 
                   <div

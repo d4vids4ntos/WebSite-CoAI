@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import Icon from '@/components/icons/Icon'
 
 const footerLinks = [
@@ -20,12 +21,13 @@ export default function Footer() {
           {/* Logo block */}
           <div className="flex flex-col items-center gap-2">
             <div className="flex items-center gap-2">
-              <div
-                className="w-8 h-8 flex items-center justify-center rounded-lg"
-                style={{ backgroundColor: 'rgba(255,248,243,0.1)' }}
-              >
-                <Icon name="neurology" style={{ color: '#fff8f3', fontSize: '18px' }} />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Clinic of AI logo"
+                width={32}
+                height={32}
+                className="rounded-lg"
+              />
               <span
                 className="font-headline font-bold italic text-xl"
                 style={{ color: '#fff8f3' }}
