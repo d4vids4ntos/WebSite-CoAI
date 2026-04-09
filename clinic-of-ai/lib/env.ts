@@ -26,10 +26,18 @@ function hasValue(value: string | undefined): boolean {
   return Boolean(value && value.trim().length > 0)
 }
 
+/**
+ * Get an environment variable value.
+ * Returns the value if present, or an empty string if missing.
+ * Logs a warning in development when a required variable is missing.
+ */
 export function requireEnv(key: string): string {
   const value = process.env[key]
   if (!hasValue(value)) {
-    throw new Error(`Missing required environment variable: ${key}`)
+    if (process.env.NODE_ENV === 'development') {
+      console.warn(`⚠ Missing environment variable: ${key}`)
+    }
+    return ''
   }
   return value!
 }
@@ -60,4 +68,3 @@ export function getEnvReadinessReport(): EnvReadinessReport {
     checks,
   }
 }
-

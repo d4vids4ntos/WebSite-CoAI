@@ -1,9 +1,11 @@
-﻿'use server'
+'use server'
 
 import { supabaseAdmin } from '@/lib/supabase-server'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export async function submitWaitlist(
@@ -20,6 +22,11 @@ export async function submitWaitlist(
 
   if (!normalizedEmail || !EMAIL_REGEX.test(normalizedEmail)) {
     return { success: false, error: 'Please enter a valid email address.' }
+  }
+
+  if (!supabaseAdmin) {
+    console.error('Supabase is not configured. Waitlist entry cannot be saved.')
+    return { success: false, error: 'Service temporarily unavailable. Please try again later.' }
   }
 
   try {
@@ -42,21 +49,23 @@ export async function submitWaitlist(
 
   const from = process.env.RESEND_FROM_EMAIL ?? 'hello@clinicofai.com'
 
-  try {
-    await resend.emails.send({
-      from,
-      to: normalizedEmail,
-      subject: "You're on the Clinic of AI Academy waitlist",
-      text: [
-        "You're in.",
-        '',
-        "We'll let you know as soon as the Academy opens. In the meantime, follow Philippe's work at clinicofai.com.",
-        '',
-        'Clinic of AI',
-      ].join('\n'),
-    })
-  } catch (error) {
-    console.error('Could not send waitlist confirmation email:', error)
+  if (resend) {
+    try {
+      await resend.emails.send({
+        from,
+        to: normalizedEmail,
+        subject: "You're on the Clinic of AI Academy waitlist",
+        text: [
+          "You're in.",
+          '',
+          "We'll let you know as soon as the Academy opens. In the meantime, follow Philippe's work at clinicofai.com.",
+          '',
+          'Clinic of AI',
+        ].join('\n'),
+      })
+    } catch (error) {
+      console.error('Could not send waitlist confirmation email:', error)
+    }
   }
 
   return { success: true }
