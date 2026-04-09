@@ -1,13 +1,12 @@
 'use client'
 
 import React, { useRef, useEffect, useState } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { SplitText as GSAPSplitText } from 'gsap/SplitText'
 import { useGSAP } from '@gsap/react'
 import { useMotionPreference } from '@/components/animations/useMotionPreference'
 
-gsap.registerPlugin(ScrollTrigger, GSAPSplitText, useGSAP)
+type GsapInstance = typeof import('gsap')['gsap']
+type ScrollTriggerPlugin = typeof import('gsap/ScrollTrigger')['ScrollTrigger']
+type SplitTextPlugin = typeof import('gsap/SplitText')['SplitText']
 
 export interface SplitTextProps {
   text: string
@@ -44,6 +43,10 @@ const SplitText: React.FC<SplitTextProps> = ({
   const animationCompletedRef = useRef(false)
   const onCompleteRef = useRef(onLetterAnimationComplete)
   const [fontsLoaded, setFontsLoaded] = useState<boolean>(false)
+  const [pluginsReady, setPluginsReady] = useState<boolean>(false)
+  const gsapRef = useRef<GsapInstance | null>(null)
+  const scrollTriggerRef = useRef<ScrollTriggerPlugin | null>(null)
+  const splitTextRef = useRef<SplitTextPlugin | null>(null)
   const { reduceMotion, lowPowerDevice } = useMotionPreference()
   const disableAnimation = reduceMotion || lowPowerDevice
 
@@ -52,6 +55,47 @@ const SplitText: React.FC<SplitTextProps> = ({
   }, [onLetterAnimationComplete])
 
   useEffect(() => {
+    let cancelled = false
+
+    const loadPlugins = async () => {
+      if (typeof window === 'undefined') {
+        return
+      }
+
+      const [{ gsap }, { ScrollTrigger }, { SplitText }] = await Promise.all([
+        import('gsap'),
+        import('gsap/ScrollTrigger'),
+        import('gsap/SplitText'),
+      ])
+
+      if (cancelled) {
+        return
+      }
+
+      gsap.registerPlugin(ScrollTrigger, SplitText, useGSAP)
+      gsapRef.current = gsap
+      scrollTriggerRef.current = ScrollTrigger
+      splitTextRef.current = SplitText
+      setPluginsReady(true)
+    }
+
+    loadPlugins().catch(() => {
+      if (!cancelled) {
+        setPluginsReady(false)
+      }
+    })
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof document === 'undefined' || !document.fonts) {
+      setFontsLoaded(true)
+      return
+    }
+
     if (document.fonts.status === 'loaded') {
       setFontsLoaded(true)
     } else {
@@ -61,7 +105,11 @@ const SplitText: React.FC<SplitTextProps> = ({
 
   useGSAP(
     () => {
-      if (!ref.current || !text || !fontsLoaded || disableAnimation) {
+      const gsap = gsapRef.current
+      const ScrollTrigger = scrollTriggerRef.current
+      const GSAPSplitText = splitTextRef.current
+
+      if (!ref.current || !text || !fontsLoaded || !pluginsReady || !gsap || !ScrollTrigger || !GSAPSplitText || disableAnimation) {
         if (disableAnimation && !animationCompletedRef.current) {
           animationCompletedRef.current = true
           onCompleteRef.current?.()
@@ -70,7 +118,7 @@ const SplitText: React.FC<SplitTextProps> = ({
       }
       if (animationCompletedRef.current) return
 
-      const el = ref.current as HTMLElement & { _rbsplitInstance?: GSAPSplitText }
+      const el = ref.current as HTMLElement & { _rbsplitInstance?: { revert: () => void } }
 
       if (el._rbsplitInstance) {
         try { el._rbsplitInstance.revert() } catch (_) {}
@@ -88,11 +136,11 @@ const SplitText: React.FC<SplitTextProps> = ({
       const start = `top ${startPct}%${sign}`
 
       let targets: Element[] = []
-      const assignTargets = (self: GSAPSplitText) => {
+      const assignTargets = (self: { chars?: Element[]; words?: Element[]; lines?: Element[] }) => {
         if (splitType.includes('chars') && self.chars?.length) targets = self.chars
-        if (!targets.length && splitType.includes('words') && self.words.length) targets = self.words
-        if (!targets.length && splitType.includes('lines') && self.lines.length) targets = self.lines
-        if (!targets.length) targets = self.chars || self.words || self.lines
+        if (!targets.length && splitType.includes('words') && self.words?.length) targets = self.words
+        if (!targets.length && splitType.includes('lines') && self.lines?.length) targets = self.lines
+        if (!targets.length) targets = self.chars ?? self.words ?? self.lines ?? []
       }
 
       const splitInstance = new GSAPSplitText(el, {
@@ -103,7 +151,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         wordsClass: 'split-word',
         charsClass: 'split-char',
         reduceWhiteSpace: false,
-        onSplit: (self: GSAPSplitText) => {
+        onSplit: (self: { chars?: Element[]; words?: Element[]; lines?: Element[] }) => {
           assignTargets(self)
           return gsap.fromTo(targets, { ...from }, {
             ...to,
@@ -139,6 +187,7 @@ const SplitText: React.FC<SplitTextProps> = ({
         text, delay, duration, ease, splitType,
         JSON.stringify(from), JSON.stringify(to),
         threshold, rootMargin, fontsLoaded, disableAnimation,
+        pluginsReady,
       ],
       scope: ref,
     }
