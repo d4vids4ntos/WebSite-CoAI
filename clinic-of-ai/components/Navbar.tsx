@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
 const navLinks = [
-  { href: '/approach', label: 'FDE Model' },
+  { href: '/approach', label: 'Solutios' },
   { href: '/industries', label: 'Industries' },
   { href: '/academy', label: 'Executive Cohort' },
   { href: '/about', label: 'Why Clinic of AI' },

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import SplitText from '@/components/animations/SplitText'
 import Icon from '@/components/icons/Icon'
+import Image from 'next/image'
 
 const industries = [
   {
@@ -18,6 +19,8 @@ const industries = [
       'Scheduling, review intelligence, dynamic pricing, and guest communication — connected across your value chain.',
     bg: '#fff8f3',
     color: '#8a6d3b',
+    image: '/images/industries/restaurant-ai-supply-chain.png',
+    imageAlt: 'Restaurant AI supply chain map with optimization and operations modules.',
   },
   {
     id: 'manufacturing',
@@ -32,20 +35,40 @@ const industries = [
       'Quality automation, predictive maintenance, and production planning that updates with real constraints.',
     bg: '#fff5e8',
     color: '#4a5568',
+    image: '/images/industries/manufacturing-ai-supply-chain.png',
+    imageAlt: 'Manufacturing AI supply chain map linking production, quality, and logistics systems.',
   },
   {
     id: 'real-estate',
     icon: 'apartment',
     title: 'Real Estate',
-    subtitle: 'Speed to lead, transaction control, retention.',
+    subtitle: 'Portfolio performance, asset risk, and market intelligence.',
     painPoints: [
-      'Leads lost outside business hours',
-      'Market intelligence fragmented across portals',
+      'Asset and portfolio decisions rely on fragmented data sources',
+      'Maintenance, valuation, and market signals are not operationally connected',
     ],
     solution:
-      'Automated lead response, document workflows, and client lifecycle management for multilingual European operations.',
+      'Smart portfolio management, predictive maintenance, and transaction intelligence integrated into one operational value chain.',
     bg: '#fff8f3',
     color: '#1a3a5c',
+    image: '/images/industries/real-estate-ai-supply-chain.png',
+    imageAlt: 'Real Estate AI supply chain map linking valuation, portfolio, maintenance, and market data.',
+  },
+  {
+    id: 'healthcare',
+    icon: 'medical_services',
+    title: 'Healthcare',
+    subtitle: 'Care quality, diagnostic support, and operational continuity.',
+    painPoints: [
+      'Clinical data fragmented across disconnected systems',
+      'Resource and treatment decisions made without integrated AI support',
+    ],
+    solution:
+      'Outcome prediction, diagnostic assistance, and connected medical workflows integrated across care teams and operational systems.',
+    bg: '#fff8f3',
+    color: '#2f5d7c',
+    image: '/images/industries/healthcare-ai-supply-chain.png',
+    imageAlt: 'Healthcare AI supply chain map connecting clinical intelligence and healthcare data systems.',
   },
   {
     id: 'agriculture',
@@ -60,6 +83,8 @@ const industries = [
       'Field data, weather, and operations connected into practical workflows: subsidy reporting, crop planning, and water intelligence.',
     bg: '#fff5e8',
     color: '#2d6a4f',
+    image: '/images/industries/agriculture-ai-supply-chain.png',
+    imageAlt: 'Agriculture AI supply chain map connecting field intelligence and logistics systems.',
   },
 ]
 
@@ -109,7 +134,7 @@ export default function IndustriesPage() {
                 <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
               </Link>
               <Link href="/approach" className="btn-secondary">
-                See the FDE model
+                See the Solutios
               </Link>
             </div>
           </div>
@@ -128,17 +153,24 @@ export default function IndustriesPage() {
                   boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
                 }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div
-                    className="w-12 h-12 flex items-center justify-center rounded-xl shrink-0"
-                    style={{ backgroundColor: '#fff5e8', border: '1px solid rgba(161,64,0,0.15)' }}
-                  >
-                    <Icon name={industry.icon} style={{ fontSize: '22px', color: industry.color }} />
-                  </div>
-                  <div>
-                    <h3 className="font-headline font-bold text-xl" style={{ color: '#001215' }}>{industry.title}</h3>
-                    <p className="font-body text-body-sm italic" style={{ color: '#a14000' }}>{industry.subtitle}</p>
-                  </div>
+                <div className="mb-6">
+                  <h3 className="font-headline font-bold text-xl" style={{ color: '#001215' }}>{industry.title}</h3>
+                  <p className="font-body text-body-sm italic" style={{ color: '#a14000' }}>{industry.subtitle}</p>
+                </div>
+
+                <div
+                  className="mb-8 overflow-hidden rounded-2xl"
+                  style={{ border: '1px solid rgba(200,168,130,0.2)' }}
+                >
+                  <Image
+                    src={industry.image}
+                    alt={industry.imageAlt}
+                    width={1400}
+                    height={768}
+                    className="block w-full h-auto"
+                    sizes="(min-width: 1024px) 1120px, 100vw"
+                    priority={index === 0}
+                  />
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

@@ -26,7 +26,7 @@ test.describe('Keyboard-only flow checks', () => {
     const menuDialog = page.getByRole('dialog', { name: /mobile navigation menu/i })
     await expect(menuDialog).toBeVisible()
 
-    const firstMenuLink = page.getByRole('link', { name: 'FDE Model' })
+    const firstMenuLink = page.getByRole('link', { name: 'Solutios' })
     await expect(firstMenuLink).toBeFocused()
 
     await page.keyboard.press('Escape')

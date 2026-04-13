@@ -83,13 +83,13 @@ export default function ContactPage() {
   return (
     <>
       <section
-        className="pt-24 pb-16 grid-watermark"
+        className="pt-20 pb-10 grid-watermark"
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 py-4 lg:py-6">
 
-            <div className="lg:col-span-5 flex flex-col gap-8">
+            <div className="lg:col-span-5 flex flex-col gap-6">
               <div
                 className="absolute top-24 left-0 w-48 h-48 pointer-events-none"
                 aria-hidden="true"
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   }}
                 >
                   <div
-                    className="px-8 py-6"
+                    className="px-6 py-4"
                     style={{ borderBottom: '1px solid rgba(200,168,130,0.12)' }}
                   >
                     <div className="flex items-center justify-between">
@@ -251,9 +251,9 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="p-8 flex flex-col gap-10">
+                  <div className="p-6 flex flex-col gap-7">
                     <div>
-                      <div className="flex items-center gap-3 mb-6">
+                      <div className="flex items-center gap-3 mb-4">
                         <div
                           className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
                           style={{
@@ -278,63 +278,65 @@ export default function ContactPage() {
                         </span>
                       </div>
 
-                      <div className="grid grid-cols-7 gap-1 mb-1">
-                        {DAYS_OF_WEEK.map((d) => (
-                          <div
-                            key={d}
-                            className="text-center py-1 font-label text-xs"
-                            style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.06em' }}
-                          >
-                            {d}
-                          </div>
-                        ))}
-                      </div>
-
-                      <div className="grid grid-cols-7 gap-1">
-                        {CALENDAR_DAYS.map((cell, idx) => {
-                          if (!cell.day) {
-                            return <div key={`empty-${idx}`} />
-                          }
-                          const isSelected = selectedDay === cell.day
-                          const isAvailable = cell.available
-
-                          return (
-                            <button
-                              key={cell.day}
-                              type="button"
-                              disabled={!isAvailable}
-                              onClick={() => {
-                                if (isAvailable) {
-                                  setSelectedDay(cell.day as number)
-                                  setStep(Math.max(step, 2))
-                                }
-                              }}
-                              className="aspect-square flex items-center justify-center rounded-lg font-body text-sm font-medium transition-all duration-150"
-                              aria-label={`April ${cell.day}, 2026${isAvailable ? '' : ' unavailable'}`}
-                              aria-pressed={isSelected}
-                              style={{
-                                backgroundColor: isSelected
-                                  ? '#a14000'
-                                  : isAvailable
-                                  ? '#fff5e8'
-                                  : 'transparent',
-                                color: isSelected
-                                  ? '#ffffff'
-                                  : isAvailable
-                                  ? '#001215'
-                                  : 'rgba(45,74,77,0.25)',
-                                cursor: isAvailable ? 'pointer' : 'default',
-                              }}
+                      <div className="w-full">
+                        <div className="grid grid-cols-7 gap-0.5 mb-0.5">
+                          {DAYS_OF_WEEK.map((d) => (
+                            <div
+                              key={d}
+                              className="text-center py-0.5 font-label text-[10px]"
+                              style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.05em' }}
                             >
-                              {cell.day}
-                            </button>
-                          )
-                        })}
+                              {d}
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="grid grid-cols-7 gap-0.5">
+                          {CALENDAR_DAYS.map((cell, idx) => {
+                            if (!cell.day) {
+                              return <div key={`empty-${idx}`} />
+                            }
+                            const isSelected = selectedDay === cell.day
+                            const isAvailable = cell.available
+
+                            return (
+                              <button
+                                key={cell.day}
+                                type="button"
+                                disabled={!isAvailable}
+                                onClick={() => {
+                                  if (isAvailable) {
+                                    setSelectedDay(cell.day as number)
+                                    setStep(Math.max(step, 2))
+                                  }
+                                }}
+                                className="w-full h-10 flex items-center justify-center rounded-md font-body text-xs font-medium transition-all duration-150"
+                                aria-label={`April ${cell.day}, 2026${isAvailable ? '' : ' unavailable'}`}
+                                aria-pressed={isSelected}
+                                style={{
+                                  backgroundColor: isSelected
+                                    ? '#a14000'
+                                    : isAvailable
+                                    ? '#fff5e8'
+                                    : 'transparent',
+                                  color: isSelected
+                                    ? '#ffffff'
+                                    : isAvailable
+                                    ? '#001215'
+                                    : 'rgba(45,74,77,0.25)',
+                                  cursor: isAvailable ? 'pointer' : 'default',
+                                }}
+                              >
+                                {cell.day}
+                              </button>
+                            )
+                          })}
+                        </div>
                       </div>
 
                       {selectedDay && (
                         <p
-                          className="font-body text-body-sm mt-3 text-center"
+                          className="font-body text-xs mt-2"
                           style={{ color: '#2d4a4d' }}
                         >
                           Selected: April {selectedDay}, 2026
@@ -343,7 +345,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-3 mb-6">
+                      <div className="flex items-center gap-3 mb-4">
                         <div
                           className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
                           style={{
@@ -362,7 +364,7 @@ export default function ContactPage() {
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                         {TIME_SLOTS.map((slot) => {
                           const isSelected = selectedTime === slot
                           return (
@@ -373,7 +375,7 @@ export default function ContactPage() {
                                 setSelectedTime(slot)
                                 setStep(Math.max(step, 3))
                               }}
-                              className="py-3 px-4 rounded-xl font-body font-semibold text-body-sm transition-all duration-200"
+                              className="py-2.5 px-3 rounded-xl font-body font-semibold text-body-sm transition-all duration-200"
                               aria-label={`Select ${slot}`}
                               aria-pressed={isSelected}
                               style={{
@@ -392,7 +394,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <div className="flex items-center gap-3 mb-6">
+                      <div className="flex items-center gap-3 mb-4">
                         <div
                           className="w-7 h-7 rounded-md flex items-center justify-center font-label text-xs font-bold"
                           style={{
@@ -411,7 +413,7 @@ export default function ContactPage() {
                         </p>
                       </div>
 
-                      <div className="flex flex-col gap-6">
+                      <div className="flex flex-col gap-4">
                         <div>
                           <label
                             htmlFor="contact-website"
@@ -546,7 +548,7 @@ export default function ContactPage() {
                     <div>
                       {selectedDay && selectedTime && (
                         <div
-                          className="rounded-xl p-4 mb-5 flex items-center gap-3"
+                          className="rounded-xl p-3 mb-4 flex items-center gap-3"
                           style={{
                             backgroundColor: '#fff5e8',
                           }}
@@ -579,7 +581,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={isPending}
-                        className="w-full flex items-center justify-center gap-3 font-body font-bold text-base py-4 px-8 rounded-xl transition-all duration-200"
+                        className="w-full flex items-center justify-center gap-3 font-body font-bold text-base py-3.5 px-6 rounded-xl transition-all duration-200"
                         style={{
                           backgroundColor: isPending ? 'rgba(161,64,0,0.6)' : '#a14000',
                           color: '#ffffff',
@@ -597,7 +599,7 @@ export default function ContactPage() {
                       </button>
 
                       <p
-                        className="font-body text-body-sm text-center mt-4"
+                        className="font-body text-body-sm text-center mt-3"
                         style={{ color: 'rgba(45,74,77,0.5)' }}
                       >
                         No commitment. No sales pressure. Clear next steps.
