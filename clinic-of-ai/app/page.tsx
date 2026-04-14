@@ -5,6 +5,7 @@ import SplitText from '@/components/animations/SplitText'
 import TextType from '@/components/animations/TextType'
 import Image from 'next/image'
 import Icon from '@/components/icons/Icon'
+import ThreeGlobe from '@/components/ThreeGlobe'
 
 export default function HomePage() {
   return (
@@ -136,51 +137,31 @@ export default function HomePage() {
             </div>
 
             <div className="lg:col-span-5 flex items-center justify-center relative">
-              <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+              <div className="relative w-80 sm:w-[26rem] lg:w-[32rem] aspect-square">
                 <div
-                  className="w-full h-full rounded-full overflow-hidden relative"
-                  style={{
-                    border: '2px solid rgba(200,168,130,0.3)',
-                    boxShadow: '0 20px 60px rgba(0,18,21,0.1)',
-                  }}
+                  className="w-full h-full rounded-full overflow-hidden relative focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-4"
+                  style={{ backgroundColor: 'transparent' }}
                 >
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: 'linear-gradient(135deg, #002a2e 0%, #001215 50%, #001022 100%)',
-                    }}
+                  <ThreeGlobe
+                    textureSrc="/images/hero/landing-hero-globe.png"
+                    className="absolute inset-[8%] rounded-full overflow-hidden"
+                    ariaLabel="Rotate 3D globe"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Image src="/logo.png" alt="Clinic of AI" width={80} height={80} className="opacity-15" />
-                  </div>
                   <div
-                    className="absolute inset-x-0 bottom-0 h-1/3"
+                    className="absolute inset-x-0 bottom-[8%] h-1/3 pointer-events-none"
                     style={{
                       background: 'linear-gradient(to top, rgba(255,248,243,0.2), transparent)',
                     }}
                   />
                 </div>
-
                 <div
-                  className="absolute -top-4 -left-8 w-14 h-14 hex-clip flex items-center justify-center"
-                  style={{ backgroundColor: '#a14000' }}
-                >
-                  <Icon name="hub" style={{ fontSize: '22px', color: '#ffffff' }} />
-                </div>
+                  className="w-full h-full rounded-full overflow-hidden pointer-events-none absolute inset-0"
+                  style={{
+                    border: '2px solid rgba(200,168,130,0.3)',
+                    boxShadow: '0 20px 60px rgba(0,18,21,0.1)',
+                  }}
+                />
 
-                <div
-                  className="absolute top-1/2 -right-10 -translate-y-1/2 w-14 h-14 hex-clip flex items-center justify-center"
-                  style={{ backgroundColor: '#002a2e' }}
-                >
-                  <Icon name="memory" style={{ fontSize: '22px', color: '#fff8f3' }} />
-                </div>
-
-                <div
-                  className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-14 h-14 hex-clip flex items-center justify-center"
-                  style={{ backgroundColor: '#001215' }}
-                >
-                  <Icon name="model_training" style={{ fontSize: '22px', color: '#fff8f3' }} />
-                </div>
               </div>
             </div>
           </div>
