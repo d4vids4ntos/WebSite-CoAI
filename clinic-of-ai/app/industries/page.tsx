@@ -134,7 +134,7 @@ export default function IndustriesPage() {
                 <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
               </Link>
               <Link href="/approach" className="btn-secondary">
-                See the Solutios
+                See the Solutions
               </Link>
             </div>
           </div>
@@ -147,7 +147,8 @@ export default function IndustriesPage() {
             {industries.map((industry, index) => (
               <div
                 key={industry.id}
-                className="rounded-2xl p-8 lg:p-10"
+                id={industry.id}
+                className="rounded-2xl p-8 lg:p-10 scroll-mt-24"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
                   boxShadow: '0 4px 16px rgba(0,18,21,0.04)',

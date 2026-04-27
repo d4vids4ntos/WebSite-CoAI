@@ -2,7 +2,6 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import Icon from '@/components/icons/Icon'
 
 const footerLinks = [
   { href: '/privacy', label: 'Privacy' },
@@ -43,44 +42,21 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links + social on same row */}
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-            <nav aria-label="Footer navigation">
-              <ul className="flex flex-wrap items-center justify-center gap-6">
-                {footerLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="font-body font-medium text-body-sm transition-colors duration-200 hover:text-white"
-                      style={{ color: 'rgba(255,248,243,0.6)' }}
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            <div
-              className="hidden sm:block w-px h-4"
-              style={{ backgroundColor: 'rgba(255,248,243,0.15)' }}
-              aria-hidden="true"
-            />
-
-            <div className="flex items-center gap-3">
-              {['terminal', 'science', 'architecture'].map((icon) => (
-                <a
-                  key={icon}
-                  href="#"
-                  aria-label={icon}
-                  className="w-9 h-9 flex items-center justify-center rounded-lg transition-all duration-200"
-                  style={{ backgroundColor: 'rgba(255,248,243,0.08)' }}
-                >
-                  <Icon name={icon} style={{ color: 'rgba(255,248,243,0.7)', fontSize: '18px' }} />
-                </a>
+          <nav aria-label="Footer navigation">
+            <ul className="flex flex-wrap items-center justify-center gap-6">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="font-body font-medium text-body-sm transition-colors duration-200 hover:text-white"
+                    style={{ color: 'rgba(255,248,243,0.6)' }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
               ))}
-            </div>
-          </div>
+            </ul>
+          </nav>
         </div>
       </div>
 

@@ -1,0 +1,69 @@
+Brand System — Clinic of AI
+
+How to Use This Document
+
+Paste this entire document as the first message in any reasoning-capable image generation session, then follow it with your specific asset request (e.g., "Generate a hero image for our manufacturing case study landing page"). The document provides standing context the model will use to make composition, typography, color, and subject decisions without further clarification. Test it across at least five different asset types — hero image, social post, case study cover, presentation slide, technical diagram — and refine the document until roughly 80% of outputs are usable on the first pass. Treat it as a living spec; iterate the Anti-Patterns section especially as you discover new failure modes.
+
+
+
+Brand Overview
+
+Clinic of AI builds AI products and services for low- and mid-tier companies, with a near-term focus on five industries: manufacturing, real estate, hospitality, healthcare, and agriculture. Additional industries will be added over time. In the longer term, the company will also offer courses and training programs that teach businesses how to adopt AI internally and reach their full operational potential. The company name is deliberate: Clinic of AI operates on a diagnostic metaphor. We assess what a business needs, identify where it underperforms, and prescribe targeted AI solutions. We are not a generalist AI lab and we are not a hype-driven startup. We are a practitioner — rigorous, methodical, and outcome-focused.
+
+The audience is operators and decision-makers at small and mid-sized companies who are aware that AI matters but who do not have internal AI teams, do not speak the jargon, and are skeptical of vendors who promise transformation. They want clarity, evidence, and concrete improvements to their existing operations. The first impression every Clinic of AI asset must deliver is trustworthy and professional — closer to a respected consulting firm or a precision-engineering company than to a typical AI startup. The reference brands are Mistral.ai and General Intelligence Company: restrained, editorial, confident, and free of visual noise.
+
+Visual Identity
+
+The Clinic of AI logo is a two-dimensional dark blue cube with an orange dot in its center, set against a beige background. The cube reads as a contained, structured object — a unit, a system, something measurable — and the orange dot functions as a focal point, a diagnostic marker, the thing being identified or examined inside the system. This logic carries through the entire visual system: structured neutral environments hold focused points of orange interest. The overall aesthetic is editorial, minimal, and quietly confident. Visuals should feel closer to a high-end industry publication or an architectural firm's portfolio than to a SaaS company's marketing site. Mood is calm, precise, and grounded — never frantic, never speculative, never futuristic.
+
+Color System
+
+The palette is intentionally narrow and warm, which distinguishes Clinic of AI from typical cool-blue tech brands. The dominant background color is a warm off-white beige, #fff8f3, used as the primary canvas for most assets. The primary dark is a near-black deep teal, expressed as either #001215 (the deeper variant) or #002a2e (slightly lifted), used for typography, structural lines, technical diagram strokes, and grounding elements. These dark tones read as ink rather than corporate blue, which reinforces the editorial and clinical feel. The accent color is orange, in two values: #a14000 is the deeper, more serious burnt orange used for emphasis in professional contexts, and #ff7a32 is the brighter variant used sparingly as a focal accent — the diagnostic marker, the highlighted node, the single moment of attention in a composition.
+
+Orange is always treated as a precision element, never as a fill or a wash. It appears in small concentrations: a single dot, a highlighted callout, a thin underline, an emphasized word. The relationship between beige, dark teal, and orange should mirror the logo itself — a quiet structured field with one focused point of interest. Forbidden colors include neon hues, purple-to-pink SaaS gradients, glowing electric blues, cyberpunk magenta or cyan, and any "glow-on-dark" treatments. Light mode (beige background) is the primary mode. A dark mode using #001215 or #002a2e as the canvas is permitted for specific contexts but must never use glow effects, neon edges, or saturated highlights — dark mode should still feel like ink on paper, not a screen in a server room.
+
+Typography
+
+Typography is clean modern sans-serif, set with editorial discipline. The system uses a single high-quality grotesque or neo-grotesque sans-serif (Inter, Söhne, GT America, or equivalent) across all weights. There is no serif, no monospace except for technical labels and diagrammatic callouts where a monospace face may appear at small sizes for clinical precision. Hierarchy is established through size and weight contrast, not through color or decoration. Display headlines are large, set in regular or medium weight with tight tracking, and given generous surrounding whitespace. Body copy is set at comfortable reading sizes with neutral tracking and generous line height. Captions and technical labels are small, often uppercase or sentence-case depending on context, with slightly looser tracking when small.
+
+Default casing is sentence case for headlines and body. Technical diagram labels may use small caps or numbered prefixes ("01 —", "02 —"). Italics are avoided. Drop shadows, glows, outlines, and gradient fills on text are forbidden. Condensed and extended display faces associated with tech-bro aesthetics — wide geometric headers, ultra-condensed sans, gimmicky variable-font flourishes — are forbidden. Typography should always feel like it belongs in a quality industry publication, not on a startup landing page.
+
+Photography and Illustration
+
+Clinic of AI uses both photography and technical/diagrammatic illustration, often layered together, and this combination is the brand's signature visual approach. Photography depicts real environments and real objects from the five industries we serve: actual manufacturing floors, real hotel interiors and lobbies, real farmland and agricultural operations, real clinic and healthcare environments, real real estate properties and construction sites. Photography is grounded, documentary in feel, naturally lit when possible, and free of staging. It captures actual industry conditions, not aspirational stock-photo versions.
+
+Illustration is technical and diagrammatic in style — blueprints, isometric system diagrams, architectural cross-sections, schematic line drawings, exploded technical views, flow diagrams. Line work is clean, precise, and rendered in the dark teal primary color, with the orange accent reserved for highlighted nodes, focal points, and diagnostic markers. Illustration may stand alone as the primary visual or may be layered as an annotation overlay on top of photography, with thin lines and labels extending from real objects in the photograph to identify components, processes, or points of intervention. This overlay treatment is a signature pattern.
+
+People and human figures are not the focus. The brand depicts objects, environments, and systems. When figures do appear, they are technical or diagrammatic representations — schematic stick figures in flow diagrams, scale figures in architectural drawings — not photographed individuals as protagonists. Photographed humans may incidentally appear in industry environments (a worker visible on a factory floor, hands operating equipment) but are never the subject of the composition. The subject is always the system, the environment, or the object being diagnosed.
+
+Subject matter is strictly grounded in real industry. The brand never depicts AI itself — no glowing neural networks, no holographic interfaces, no abstract intelligence imagery, no robots, no faces being scanned, no data streams. AI is the lens through which we examine businesses, not the thing we put on screen. The story is always about the business reaching its potential, never about the technology being impressive.
+
+Layout and Composition
+
+The brand uses two distinct layout modes depending on context. For brand identity, marketing, and hero assets, the mode is full-scale sparse whitespace — Mistral-style restraint, with a single subject, generous margins, and minimal supporting text. The composition holds confidence through emptiness; the eye has one place to land. For content-dense contexts such as case studies, technical documentation, presentation interiors, and editorial spreads, the mode shifts to grid-based density — a clear modular grid, left-aligned editorial structure, magazine-like rhythm, with information organized in well-defined zones rather than spread loosely across the canvas.
+
+Alignment is left-aligned editorial throughout. Text is set on a clear baseline grid, headlines and body align to the same vertical edge, and asymmetric balance is preferred over symmetrical centering. Centered marketing copy with no hierarchical anchor is forbidden. The relationship between text and image is text beside image — split layouts with clean separation between the visual and the typographic zones. Text is not overlaid on photographs, and photographs are not used as decorative backgrounds behind copy.
+
+The signature hero composition is a centered object with technical callouts radiating outward — an exploded-diagram treatment in which a real industry object (a piece of manufacturing equipment, a building, a hotel room, a field, a piece of medical equipment) is centered in the composition with thin annotation lines extending outward to numbered or labeled callouts that identify components, processes, or AI intervention points. This is the brand's most recognizable layout and should be used for primary hero assets. It literally visualizes the value proposition: take a real business, reveal its structure, show where AI applies.
+
+Voice in Visual Assets
+
+Headlines are direct and declarative. They state the subject and the diagnosis in plain confident language, without hedging or hype. "Manufacturing, diagnosed." "Hospitality at full capacity." "Agriculture, measured." Headlines are short, often a single clause, and never use exclamation marks, never pose rhetorical questions, never lead with adjectives. Captions and technical labels are clinical and numbered. They read like field notes from a precise practitioner: "01 — Inventory audit. 14-day cycle." "02 — Bottleneck identified at packaging line." "03 — Forecast accuracy: baseline 62%." Numbered prefixes establish a methodical rhythm and reinforce the diagnostic metaphor.
+
+Preferred vocabulary includes potential, growth, reach, diagnose, optimization, and rigorous. These words form a coherent register that ties the clinical metaphor to outcome-focused business language without slipping into either coldness or hype. Forbidden vocabulary includes AI-powered, revolutionary, disrupt, unleash, transform, next-generation, cutting-edge, harness the power of, and any phrasing associated with tech-bro marketing or Series A pitch-deck hype. Emojis are not used. Exclamation marks are not used. Overly casual language, slang, and conversational filler are not used. The voice is professional, measured, and confident — never folksy, never breathless, never trying too hard.
+
+Anti-Patterns
+
+The following must never appear in Clinic of AI visual assets, under any circumstance.
+
+Visual clichés: No cyberpunk aesthetics, no cyborg or robot imagery, no magical or mystical visual treatments, no Matrix-style cascading code or green digital rain, no floating UI panels or holographic dashboards, no anatomical diagrams of brains or cognitive systems, no faceless silhouettes used as stand-ins for people, no surgery or medical-procedure imagery (even in healthcare contexts), no floating brains, no infinite data tunnels, no glowing neural network nodes, no robot hands touching human hands, no face-mesh scanning visuals, no binary code overlays.
+
+Color and aesthetic errors: No neon cyberpunk palettes, no purple-to-pink SaaS gradients, no glow-on-dark treatments, no oversaturated photography, no gradient-overload backgrounds, no electric blue corporate-tech tones. The palette is beige, dark teal, and orange — and it stays that way.
+
+Typography errors: No tech-bro condensed or extended display fonts, no drop shadows on text, no glow effects on text, no gradient-filled text, no all-caps headlines (small caps in technical labels are allowed), no italic display type, no decorative or novelty typefaces.
+
+Layout errors: No floating dashboard mockups tilted at perspective angles, no every-pixel-filled collage density, no centered marketing copy with no hierarchical structure, no busy compositions that lack a clear focal subject, no decorative photography used as a backdrop behind copy.
+
+Tonal errors: No emojis in marketing copy, no exclamation marks, no Series A hype language, no overly casual or conversational tone, no fake-testimonial stock photography, no aspirational lifestyle imagery disconnected from real industry.
+
+Subject errors: No faceless silhouettes, no surgery imagery, no floating brains, no infinite data tunnels, no glowing AI personifications, no sci-fi futurism, no scenes of humans gazing in wonder at floating screens. The subject is always real industry, real environments, and real objects — examined through technical and diagrammatic precision.
