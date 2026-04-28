@@ -68,15 +68,32 @@ export default function GastronomyPage() {
   return (
     <>
       <section
-        className="pt-32 pb-20 relative grid-watermark"
-        style={{ backgroundColor: '#fff8f3' }}
+        className="pt-32 pb-20 relative overflow-hidden"
+        style={{ backgroundColor: '#001215' }}
       >
-        <div className="max-w-content mx-auto px-6 lg:px-8">
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+        >
+          <Image
+            src="/images/industries/gastronomy_ai_header_background.png"
+            alt=""
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="relative max-w-content mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="section-label mb-5">
+            <p
+              className="font-label text-xs font-semibold uppercase mb-5"
+              style={{ color: '#ff7a32', letterSpacing: '0.15em' }}
+            >
               Industry value chain — Gastronomy and small retail
             </p>
-            <div className="overflow-hidden mb-8">
+            <div className="overflow-hidden mb-8" style={{ color: '#fff8f3' }}>
               <SplitText
                 text="Gastronomy and small retail, measured."
                 tag="h1"
@@ -91,7 +108,10 @@ export default function GastronomyPage() {
                 className="page-title"
               />
             </div>
-            <div className="overflow-hidden mb-8">
+            <div
+              className="overflow-hidden mb-8"
+              style={{ color: 'rgba(255,248,243,0.85)' }}
+            >
               <SplitText
                 text="Inventory, demand, and service quality on one operational baseline — built where your team already works the floor."
                 tag="p"
@@ -111,7 +131,14 @@ export default function GastronomyPage() {
                 Book a 20-minute conversation
                 <Icon name="arrow_forward" style={{ fontSize: '18px' }} />
               </Link>
-              <Link href="/industries" className="btn-outlined">
+              <Link
+                href="/industries"
+                className="inline-flex items-center justify-center gap-2 font-body font-semibold px-6 py-3 rounded-xl border-2 transition-all duration-200"
+                style={{
+                  borderColor: 'rgba(255,248,243,0.5)',
+                  color: '#fff8f3',
+                }}
+              >
                 See all industries
               </Link>
             </div>
