@@ -13,7 +13,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#001215', color: '#fff8f3' }}>
+    <footer style={{ backgroundColor: '#fff8f3', color: '#001215' }}>
       {/* Main footer */}
       <div className="max-w-content mx-auto px-6 lg:px-8 py-14">
         <div className="flex flex-col items-center gap-8">
@@ -29,14 +29,14 @@ export default function Footer() {
               />
               <span
                 className="font-headline font-bold italic text-xl"
-                style={{ color: '#fff8f3' }}
+                style={{ color: '#001215' }}
               >
                 Clinic of AI
               </span>
             </div>
             <p
               className="font-label text-xs tracking-widest uppercase"
-              style={{ color: 'rgba(255,248,243,0.4)', letterSpacing: '0.2em' }}
+              style={{ color: '#a14000', letterSpacing: '0.2em' }}
             >
               Forward Deployed AI Engineers
             </p>
@@ -48,8 +48,8 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="font-body font-medium text-body-sm transition-colors duration-200 hover:text-white"
-                    style={{ color: 'rgba(255,248,243,0.6)' }}
+                    className="font-body font-medium text-body-sm transition-colors duration-200 hover:text-secondary"
+                    style={{ color: '#2d4a4d' }}
                   >
                     {link.label}
                   </Link>
@@ -63,18 +63,18 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         className="border-t"
-        style={{ borderColor: 'rgba(255,248,243,0.08)' }}
+        style={{ borderColor: 'rgba(0,18,21,0.08)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p
             className="font-body text-body-sm"
-            style={{ color: 'rgba(255,248,243,0.4)' }}
+            style={{ color: '#2d4a4d' }}
           >
             &copy; {new Date().getFullYear()} Clinic of AI. All rights reserved.
           </p>
           <p
             className="font-label text-xs tracking-widest uppercase"
-            style={{ color: 'rgba(255,248,243,0.25)', letterSpacing: '0.15em' }}
+            style={{ color: '#a14000', letterSpacing: '0.15em' }}
           >
             20 minutes. No pitch deck.
           </p>

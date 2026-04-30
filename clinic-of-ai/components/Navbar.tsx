@@ -156,16 +156,21 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled ? 'shadow-ambient-sm' : ''
-        }`}
-        style={{
-          backgroundColor: '#fff8f3',
-          borderBottom: '1px solid rgba(0, 18, 21, 0.05)',
-        }}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       >
-        <div className="max-w-content mx-auto px-6 lg:px-8">
-          <div className="flex items-center h-16">
+        <div className="max-w-content mx-auto px-4 sm:px-6 lg:px-8 pt-1.5 sm:pt-2">
+          <div
+            className={`flex items-center h-14 px-4 sm:px-6 rounded-full transition-all duration-300 ${
+              scrolled ? 'shadow-ambient-md' : 'shadow-ambient-sm'
+            }`}
+            style={{
+              backgroundColor: '#fff8f3',
+              border: '1px solid rgba(0, 18, 21, 0.08)',
+              boxShadow: scrolled
+                ? '0 12px 40px rgba(0, 18, 21, 0.10)'
+                : '0 6px 24px rgba(0, 18, 21, 0.06)',
+            }}
+          >
             {/* Logo */}
             <Link
               href="/"
@@ -377,7 +382,7 @@ export default function Navbar() {
         <div
           id="mobile-main-menu"
           ref={mobileMenuRef}
-          className="fixed inset-0 z-40 flex flex-col pt-16"
+          className="fixed inset-0 z-40 flex flex-col pt-20"
           style={{
             backgroundColor: 'rgba(255, 248, 243, 0.98)',
             backdropFilter: 'blur(20px)',

@@ -409,11 +409,11 @@ export default function HomePage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#fff8f3', borderTop: '1px solid rgba(200,168,130,0.2)' }}
+        style={{ backgroundColor: '#001022', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: '#2d4a4d' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
               20 minutes. No pitch deck. We will tell you in 5 if we can help.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
