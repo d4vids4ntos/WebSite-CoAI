@@ -11,12 +11,12 @@ To break the "template" look, we employ **Intentional Asymmetry**. Hero sections
 
 ## 2. Colors
 
-The palette is anchored in high-contrast sophistication, using deep, scholarly navies and charcoals punctuated by technical accents.
+The palette is anchored in airy, editorial sophistication — clean warm slates rather than near-black charcoals, punctuated by technical orange accents.
 
 ### Palette Roles
-*   **Primary (`#001215` / `#002a2e`):** Used for deep backgrounds and high-density technical areas.
+*   **Primary (`#3d4a5c` / `#5b6b7e`):** Warm slate. Used for typography, structural strokes, and grounded technical areas. Bright enough to keep compositions breathing.
 *   **Secondary (`#a14000` / `#ff7a32`):** Our "Energetic Orange." Use this for critical CTAs and highlight nodes in circuit motifs.
-*   **Tertiary (`#001022`):** Deep charcoal for grounding UI elements.
+*   **Tertiary (`#3d4a5c`):** Warm slate for grounding UI elements — soft ink, never near-black.
 *   **Surface (`#fff8f3`):** The "Off-White Vellum." This is our primary canvas, often paired with the signature grid pattern.
 
 ### The "No-Line" Rule
@@ -30,7 +30,7 @@ Treat the UI as physical layers.
 Nesting these creates a natural sense of importance. An inner card should use a higher tier than its parent container to "lift" toward the user.
 
 ### The "Glass & Gradient" Rule
-For floating panels or navigation headers, use **Glassmorphism**. Apply `surface` colors at 80% opacity with a `backdrop-blur(12px)`. To add "soul," use subtle gradients from `primary` to `primary_container` for hero backgrounds, mimicking the glow of a high-end monitor in a dimly lit studio.
+For floating panels or navigation headers, use **Glassmorphism**. Apply `surface` colors at 80% opacity with a `backdrop-blur(12px)`. To add "soul," use subtle gradients from `primary` (`#3d4a5c`) to `primary_container` (`#5b6b7e`) for hero backgrounds — a quiet slate wash, not a moody monitor glow.
 
 ---
 
@@ -53,7 +53,7 @@ Avoid "Drop Shadows" as a default. Instead, achieve depth through **Tonal Layeri
 Where floating is necessary (e.g., a primary modal), shadows must be:
 *   **Extra-diffused:** Blur radius > 24px.
 *   **Low-opacity:** 4%–8% alpha.
-*   **Tinted:** Use a darkened version of the background color (e.g., a navy-tinted shadow on a charcoal background) to mimic natural light.
+*   **Tinted:** Use a slightly darker version of the background color (e.g., a slate-tinted shadow on a beige surface) to mimic natural light.
 
 ### The "Ghost Border" Fallback
 If accessibility requires a container definition, use a **Ghost Border**: the `outline-variant` token at 15% opacity. Never use 100% opaque, high-contrast lines.
@@ -68,7 +68,7 @@ If accessibility requires a container definition, use a **Ghost Border**: the `o
 *   **Tertiary:** No fill. `label-md` (Space Grotesk) in `primary` with a hexagonal icon suffix.
 
 ### Input Fields
-Avoid the "boxed" look. Use a `surface-variant` background with a bottom-only `outline` at 20% opacity. Upon focus, transition the bottom border to `on_primary_container` (Teal).
+Avoid the "boxed" look. Use a `surface-variant` background with a bottom-only `outline` at 20% opacity. Upon focus, transition the bottom border to `on_primary_container` (warm slate `#3d4a5c`).
 
 ### Cards & Lists
 **Forbid divider lines.** Separate list items using the Spacing Scale (e.g., `12` or `3rem` gaps) or subtle background alternates. 
@@ -88,5 +88,5 @@ For status indicators or tags, use a clipped hexagonal shape rather than a stand
 
 ### Don’t:
 *   **DON’T** use standard 90-degree corners for large image containers; use the `xl` (0.75rem) roundedness to soften the technical edge.
-*   **DON’T** use pure black (`#000000`). Always use `primary` (`#001215`) to maintain tonal depth.
+*   **DON’T** use pure black (`#000000`) or near-black tones. Always use `primary` (`#3d4a5c`) so type and lines stay airy and editorial.
 *   **DON’T** crowd the layout. If in doubt, increase spacing by two increments on the scale. High-end design requires "Oxygen."

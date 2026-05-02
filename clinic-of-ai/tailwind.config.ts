@@ -23,6 +23,14 @@ const config: Config = {
         'on-surface': '#001215',
         'on-surface-variant': '#2d4a4d',
         'outline-variant': '#c8a882',
+        accent: {
+          mint: { surface: '#dde8dc', pill: '#7fa890' },
+          peach: { surface: '#fde4d0', pill: '#ff7a32' },
+          blush: { surface: '#fcd6cf', pill: '#e8755e' },
+          sky: { surface: '#dce8ee', pill: '#5b8caf' },
+          lilac: { surface: '#e3dceb', pill: '#8a72b3' },
+          cream: { surface: '#fff2e2', pill: '#3d4a5c' },
+        },
       },
       fontFamily: {
         headline: ['Newsreader', 'Georgia', 'serif'],
