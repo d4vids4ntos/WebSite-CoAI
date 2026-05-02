@@ -13,7 +13,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: '#fff8f3', color: '#001215' }}>
+    <footer style={{ backgroundColor: '#fff8f3', color: '#3d4a5c' }}>
       {/* Main footer */}
       <div className="max-w-content mx-auto px-6 lg:px-8 py-14">
         <div className="flex flex-col items-center gap-8">
@@ -28,8 +28,8 @@ export default function Footer() {
                 className="rounded-lg"
               />
               <span
-                className="font-headline font-bold italic text-xl"
-                style={{ color: '#001215' }}
+                className="font-headline font-bold text-xl"
+                style={{ color: '#3d4a5c' }}
               >
                 Clinic of AI
               </span>
@@ -63,7 +63,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div
         className="border-t"
-        style={{ borderColor: 'rgba(0,18,21,0.08)' }}
+        style={{ borderColor: 'rgba(61,74,92,0.08)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p

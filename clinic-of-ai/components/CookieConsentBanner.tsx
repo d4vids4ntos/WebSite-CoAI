@@ -53,7 +53,7 @@ export default function CookieConsentBanner() {
       className="fixed bottom-4 left-4 right-4 z-50 rounded-2xl p-5 md:p-6"
       style={{
         backgroundColor: '#fff8f3',
-        boxShadow: '0 12px 40px rgba(0,18,21,0.12)',
+        boxShadow: '0 12px 40px rgba(61,74,92,0.12)',
       }}
       role="dialog"
       aria-live="polite"

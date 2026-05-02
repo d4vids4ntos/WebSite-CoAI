@@ -28,13 +28,13 @@ export default function SignInPage() {
           className="rounded-2xl p-10"
           style={{
             backgroundColor: '#ffffff',
-            boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
+            boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
             border: '1px solid rgba(200,168,130,0.15)',
           }}
         >
           <h1
             className="font-headline font-bold text-2xl mb-2 text-center"
-            style={{ color: '#001215' }}
+            style={{ color: '#3d4a5c' }}
           >
             Create your account
           </h1>
@@ -42,7 +42,7 @@ export default function SignInPage() {
             className="font-body text-body-sm text-center mb-8"
             style={{ color: '#2d4a4d' }}
           >
-            Join Clinic of AI and start your transformation
+            Join Clinic of AI and begin your engagement
           </p>
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">

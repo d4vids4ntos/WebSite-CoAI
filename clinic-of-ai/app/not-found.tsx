@@ -21,7 +21,7 @@ export default function NotFound() {
         </p>
         <h1
           className="page-title mb-6"
-          style={{ color: '#001215', letterSpacing: '-0.02em' }}
+          style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
         >
           This path does not exist.
         </h1>

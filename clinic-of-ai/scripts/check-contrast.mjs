@@ -32,10 +32,10 @@ function contrastRatio(fg, bg) {
 }
 
 const checks = [
-  { fg: '#001215', bg: '#fff8f3', min: 4.5, label: 'Primary text on surface' },
+  { fg: '#3d4a5c', bg: '#fff8f3', min: 4.5, label: 'Primary text on surface' },
   { fg: '#2d4a4d', bg: '#fff8f3', min: 4.5, label: 'Body variant text on surface' },
   { fg: '#a14000', bg: '#fff8f3', min: 4.5, label: 'Secondary accent text on surface' },
-  { fg: '#fff8f3', bg: '#001215', min: 4.5, label: 'Inverse text on primary background' },
+  { fg: '#fff8f3', bg: '#3d4a5c', min: 4.5, label: 'Inverse text on primary background' },
   { fg: '#fff8f3', bg: '#a14000', min: 4.5, label: 'Button text on secondary button' },
   { fg: '#2d4a4d', bg: '#fff5e8', min: 4.5, label: 'Body text on surface container' },
 ]

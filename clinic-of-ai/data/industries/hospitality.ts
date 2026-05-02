@@ -3,6 +3,7 @@ import type { IndustryPageData } from './types'
 export const hospitality: IndustryPageData = {
   slug: 'hospitality',
   name: 'Hospitality',
+  heroAccent: 'peach',
   heroSummary:
     'Guest experience, scheduling, and revenue running on one operational rhythm — built where your team already works.',
   introTagline: 'At full capacity',

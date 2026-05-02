@@ -151,12 +151,12 @@ export default function IndustriesPage() {
                 className="rounded-2xl p-8 lg:p-10 scroll-mt-24"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
-                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
+                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
                 }}
               >
                 <div className="mb-6">
-                  <h3 className="font-headline font-bold text-xl" style={{ color: '#001215' }}>{industry.title}</h3>
-                  <p className="font-body text-body-sm italic" style={{ color: '#a14000' }}>{industry.subtitle}</p>
+                  <h3 className="font-headline font-bold text-xl" style={{ color: '#3d4a5c' }}>{industry.title}</h3>
+                  <p className="font-body text-body-sm" style={{ color: '#a14000' }}>{industry.subtitle}</p>
                 </div>
 
                 <div
@@ -208,7 +208,7 @@ export default function IndustriesPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

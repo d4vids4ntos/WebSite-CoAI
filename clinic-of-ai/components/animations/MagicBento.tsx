@@ -29,17 +29,17 @@ export interface BentoProps {
 
 const DEFAULT_PARTICLE_COUNT = 12
 const DEFAULT_SPOTLIGHT_RADIUS = 300
-const DEFAULT_GLOW_COLOR = '132, 0, 255'
+const DEFAULT_GLOW_COLOR = '61, 74, 92'
 const MOBILE_BREAKPOINT = 768
 
 // CoAI default cards — override via the `cards` prop
 const DEFAULT_CARD_DATA: BentoCardProps[] = [
-  { color: '#060010', title: 'Analytics', description: 'Track user behavior', label: 'Insights' },
-  { color: '#060010', title: 'Dashboard', description: 'Centralized data view', label: 'Overview' },
-  { color: '#060010', title: 'Collaboration', description: 'Work together seamlessly', label: 'Teamwork' },
-  { color: '#060010', title: 'Automation', description: 'Streamline workflows', label: 'Efficiency' },
-  { color: '#060010', title: 'Integration', description: 'Connect favorite tools', label: 'Connectivity' },
-  { color: '#060010', title: 'Security', description: 'Enterprise-grade protection', label: 'Protection' },
+  { color: '#ffffff', title: 'Analytics', description: 'Track user behavior', label: 'Insights' },
+  { color: '#ffffff', title: 'Dashboard', description: 'Centralized data view', label: 'Overview' },
+  { color: '#ffffff', title: 'Collaboration', description: 'Work together seamlessly', label: 'Teamwork' },
+  { color: '#ffffff', title: 'Automation', description: 'Streamline workflows', label: 'Efficiency' },
+  { color: '#ffffff', title: 'Integration', description: 'Connect favorite tools', label: 'Connectivity' },
+  { color: '#ffffff', title: 'Security', description: 'Enterprise-grade protection', label: 'Protection' },
 ]
 
 // ─── Helpers ────────────────────────────────────────────────────────────────

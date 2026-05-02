@@ -19,7 +19,7 @@ export default function OpenGraphImage() {
           justifyContent: 'space-between',
           padding: '56px',
           background: '#fff8f3',
-          color: '#001215',
+          color: '#3d4a5c',
           fontFamily: 'Arial, sans-serif',
         }}
       >
@@ -31,7 +31,7 @@ export default function OpenGraphImage() {
             color: '#a14000',
           }}
         >
-          Systems Architected
+          Systems architected
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20, maxWidth: 1000 }}>
@@ -41,8 +41,8 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        <div style={{ fontSize: 24, color: '#2d4a4d' }}>
-          Forward Deployed AI Engineers for measurable operational transformation
+        <div style={{ fontSize: 24, color: '#5b6b7e' }}>
+          Forward Deployed AI Engineers for measurable operational improvement
         </div>
       </div>
     ),

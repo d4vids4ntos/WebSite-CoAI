@@ -96,7 +96,7 @@ export default function ContactPage() {
                 style={{ opacity: 0.05 }}
               >
                 <svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 0 L0 96 L64 96 L64 32 L128 32 L128 0" stroke="#001215" strokeWidth="1" fill="none" />
+                  <path d="M0 0 L0 96 L64 96 L64 32 L128 32 L128 0" stroke="#3d4a5c" strokeWidth="1" fill="none" />
                   <circle cx="64" cy="96" r="4" fill="#a14000" />
                 </svg>
               </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                 }}
               >
                 <Icon name="verified" style={{ fontSize: '18px', color: '#a14000' }} />
-                <span className="font-body text-body-sm" style={{ color: '#001215' }}>
+                <span className="font-body text-body-sm" style={{ color: '#3d4a5c' }}>
                   Working with teams across Europe.
                 </span>
               </div>
@@ -182,27 +182,21 @@ export default function ContactPage() {
                   className="rounded-2xl p-12 text-center"
                   style={{
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
+                    boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
                   role="status"
                   aria-live="polite"
                 >
-                  <div
-                    className="w-20 h-20 hex-clip flex items-center justify-center mx-auto mb-6"
-                    style={{ backgroundColor: '#a14000' }}
-                  >
-                    <Icon name="check" style={{ fontSize: '36px', color: '#fff' }} />
-                  </div>
                   <h2
                     className="font-headline font-bold text-3xl mb-4"
-                    style={{ color: '#001215' }}
+                    style={{ color: '#3d4a5c' }}
                   >
                     Conversation Scheduled.
                   </h2>
                   <p className="font-body text-body-md mb-3" style={{ color: '#2d4a4d' }}>
                     Your session is scheduled for{' '}
-                    <strong style={{ color: '#001215' }}>
+                    <strong style={{ color: '#3d4a5c' }}>
                       April {selectedDay}, 2026 at {selectedTime}
                     </strong>
                     .
@@ -221,7 +215,7 @@ export default function ContactPage() {
                   className="rounded-2xl overflow-hidden"
                   style={{
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 20px 60px rgba(0,18,21,0.08)',
+                    boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
                 >
@@ -232,7 +226,7 @@ export default function ContactPage() {
                     <div className="flex items-center justify-between">
                       <h2
                         className="font-headline font-bold text-xl"
-                        style={{ color: '#001215' }}
+                        style={{ color: '#3d4a5c' }}
                       >
                         Book your 20-minute session
                       </h2>
@@ -266,7 +260,7 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#001215' }}
+                          style={{ color: '#3d4a5c' }}
                         >
                           Select date
                         </p>
@@ -322,7 +316,7 @@ export default function ContactPage() {
                                   color: isSelected
                                     ? '#ffffff'
                                     : isAvailable
-                                    ? '#001215'
+                                    ? '#3d4a5c'
                                     : 'rgba(45,74,77,0.25)',
                                   cursor: isAvailable ? 'pointer' : 'default',
                                 }}
@@ -358,7 +352,7 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#001215' }}
+                          style={{ color: '#3d4a5c' }}
                         >
                           Select time
                         </p>
@@ -380,7 +374,7 @@ export default function ContactPage() {
                               aria-pressed={isSelected}
                               style={{
                                 backgroundColor: isSelected ? '#a14000' : '#fff5e8',
-                                color: isSelected ? '#ffffff' : '#001215',
+                                color: isSelected ? '#ffffff' : '#3d4a5c',
                                 boxShadow: isSelected
                                   ? '0 4px 12px rgba(161,64,0,0.25)'
                                   : 'none',
@@ -407,7 +401,7 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#001215' }}
+                          style={{ color: '#3d4a5c' }}
                         >
                           Your details
                         </p>
@@ -530,7 +524,7 @@ export default function ContactPage() {
                               className="w-full bg-transparent font-body text-on-surface text-body-md py-3 outline-none appearance-none pr-8 cursor-pointer"
                               style={{
                                 borderBottom: '2px solid rgba(200,168,130,0.4)',
-                                color: '#001215',
+                                color: '#3d4a5c',
                               }}
                             >
                               {FOCUS_OPTIONS.map((opt) => (
@@ -556,7 +550,7 @@ export default function ContactPage() {
                           <Icon name="calendar_today" className="shrink-0" style={{ fontSize: '18px', color: '#a14000' }} />
                           <p
                             className="font-body text-body-sm"
-                            style={{ color: '#001215' }}
+                            style={{ color: '#3d4a5c' }}
                           >
                             April {selectedDay} at {selectedTime} - 20-minute conversation
                           </p>
@@ -641,7 +635,7 @@ export default function ContactPage() {
                 <div>
                   <p
                     className="font-body font-semibold text-body-md mb-1"
-                    style={{ color: '#001215' }}
+                    style={{ color: '#3d4a5c' }}
                   >
                     {item.title}
                   </p>

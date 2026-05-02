@@ -184,8 +184,8 @@ export default function AboutPage() {
                 key={member.name}
                 className="rounded-2xl overflow-hidden"
                 style={{
-                  backgroundColor: member.featured ? '#001215' : '#ffffff',
-                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
+                  backgroundColor: member.featured ? '#3d4a5c' : '#ffffff',
+                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
                 }}
               >
                 <div className="p-8 lg:p-10 flex flex-col gap-6">
@@ -195,7 +195,7 @@ export default function AboutPage() {
                       style={{
                         backgroundColor: member.featured
                           ? 'rgba(161,64,0,0.3)'
-                          : '#001215',
+                          : '#3d4a5c',
                       }}
                     >
                       {member.icon === 'neurology' ? (
@@ -213,7 +213,7 @@ export default function AboutPage() {
                     <div>
                       <p
                         className="font-headline font-bold text-xl"
-                        style={{ color: member.featured ? '#fff8f3' : '#001215' }}
+                        style={{ color: member.featured ? '#fff8f3' : '#3d4a5c' }}
                       >
                         {member.name}
                       </p>
@@ -316,10 +316,10 @@ export default function AboutPage() {
                   <div
                     className="absolute -left-12 top-1 w-8 h-8 rounded-full flex items-center justify-center"
                     style={{
-                      backgroundColor: item.highlight ? '#a14000' : '#001215',
+                      backgroundColor: item.highlight ? '#a14000' : '#3d4a5c',
                       boxShadow: item.highlight
                         ? '0 0 0 4px rgba(161,64,0,0.15)'
-                        : '0 0 0 4px rgba(0,18,21,0.08)',
+                        : '0 0 0 4px rgba(61,74,92,0.08)',
                     }}
                   >
                     {item.icon === 'neurology' ? (
@@ -336,7 +336,7 @@ export default function AboutPage() {
                     className="rounded-2xl p-7"
                     style={{
                       backgroundColor: item.highlight ? '#fff5e8' : '#ffffff',
-                      boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
+                      boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
                       border: item.highlight
                         ? '1px solid rgba(161,64,0,0.15)'
                         : '1px solid rgba(200,168,130,0.1)',
@@ -353,7 +353,7 @@ export default function AboutPage() {
                     </p>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
-                      style={{ color: '#001215' }}
+                      style={{ color: '#3d4a5c' }}
                     >
                       {item.title}
                     </h3>
@@ -398,19 +398,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 max-w-3xl mx-auto">
             {values.map((value) => (
               <div key={value.title} className="flex items-start gap-4">
-                <div
-                  className="w-10 h-10 hex-clip flex items-center justify-center shrink-0 mt-0.5"
-                  style={{ backgroundColor: '#001215' }}
-                >
-                  <Icon
-                    name={value.icon}
-                    style={{ fontSize: '18px', color: '#fff8f3' }}
-                  />
-                </div>
                 <div>
                   <h3
                     className="font-headline font-bold text-lg mb-1"
-                    style={{ color: '#001215' }}
+                    style={{ color: '#3d4a5c' }}
                   >
                     {value.title}
                   </h3>
@@ -436,13 +427,13 @@ export default function AboutPage() {
             className="rounded-2xl p-8 lg:p-10"
             style={{
               backgroundColor: '#ffffff',
-              boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+              boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
             }}
           >
             <p className="section-label mb-4">Client and Partner Proof</p>
             <h2
               className="font-headline font-bold text-2xl mb-4"
-              style={{ color: '#001215' }}
+              style={{ color: '#3d4a5c' }}
             >
               References can be shared in qualified conversations.
             </h2>
@@ -477,7 +468,7 @@ export default function AboutPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

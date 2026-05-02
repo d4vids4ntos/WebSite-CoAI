@@ -23,6 +23,7 @@ export interface IndustryValueChainCategory {
 export interface IndustryPageData {
   slug: string
   name: string
+  heroAccent: AccentName
   heroSummary: string
   introTagline: string
   introBody: string

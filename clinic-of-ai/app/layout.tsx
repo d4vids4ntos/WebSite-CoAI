@@ -11,7 +11,7 @@ import { SITE_DESCRIPTION, SITE_NAME, getSiteUrl } from '@/lib/site'
 const newsreader = Newsreader({
   subsets: ['latin'],
   weight: ['400', '700'],
-  style: ['normal', 'italic'],
+  style: ['normal'],
   variable: '--font-newsreader',
   display: 'swap',
 })
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   keywords: [
     'AI consulting',
-    'AI transformation',
+    'AI adoption',
     'AI upskilling for SMBs',
     'systematic AI adoption',
     'AI value chain',
@@ -126,7 +126,7 @@ export default function RootLayout({
       className={`${newsreader.variable} ${manrope.variable} ${spaceGrotesk.variable}`}
     >
       <head />
-      <body className="text-on-surface font-body antialiased" style={{ backgroundColor: '#001215' }}>
+      <body className="text-on-surface font-body antialiased bg-surface">
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
@@ -138,7 +138,7 @@ export default function RootLayout({
           <Analytics />
         </Suspense>
         <Navbar />
-        <main id="main-content" style={{ backgroundColor: '#001215' }}>
+        <main id="main-content" className="bg-surface">
           {children}
         </main>
         <Footer />

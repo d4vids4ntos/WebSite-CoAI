@@ -16,7 +16,7 @@ export default async function TermsPage() {
         <p className="section-label mb-4">Legal</p>
         <h1
           className="page-title mb-8"
-          style={{ color: '#001215', letterSpacing: '-0.02em' }}
+          style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
         >
           Terms of Service
         </h1>
@@ -29,15 +29,15 @@ export default async function TermsPage() {
 
         <div className="flex flex-col gap-8 font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
               1. Services
             </h2>
             <p>
-              Clinic of AI provides AI transformation consulting, workforce upskilling programs, and educational services. These terms govern your use of our website and engagement with our services.
+              Clinic of AI provides AI adoption consulting, workforce upskilling programs, and educational services. These terms govern your use of our website and engagement with our services.
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
               2. Bookings and Cancellations
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default async function TermsPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
               3. Intellectual Property
             </h2>
             <p>
@@ -53,7 +53,7 @@ export default async function TermsPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#001215' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
               4. Contact
             </h2>
             <p>

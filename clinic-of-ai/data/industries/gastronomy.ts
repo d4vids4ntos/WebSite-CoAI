@@ -3,6 +3,7 @@ import type { IndustryPageData } from './types'
 export const gastronomy: IndustryPageData = {
   slug: 'gastronomy',
   name: 'Gastronomy',
+  heroAccent: 'blush',
   heroSummary:
     'Inventory, demand, and service quality on one operational baseline — built where your team already works the floor.',
   introTagline: 'Small retail, measured',

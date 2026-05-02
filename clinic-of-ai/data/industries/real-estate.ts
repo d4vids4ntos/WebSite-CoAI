@@ -3,6 +3,7 @@ import type { IndustryPageData } from './types'
 export const realEstate: IndustryPageData = {
   slug: 'real-estate',
   name: 'Real Estate',
+  heroAccent: 'sky',
   heroSummary:
     'Asset performance, portfolio risk, and market intelligence connected into one operational view your team runs.',
   introTagline: 'Diagnosed',

@@ -25,6 +25,42 @@ const ACCENT_PILL: Record<AccentName, string> = {
   lilac: '#8a72b3',
 }
 
+type ColorPair = { surface: string; pill: string }
+
+// Each industry's 4 solution cards use four distinct shades of the hero hue.
+const INDUSTRY_CARD_PALETTES: Record<AccentName, [ColorPair, ColorPair, ColorPair, ColorPair]> = {
+  sky: [
+    { surface: '#dce8ee', pill: '#5b8caf' },
+    { surface: '#cbe0e8', pill: '#4a8aa6' },
+    { surface: '#dde3ed', pill: '#6b7d96' },
+    { surface: '#c8d8e3', pill: '#3d6f8c' },
+  ],
+  peach: [
+    { surface: '#fde4d0', pill: '#ff7a32' },
+    { surface: '#fcdcb8', pill: '#e69538' },
+    { surface: '#fcd0b8', pill: '#dc6b3a' },
+    { surface: '#f5d6c0', pill: '#cc7848' },
+  ],
+  blush: [
+    { surface: '#fcd6cf', pill: '#e8755e' },
+    { surface: '#fbc4b8', pill: '#d65c47' },
+    { surface: '#fcdfd5', pill: '#dc8576' },
+    { surface: '#f7c0b3', pill: '#c95a47' },
+  ],
+  mint: [
+    { surface: '#dde8dc', pill: '#7fa890' },
+    { surface: '#d0e2d3', pill: '#6c9a7d' },
+    { surface: '#dde6d0', pill: '#80a070' },
+    { surface: '#cce0d4', pill: '#5e8e7a' },
+  ],
+  lilac: [
+    { surface: '#e3dceb', pill: '#8a72b3' },
+    { surface: '#d8d0e6', pill: '#7561a3' },
+    { surface: '#e8e0eb', pill: '#9580b3' },
+    { surface: '#d0c8e0', pill: '#6c5b96' },
+  ],
+}
+
 const SLATE = '#3d4a5c'
 const SLATE_SOFT = '#5b6b7e'
 
@@ -38,7 +74,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
       {/* Section 1 — Hero band */}
       <section
         className="pt-32 pb-20 lg:pb-28 relative overflow-hidden"
-        style={{ backgroundColor: ACCENT_SURFACE.mint }}
+        style={{ backgroundColor: ACCENT_SURFACE[data.heroAccent] }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8 text-center relative z-10">
           <p
@@ -69,14 +105,6 @@ export default function IndustryPage({ data }: IndustryPageProps) {
             {data.heroSummary}
           </p>
         </div>
-        {/* Decorative geometric shape — right edge, hidden on small */}
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 200 200"
-          className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-32 lg:w-48 opacity-70 pointer-events-none"
-        >
-          <polygon points="100,10 190,55 190,145 100,190 10,145 10,55" fill={ACCENT_PILL.mint} />
-        </svg>
       </section>
 
       {/* Section 2 — Two-column intro */}
@@ -260,15 +288,19 @@ export default function IndustryPage({ data }: IndustryPageProps) {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {data.solutions.map((s) => (
-              <SolutionCard key={s.id} solution={s} />
+            {data.solutions.map((s, i) => (
+              <SolutionCard
+                key={s.id}
+                solution={s}
+                colors={INDUSTRY_CARD_PALETTES[data.heroAccent][i % 4]}
+              />
             ))}
           </div>
 
-          {/* Full module card (mint, full width) */}
+          {/* Full module card — matches the industry hero accent */}
           <article
-            className="relative overflow-hidden rounded-2xl p-10 lg:p-12 mt-6 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-center"
-            style={{ backgroundColor: ACCENT_SURFACE.mint }}
+            className="relative overflow-hidden rounded-2xl p-10 lg:p-12 mt-6 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-center cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:brightness-95"
+            style={{ backgroundColor: ACCENT_SURFACE[data.heroAccent] }}
           >
             <div className="relative z-10">
               <span
@@ -298,7 +330,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
               <button
                 type="button"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-body font-semibold text-white transition-transform hover:translate-x-0.5"
-                style={{ backgroundColor: ACCENT_PILL.mint }}
+                style={{ backgroundColor: ACCENT_PILL[data.heroAccent] }}
               >
                 See more
                 <Icon name="arrow_forward" style={{ fontSize: 18 }} />
@@ -308,7 +340,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
               aria-hidden="true"
               className="absolute -bottom-12 -right-12 w-72 h-72 opacity-55 pointer-events-none"
               style={{
-                backgroundColor: ACCENT_PILL.mint,
+                backgroundColor: ACCENT_PILL[data.heroAccent],
                 borderRadius: '50% 40% 60% 30%',
                 filter: 'blur(28px)',
               }}
@@ -342,15 +374,19 @@ export default function IndustryPage({ data }: IndustryPageProps) {
             {data.steps.map((step, i) => (
               <li key={step.id} className="relative">
                 <div
-                  className="absolute -left-[52px] top-0 w-10 h-10 grid place-items-center rounded-lg"
+                  className="absolute -left-[52px] top-0 w-10 h-10 grid place-items-center rounded-lg overflow-hidden"
                   style={{
                     backgroundColor: '#ffffff',
                     border: `1px solid rgba(61,74,92,0.15)`,
                   }}
                 >
-                  <Icon
-                    name="hub"
-                    style={{ fontSize: 20, color: SLATE }}
+                  <Image
+                    src="/logo.png"
+                    alt=""
+                    width={28}
+                    height={28}
+                    aria-hidden="true"
+                    className="w-7 h-7 object-contain"
                   />
                 </div>
                 <h3
@@ -410,12 +446,12 @@ export default function IndustryPage({ data }: IndustryPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-body font-semibold text-white transition-colors"
-                style={{ backgroundColor: SLATE }}
+                style={{ backgroundColor: '#ff7a32' }}
                 onMouseEnter={(e) =>
-                  (e.currentTarget.style.backgroundColor = SLATE_SOFT)
+                  (e.currentTarget.style.backgroundColor = '#a14000')
                 }
                 onMouseLeave={(e) =>
-                  (e.currentTarget.style.backgroundColor = SLATE)
+                  (e.currentTarget.style.backgroundColor = '#ff7a32')
                 }
               >
                 Book a call
@@ -438,13 +474,18 @@ export default function IndustryPage({ data }: IndustryPageProps) {
   )
 }
 
-function SolutionCard({ solution }: { solution: IndustrySolution }) {
-  const surface = ACCENT_SURFACE[solution.accent]
-  const pill = ACCENT_PILL[solution.accent]
+function SolutionCard({
+  solution,
+  colors,
+}: {
+  solution: IndustrySolution
+  colors: ColorPair
+}) {
+  const { surface, pill } = colors
 
   return (
     <article
-      className="relative overflow-hidden rounded-2xl p-8 min-h-[260px] flex flex-col"
+      className="relative overflow-hidden rounded-2xl p-8 min-h-[260px] flex flex-col cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:brightness-95"
       style={{ backgroundColor: surface }}
     >
       <div className="relative z-10 flex flex-col h-full">

@@ -10,7 +10,7 @@ const capabilities = [
     label: 'Technical Breadth',
     title: 'The full technology landscape — not just the latest model.',
     description:
-      'From legacy machine learning and data engineering to cutting-edge generative AI, autonomous agents, and on-premise deployment. A Forward Deployed AI Engineer selects the right solution for the problem, not the trendy one.',
+      'From legacy machine learning and data engineering to applied generative AI, autonomous agents, and on-premise deployment. A Forward Deployed AI Engineer selects the right solution for the problem, not the trendy one.',
     details: [
       'Industrial ML and predictive maintenance',
       'Generative AI application development',
@@ -58,7 +58,7 @@ const comparisonRows = [
   { traditional: 'Generic enablement sessions', clinic: 'Role-based capability transfer' },
   { traditional: 'Short-term output focus', clinic: 'Long-term continuity architecture' },
   { traditional: 'Vendor dependency over time', clinic: 'Team ownership over time' },
-  { traditional: 'Deck-driven transformation', clinic: 'Operational transformation' },
+  { traditional: 'Deck-driven theatre', clinic: 'Operational improvement' },
 ]
 
 export default function ApproachPage() {
@@ -143,7 +143,7 @@ export default function ApproachPage() {
                 className="rounded-2xl overflow-hidden"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
-                  boxShadow: '0 4px 16px rgba(0,18,21,0.04)',
+                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
                 }}
               >
                 <div className="p-8 lg:p-10">
@@ -159,18 +159,19 @@ export default function ApproachPage() {
                         {cap.number}
                       </div>
                       <div>
-                        <p className="section-label mb-1">{cap.label}</p>
-                        <Icon
-                          name={cap.icon}
-                          style={{ fontSize: '20px', color: '#a14000' }}
-                        />
+                        <p
+                          className="font-body font-semibold text-xs uppercase"
+                          style={{ color: '#a14000', letterSpacing: '0.15em' }}
+                        >
+                          {cap.label}
+                        </p>
                       </div>
                     </div>
 
                     <div className="lg:col-span-5 flex flex-col gap-4">
                       <h3
                         className="font-headline font-bold text-2xl"
-                        style={{ color: '#001215' }}
+                        style={{ color: '#3d4a5c' }}
                       >
                         {cap.title}
                       </h3>
@@ -276,8 +277,8 @@ export default function ApproachPage() {
                   Data Anchor
                 </p>
                 <p
-                  className="font-body text-body-md leading-relaxed italic"
-                  style={{ color: '#001215' }}
+                  className="font-body text-body-md leading-relaxed"
+                  style={{ color: '#3d4a5c' }}
                 >
                   &ldquo;95% of generative AI pilots at companies fail before reaching
                   production.&rdquo;
@@ -298,8 +299,8 @@ export default function ApproachPage() {
                   Data Anchor
                 </p>
                 <p
-                  className="font-body text-body-md leading-relaxed italic"
-                  style={{ color: '#001215' }}
+                  className="font-body text-body-md leading-relaxed"
+                  style={{ color: '#3d4a5c' }}
                 >
                   &ldquo;42% of companies have abandoned the majority of their AI initiatives,
                   up from 17%.&rdquo;
@@ -320,8 +321,8 @@ export default function ApproachPage() {
                   Data Anchor
                 </p>
                 <p
-                  className="font-body text-body-md leading-relaxed italic"
-                  style={{ color: '#001215' }}
+                  className="font-body text-body-md leading-relaxed"
+                  style={{ color: '#3d4a5c' }}
                 >
                   &ldquo;Enterprise-wide AI initiatives achieve only 5.9% ROI despite requiring
                   10% capital investment.&rdquo;
@@ -411,7 +412,7 @@ export default function ApproachPage() {
                   />
                   <span
                     className="font-body text-body-sm font-medium"
-                    style={{ color: '#001215' }}
+                    style={{ color: '#3d4a5c' }}
                   >
                     {row.clinic}
                   </span>
@@ -424,7 +425,7 @@ export default function ApproachPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

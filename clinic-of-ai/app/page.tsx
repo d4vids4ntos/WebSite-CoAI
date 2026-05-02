@@ -40,11 +40,11 @@ export default function HomePage() {
           style={{ opacity: 0.06 }}
         >
           <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M320 0 L320 160 L240 160 L240 80 L160 80 L160 0" stroke="#001215" strokeWidth="1" fill="none" />
-            <path d="M320 80 L280 80 L280 120 L200 120 L200 40 L320 40" stroke="#001215" strokeWidth="1" fill="none" />
+            <path d="M320 0 L320 160 L240 160 L240 80 L160 80 L160 0" stroke="#3d4a5c" strokeWidth="1" fill="none" />
+            <path d="M320 80 L280 80 L280 120 L200 120 L200 40 L320 40" stroke="#3d4a5c" strokeWidth="1" fill="none" />
             <circle cx="240" cy="160" r="4" fill="#a14000" />
             <circle cx="160" cy="80" r="4" fill="#a14000" />
-            <circle cx="280" cy="120" r="3" fill="#001215" />
+            <circle cx="280" cy="120" r="3" fill="#3d4a5c" />
           </svg>
         </div>
 
@@ -158,7 +158,7 @@ export default function HomePage() {
                   className="w-full h-full rounded-full overflow-hidden pointer-events-none absolute inset-0"
                   style={{
                     border: '2px solid rgba(200,168,130,0.3)',
-                    boxShadow: '0 20px 60px rgba(0,18,21,0.1)',
+                    boxShadow: '0 20px 60px rgba(61,74,92,0.1)',
                   }}
                 />
 
@@ -197,20 +197,14 @@ export default function HomePage() {
               className="lg:col-span-5 rounded-2xl p-8 flex flex-col gap-6"
               style={{
                 backgroundColor: '#ffffff',
-                boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
               }}
             >
-              <div
-                className="w-12 h-12 hex-clip flex items-center justify-center"
-                style={{ backgroundColor: '#001215' }}
-              >
-                <Icon name="shopping_cart" style={{ fontSize: '20px', color: '#fff8f3' }} />
-              </div>
               <div>
                 <p className="section-label mb-3">Problem 01</p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
-                  style={{ color: '#001215' }}
+                  style={{ color: '#3d4a5c' }}
                 >
                   Tool-first pilots
                 </h3>
@@ -226,8 +220,8 @@ export default function HomePage() {
             <div
               className="lg:col-span-4 rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
               style={{
-                backgroundColor: '#002a2e',
-                boxShadow: '0 20px 60px rgba(0,18,21,0.12)',
+                backgroundColor: '#5b6b7e',
+                boxShadow: '0 20px 60px rgba(61,74,92,0.12)',
               }}
             >
               <Icon
@@ -235,12 +229,6 @@ export default function HomePage() {
                 className="absolute -right-4 -bottom-4 pointer-events-none select-none"
                 style={{ fontSize: '140px', color: 'rgba(255,248,243,0.04)' }}
               />
-              <div
-                className="w-12 h-12 hex-clip flex items-center justify-center relative z-10"
-                style={{ backgroundColor: '#a14000' }}
-              >
-                <Icon name="school" style={{ fontSize: '20px', color: '#fff' }} />
-              </div>
               <div className="relative z-10">
                 <p className="font-label text-xs uppercase tracking-widest mb-3" style={{ color: 'rgba(255,248,243,0.5)', letterSpacing: '0.15em' }}>
                   Problem 02
@@ -264,20 +252,14 @@ export default function HomePage() {
               className="lg:col-span-3 rounded-2xl p-8 flex flex-col gap-6"
               style={{
                 backgroundColor: '#efe0cd',
-                boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
               }}
             >
-              <div
-                className="w-12 h-12 hex-clip flex items-center justify-center"
-                style={{ backgroundColor: '#001215' }}
-              >
-                <Icon name="link_off" style={{ fontSize: '20px', color: '#fff8f3' }} />
-              </div>
               <div>
                 <p className="section-label mb-3">Problem 03</p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
-                  style={{ color: '#001215' }}
+                  style={{ color: '#3d4a5c' }}
                 >
                   Consultants leave, pilots die
                 </h3>
@@ -295,7 +277,7 @@ export default function HomePage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -368,7 +350,7 @@ export default function HomePage() {
                 className="rounded-2xl p-8 flex flex-col gap-5"
                 style={{
                   backgroundColor: '#ffffff',
-                  boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+                  boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
                 }}
               >
                 <p
@@ -377,7 +359,7 @@ export default function HomePage() {
                 >
                   {item.industry}
                 </p>
-                <p className="font-headline font-bold text-4xl" style={{ color: '#001215' }}>
+                <p className="font-headline font-bold text-4xl" style={{ color: '#3d4a5c' }}>
                   {item.metric}
                 </p>
                 <p className="font-body text-body-sm" style={{ color: '#a14000' }}>
@@ -409,7 +391,7 @@ export default function HomePage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001022', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">

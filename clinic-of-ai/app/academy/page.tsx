@@ -140,7 +140,7 @@ export default function AcademyPage() {
             <p className="section-label mb-5">Industry Executive Cohort</p>
             <h1
               className="page-title mb-8"
-              style={{ color: '#001215', letterSpacing: '-0.02em' }}
+              style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
             >
               <TextType
                 text="AI in Hospitality: 5 weeks for executives who are done experimenting."
@@ -218,10 +218,10 @@ export default function AcademyPage() {
                 key={course.id}
                 className="rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
                 style={{
-                  backgroundColor: course.highlight ? '#002a2e' : '#ffffff',
+                  backgroundColor: course.highlight ? '#5b6b7e' : '#ffffff',
                   boxShadow: course.highlight
-                    ? '0 20px 60px rgba(0,18,21,0.15)'
-                    : '0 4px 16px rgba(0,18,21,0.04)',
+                    ? '0 20px 60px rgba(61,74,92,0.15)'
+                    : '0 4px 16px rgba(61,74,92,0.04)',
                   border: course.highlight ? 'none' : '1px solid rgba(200,168,130,0.15)',
                 }}
               >
@@ -235,22 +235,13 @@ export default function AcademyPage() {
 
                 <div className="relative z-10 flex flex-col gap-5 flex-1">
                   <div className="flex items-start justify-between">
-                    <div
-                      className="w-12 h-12 hex-clip flex items-center justify-center"
-                      style={{ backgroundColor: course.highlight ? '#a14000' : '#001215' }}
-                    >
-                      <Icon
-                        name={course.icon}
-                        style={{ fontSize: '20px', color: '#fff8f3' }}
-                      />
-                    </div>
                     <div className="flex items-center gap-2 flex-wrap justify-end">
                       <span
                         className="font-label text-xs px-2 py-1 rounded-md"
                         style={{
                           backgroundColor: course.highlight
                             ? 'rgba(255,248,243,0.1)'
-                            : 'rgba(0,18,21,0.06)',
+                            : 'rgba(61,74,92,0.06)',
                           color: course.highlight ? 'rgba(255,248,243,0.7)' : '#2d4a4d',
                           letterSpacing: '0.08em',
                         }}
@@ -275,7 +266,7 @@ export default function AcademyPage() {
                   <div>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
-                      style={{ color: course.highlight ? '#fff8f3' : '#001215' }}
+                      style={{ color: course.highlight ? '#fff8f3' : '#3d4a5c' }}
                     >
                       {course.title}
                     </h3>
@@ -322,7 +313,7 @@ export default function AcademyPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#001215', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -374,7 +365,7 @@ export default function AcademyPage() {
               className="rounded-2xl p-10 text-center"
               style={{
                 backgroundColor: '#ffffff',
-                boxShadow: '0 12px 40px rgba(0,18,21,0.06)',
+                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
               }}
               role="status"
               aria-live="polite"
@@ -386,7 +377,7 @@ export default function AcademyPage() {
               />
               <h3
                 className="font-headline font-bold text-2xl mb-3"
-                style={{ color: '#001215' }}
+                style={{ color: '#3d4a5c' }}
               >
                 {duplicate ? 'Already on the list.' : 'You are on the list.'}
               </h3>
@@ -518,7 +509,7 @@ export default function AcademyPage() {
                 className="rounded-xl overflow-hidden"
                 style={{
                   backgroundColor: '#ffffff',
-                  boxShadow: '0 2px 8px rgba(0,18,21,0.04)',
+                  boxShadow: '0 2px 8px rgba(61,74,92,0.04)',
                 }}
               >
                 <button
@@ -530,7 +521,7 @@ export default function AcademyPage() {
                 >
                   <span
                     className="font-body font-semibold text-body-md pr-6"
-                    style={{ color: '#001215' }}
+                    style={{ color: '#3d4a5c' }}
                   >
                     {faq.question}
                   </span>

@@ -35,12 +35,12 @@ const isExternalLink = (href: string) =>
 
 // ─── CoAI design tokens (DESIGN.md) ─────────────────────────────────────────
 // Surface (#fff8f3)  → nav bar background (glass at 80% opacity)
-// Primary (#001215)  → pill background
+// Primary (#3d4a5c)  → pill background
 // Secondary (#a14000)→ active indicator dot
 // On-surface white   → pill text / hover text
 
 const COAI_BASE        = 'rgba(255,248,243,0.85)' // surface at 80% — glassmorphism
-const COAI_PILL        = '#001215'                 // primary navy
+const COAI_PILL        = '#3d4a5c'                 // primary navy
 const COAI_PILL_TEXT   = '#fff8f3'                 // surface white on navy
 const COAI_HOVER_TEXT  = '#fff8f3'                 // stays surface on hover reveal
 
@@ -198,7 +198,7 @@ const PillNav: React.FC<PillNavProps> = ({
       <>
         <span
           className="hover-circle absolute left-1/2 bottom-0 rounded-full z-[1] block pointer-events-none"
-          style={{ background: 'var(--pill-bg, #001215)', willChange: 'transform' }}
+          style={{ background: 'var(--pill-bg, #3d4a5c)', willChange: 'transform' }}
           aria-hidden="true"
           ref={el => { circleRefs.current[i] = el }}
         />
