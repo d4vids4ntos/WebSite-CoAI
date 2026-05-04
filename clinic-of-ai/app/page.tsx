@@ -194,9 +194,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
             <div
-              className="lg:col-span-5 rounded-2xl p-8 flex flex-col gap-6"
+              className="lg:col-span-5 rounded-2xl p-8 flex flex-col gap-6 card-shine"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: '#FFF59D',
                 boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
               }}
             >
@@ -218,7 +218,7 @@ export default function HomePage() {
             </div>
 
             <div
-              className="lg:col-span-4 rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
+              className="lg:col-span-4 rounded-2xl p-8 flex flex-col gap-6 card-shine"
               style={{
                 backgroundColor: '#FFF59D',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
@@ -249,9 +249,9 @@ export default function HomePage() {
             </div>
 
             <div
-              className="lg:col-span-3 rounded-2xl p-8 flex flex-col gap-6"
+              className="lg:col-span-3 rounded-2xl p-8 flex flex-col gap-6 card-shine"
               style={{
-                backgroundColor: '#efe0cd',
+                backgroundColor: '#FFF59D',
                 boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
               }}
             >
@@ -347,9 +347,9 @@ export default function HomePage() {
             ].map((item) => (
               <div
                 key={item.industry}
-                className="rounded-2xl p-8 flex flex-col gap-5"
+                className="rounded-2xl p-8 flex flex-col gap-5 card-shine"
                 style={{
-                  backgroundColor: '#ffffff',
+                  backgroundColor: '#FFF59D',
                   boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
                 }}
               >
