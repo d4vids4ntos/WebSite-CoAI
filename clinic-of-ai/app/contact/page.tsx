@@ -96,7 +96,7 @@ export default function ContactPage() {
                 style={{ opacity: 0.05 }}
               >
                 <svg viewBox="0 0 192 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M0 0 L0 96 L64 96 L64 32 L128 32 L128 0" stroke="#3d4a5c" strokeWidth="1" fill="none" />
+                  <path d="M0 0 L0 96 L64 96 L64 32 L128 32 L128 0" stroke="#000000" strokeWidth="1" fill="none" />
                   <circle cx="64" cy="96" r="4" fill="#a14000" />
                 </svg>
               </div>
@@ -143,12 +143,12 @@ export default function ContactPage() {
               <div
                 className="inline-flex items-center gap-3 px-4 py-3 rounded-xl self-start"
                 style={{
-                  backgroundColor: 'rgba(0,42,46,0.06)',
-                  border: '1px solid rgba(0,42,46,0.1)',
+                  backgroundColor: '#FFF59D',
+                  border: '1px solid rgba(0,0,0,0.1)',
                 }}
               >
                 <Icon name="verified" style={{ fontSize: '18px', color: '#a14000' }} />
-                <span className="font-body text-body-sm" style={{ color: '#3d4a5c' }}>
+                <span className="font-body text-body-sm" style={{ color: '#000000' }}>
                   Working with teams across Europe.
                 </span>
               </div>
@@ -156,7 +156,7 @@ export default function ContactPage() {
               <div className="flex flex-col gap-4 mt-2">
                 <p
                   className="font-label text-xs uppercase font-semibold"
-                  style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.1em' }}
+                  style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.1em' }}
                 >
                   What to expect
                 </p>
@@ -168,7 +168,7 @@ export default function ContactPage() {
                 ].map((item) => (
                   <div key={item.text} className="flex items-center gap-3">
                     <Icon name={item.icon} className="shrink-0" style={{ fontSize: '18px', color: '#a14000' }} />
-                    <span className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
+                    <span className="font-body text-body-sm" style={{ color: '#000000' }}>
                       {item.text}
                     </span>
                   </div>
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   className="rounded-2xl p-12 text-center"
                   style={{
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
                   role="status"
@@ -190,18 +190,18 @@ export default function ContactPage() {
                 >
                   <h2
                     className="font-headline font-bold text-3xl mb-4"
-                    style={{ color: '#3d4a5c' }}
+                    style={{ color: '#000000' }}
                   >
                     Conversation Scheduled.
                   </h2>
-                  <p className="font-body text-body-md mb-3" style={{ color: '#2d4a4d' }}>
+                  <p className="font-body text-body-md mb-3" style={{ color: '#000000' }}>
                     Your session is scheduled for{' '}
-                    <strong style={{ color: '#3d4a5c' }}>
+                    <strong style={{ color: '#000000' }}>
                       April {selectedDay}, 2026 at {selectedTime}
                     </strong>
                     .
                   </p>
-                  <p className="font-body text-body-sm mb-8" style={{ color: '#2d4a4d' }}>
+                  <p className="font-body text-body-sm mb-8" style={{ color: '#000000' }}>
                     A calendar invitation and prep note will arrive in your inbox shortly. We look forward to speaking with you, {name.split(' ')[0]}.
                   </p>
                   <Link href="/" className="btn-primary">
@@ -215,7 +215,7 @@ export default function ContactPage() {
                   className="rounded-2xl overflow-hidden"
                   style={{
                     backgroundColor: '#ffffff',
-                    boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
                     border: '1px solid rgba(200,168,130,0.15)',
                   }}
                 >
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     <div className="flex items-center justify-between">
                       <h2
                         className="font-headline font-bold text-xl"
-                        style={{ color: '#3d4a5c' }}
+                        style={{ color: '#000000' }}
                       >
                         Book your 20-minute session
                       </h2>
@@ -260,13 +260,13 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#3d4a5c' }}
+                          style={{ color: '#000000' }}
                         >
                           Select date
                         </p>
                         <span
                           className="font-label text-xs ml-auto"
-                          style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.08em' }}
+                          style={{ color: 'rgba(0,0,0,0.4)', letterSpacing: '0.08em' }}
                         >
                           April 2026
                         </span>
@@ -278,7 +278,7 @@ export default function ContactPage() {
                             <div
                               key={d}
                               className="text-center py-0.5 font-label text-[10px]"
-                              style={{ color: 'rgba(45,74,77,0.4)', letterSpacing: '0.05em' }}
+                              style={{ color: 'rgba(0,0,0,0.4)', letterSpacing: '0.05em' }}
                             >
                               {d}
                             </div>
@@ -316,8 +316,8 @@ export default function ContactPage() {
                                   color: isSelected
                                     ? '#ffffff'
                                     : isAvailable
-                                    ? '#3d4a5c'
-                                    : 'rgba(45,74,77,0.25)',
+                                    ? '#000000'
+                                    : 'rgba(0,0,0,0.25)',
                                   cursor: isAvailable ? 'pointer' : 'default',
                                 }}
                               >
@@ -331,7 +331,7 @@ export default function ContactPage() {
                       {selectedDay && (
                         <p
                           className="font-body text-xs mt-2"
-                          style={{ color: '#2d4a4d' }}
+                          style={{ color: '#000000' }}
                         >
                           Selected: April {selectedDay}, 2026
                         </p>
@@ -352,7 +352,7 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#3d4a5c' }}
+                          style={{ color: '#000000' }}
                         >
                           Select time
                         </p>
@@ -374,7 +374,7 @@ export default function ContactPage() {
                               aria-pressed={isSelected}
                               style={{
                                 backgroundColor: isSelected ? '#a14000' : '#fff5e8',
-                                color: isSelected ? '#ffffff' : '#3d4a5c',
+                                color: isSelected ? '#ffffff' : '#000000',
                                 boxShadow: isSelected
                                   ? '0 4px 12px rgba(161,64,0,0.25)'
                                   : 'none',
@@ -401,7 +401,7 @@ export default function ContactPage() {
                         </div>
                         <p
                           className="font-body font-semibold text-body-md"
-                          style={{ color: '#3d4a5c' }}
+                          style={{ color: '#000000' }}
                         >
                           Your details
                         </p>
@@ -452,7 +452,7 @@ export default function ContactPage() {
                           <label
                             htmlFor="contact-name"
                             className="font-label text-xs uppercase font-semibold block mb-2"
-                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                            style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
                           >
                             Full Name
                           </label>
@@ -472,7 +472,7 @@ export default function ContactPage() {
                           <label
                             htmlFor="contact-email"
                             className="font-label text-xs uppercase font-semibold block mb-2"
-                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                            style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
                           >
                             Work Email
                           </label>
@@ -492,7 +492,7 @@ export default function ContactPage() {
                           <label
                             htmlFor="contact-company"
                             className="font-label text-xs uppercase font-semibold block mb-2"
-                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                            style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
                           >
                             Company
                           </label>
@@ -512,7 +512,7 @@ export default function ContactPage() {
                           <label
                             htmlFor="contact-focus"
                             className="font-label text-xs uppercase font-semibold block mb-2"
-                            style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                            style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
                           >
                             Session Focus
                           </label>
@@ -524,7 +524,7 @@ export default function ContactPage() {
                               className="w-full bg-transparent font-body text-on-surface text-body-md py-3 outline-none appearance-none pr-8 cursor-pointer"
                               style={{
                                 borderBottom: '2px solid rgba(200,168,130,0.4)',
-                                color: '#3d4a5c',
+                                color: '#000000',
                               }}
                             >
                               {FOCUS_OPTIONS.map((opt) => (
@@ -533,7 +533,7 @@ export default function ContactPage() {
                                 </option>
                               ))}
                             </select>
-                            <Icon name="expand_more" className="absolute right-0 top-3 pointer-events-none" style={{ fontSize: '20px', color: '#2d4a4d' }} />
+                            <Icon name="expand_more" className="absolute right-0 top-3 pointer-events-none" style={{ fontSize: '20px', color: '#000000' }} />
                           </div>
                         </div>
                       </div>
@@ -550,7 +550,7 @@ export default function ContactPage() {
                           <Icon name="calendar_today" className="shrink-0" style={{ fontSize: '18px', color: '#a14000' }} />
                           <p
                             className="font-body text-body-sm"
-                            style={{ color: '#3d4a5c' }}
+                            style={{ color: '#000000' }}
                           >
                             April {selectedDay} at {selectedTime} - 20-minute conversation
                           </p>
@@ -594,7 +594,7 @@ export default function ContactPage() {
 
                       <p
                         className="font-body text-body-sm text-center mt-3"
-                        style={{ color: 'rgba(45,74,77,0.5)' }}
+                        style={{ color: 'rgba(0,0,0,0.5)' }}
                       >
                         No commitment. No sales pressure. Clear next steps.
                       </p>
@@ -635,11 +635,11 @@ export default function ContactPage() {
                 <div>
                   <p
                     className="font-body font-semibold text-body-md mb-1"
-                    style={{ color: '#3d4a5c' }}
+                    style={{ color: '#000000' }}
                   >
                     {item.title}
                   </p>
-                  <p className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>
+                  <p className="font-body text-body-sm" style={{ color: '#000000' }}>
                     {item.desc}
                   </p>
                 </div>

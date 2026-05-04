@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #3d4a5c;
-  --color-primary-container: #5b6b7e;
+  --color-primary: #000000;
+  --color-primary-container: #FFF59D;
   --color-on-primary: #fff8f3;
   --color-secondary: #a14000;
   --color-secondary-container: #ff7a32;
   --color-on-secondary: #ffffff;
-  --color-tertiary: #3d4a5c;
-  --color-tertiary-container: rgba(61, 74, 92, 0.06);
+  --color-tertiary: #000000;
+  --color-tertiary-container: #FFF59D;
   --color-surface: #fff8f3;
   --color-surface-container: #fff5e8;
   --color-surface-container-low: #fff2e2;
   --color-surface-container-lowest: #ffffff;
   --color-surface-container-highest: #efe0cd;
-  --color-on-surface: #3d4a5c;
-  --color-on-surface-variant: #5b6b7e;
+  --color-on-surface: #000000;
+  --color-on-surface-variant: #000000;
   --color-outline-variant: #c8a882;
-  --shadow-ambient: 0 12px 40px rgba(61, 74, 92, 0.06);
-  --shadow-ambient-lg: 0 20px 60px rgba(61, 74, 92, 0.08);
-  --shadow-ambient-sm: 0 4px 16px rgba(61, 74, 92, 0.04);
+  --shadow-ambient: 0 12px 40px rgba(0,0,0,0.06);
+  --shadow-ambient-lg: 0 20px 60px rgba(0,0,0,0.08);
+  --shadow-ambient-sm: 0 4px 16px rgba(0,0,0,0.04);
 }
 
 @layer base {
   html {
     font-family: 'Manrope', system-ui, sans-serif;
     background-color: #fff8f3;
-    color: #3d4a5c;
+    color: #000000;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     background-color: #fff8f3;
-    color: #3d4a5c;
+    color: #000000;
     min-height: 100dvh;
   }
 
@@ -54,7 +54,7 @@
 
   ::selection {
     background-color: rgba(161, 64, 0, 0.15);
-    color: #3d4a5c;
+    color: #000000;
   }
 
   :focus-visible {
@@ -66,8 +66,8 @@
 @layer components {
   .grid-watermark {
     background-image:
-      linear-gradient(rgba(61, 74, 92, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(61, 74, 92, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
     background-size: 32px 32px;
   }
 
@@ -102,7 +102,7 @@
   .btn-outlined {
     @apply inline-flex items-center justify-center gap-2 font-body font-semibold px-6 py-3 rounded-xl transition-all duration-200 border-2;
     border-color: rgba(200, 168, 130, 0.5);
-    color: #3d4a5c;
+    color: #000000;
   }
 
   .btn-outlined:hover {
@@ -120,11 +120,11 @@
   }
 
   .input-field::placeholder {
-    color: rgba(45, 74, 77, 0.5);
+    color: rgba(0,0,0,0.5);
   }
 
   .research-note {
-    background-color: rgba(61, 74, 92, 0.04);
+    background-color: #FFF59D;
     border-left: 3px solid #a14000;
     @apply p-5 rounded-r-xl;
   }
@@ -156,6 +156,39 @@
   .card-bento {
     @apply rounded-2xl p-8 overflow-hidden relative;
     box-shadow: var(--shadow-ambient);
+  }
+
+  .card-trace {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .card-trace::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: conic-gradient(
+      from var(--card-trace-angle, 0deg),
+      transparent 0deg,
+      transparent 300deg,
+      rgba(255, 255, 255, 0.95) 350deg,
+      rgba(255, 255, 255, 0) 360deg
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .card-trace:hover::after {
+    opacity: 1;
+    animation: card-trace-spin 1.6s linear infinite;
   }
 
   .nav-link {
@@ -244,14 +277,26 @@
   }
 }
 
+@property --card-trace-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes card-trace-spin {
+  to {
+    --card-trace-angle: 360deg;
+  }
+}
+
 /* ─── MagicBento ──────────────────────────────────────────────────────────── */
 .bento-section {
   --glow-x: 50%;
   --glow-y: 50%;
   --glow-intensity: 0;
   --glow-radius: 200px;
-  --glow-color: 61, 74, 92;
-  --border-color: rgba(61, 74, 92, 0.12);
+  --glow-color: 0, 0, 0;
+  --border-color: rgba(0,0,0,0.12);
   --background-dark: #ffffff;
   --white: hsl(0, 0%, 100%);
 }
@@ -296,8 +341,8 @@
   inset: 0;
   padding: 6px;
   background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-      rgba(61, 74, 92, calc(var(--glow-intensity) * 0.18)) 0%,
-      rgba(61, 74, 92, calc(var(--glow-intensity) * 0.08)) 30%,
+      rgba(0,0,0,calc(var(--glow-intensity) * 0.18)) 0%,
+      rgba(0,0,0,calc(var(--glow-intensity) * 0.08)) 30%,
       transparent 60%);
   border-radius: inherit;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -309,7 +354,7 @@
 }
 
 .card--border-glow:hover {
-  box-shadow: 0 12px 32px rgba(61, 74, 92, 0.08);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
 .text-clamp-1 {
@@ -357,10 +402,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(61, 74, 92, 0.15);
+  background: rgba(0,0,0,0.15);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(61, 74, 92, 0.25);
+  background: rgba(0,0,0,0.25);
 }

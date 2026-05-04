@@ -19,7 +19,7 @@ export default function OpenGraphImage() {
           justifyContent: 'space-between',
           padding: '56px',
           background: '#fff8f3',
-          color: '#3d4a5c',
+          color: '#000000',
           fontFamily: 'Arial, sans-serif',
         }}
       >
@@ -41,7 +41,7 @@ export default function OpenGraphImage() {
           </div>
         </div>
 
-        <div style={{ fontSize: 24, color: '#5b6b7e' }}>
+        <div style={{ fontSize: 24, color: '#000000' }}>
           Forward Deployed AI Engineers for measurable operational improvement
         </div>
       </div>

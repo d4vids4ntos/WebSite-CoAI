@@ -28,19 +28,19 @@ export default function SignInPage() {
           className="rounded-2xl p-10"
           style={{
             backgroundColor: '#ffffff',
-            boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
+            boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
             border: '1px solid rgba(200,168,130,0.15)',
           }}
         >
           <h1
             className="font-headline font-bold text-2xl mb-2 text-center"
-            style={{ color: '#3d4a5c' }}
+            style={{ color: '#000000' }}
           >
             Create your account
           </h1>
           <p
             className="font-body text-body-sm text-center mb-8"
-            style={{ color: '#2d4a4d' }}
+            style={{ color: '#000000' }}
           >
             Join Clinic of AI and begin your engagement
           </p>
@@ -50,7 +50,7 @@ export default function SignInPage() {
               <label
                 htmlFor="signin-name"
                 className="font-label text-xs uppercase font-semibold block mb-2"
-                style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
               >
                 Full Name
               </label>
@@ -69,7 +69,7 @@ export default function SignInPage() {
               <label
                 htmlFor="signin-email"
                 className="font-label text-xs uppercase font-semibold block mb-2"
-                style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
               >
                 Email
               </label>
@@ -88,7 +88,7 @@ export default function SignInPage() {
               <label
                 htmlFor="signin-password"
                 className="font-label text-xs uppercase font-semibold block mb-2"
-                style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}
+                style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}
               >
                 Password
               </label>
@@ -103,7 +103,7 @@ export default function SignInPage() {
               />
               <p
                 className="font-body text-body-sm mt-2"
-                style={{ color: 'rgba(45,74,77,0.4)' }}
+                style={{ color: 'rgba(0,0,0,0.4)' }}
               >
                 Minimum 8 characters
               </p>
@@ -128,7 +128,7 @@ export default function SignInPage() {
           </form>
         </div>
 
-        <p className="font-body text-body-sm text-center mt-6" style={{ color: '#2d4a4d' }}>
+        <p className="font-body text-body-sm text-center mt-6" style={{ color: '#000000' }}>
           Already have an account?{' '}
           <Link href="/login" className="font-semibold hover:underline" style={{ color: '#a14000' }}>
             Login

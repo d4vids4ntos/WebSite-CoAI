@@ -21,13 +21,13 @@ export default function NotFound() {
         </p>
         <h1
           className="page-title mb-6"
-          style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
+          style={{ color: '#000000', letterSpacing: '-0.02em' }}
         >
           This path does not exist.
         </h1>
         <p
           className="font-body text-lg leading-relaxed mb-10"
-          style={{ color: '#2d4a4d' }}
+          style={{ color: '#000000' }}
         >
           Even the best systems have dead ends. Let us help you find the right route.
         </p>

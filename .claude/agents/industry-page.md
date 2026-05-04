@@ -333,7 +333,7 @@ Two-column layout: sticky-ish heading on the left, numbered steps on the right c
         aria-hidden
         className="absolute -right-12 bottom-0 w-72 h-72 opacity-60 pointer-events-none"
         style={{
-          backgroundColor: '#f5d99a',
+          backgroundColor: '#FFF59D',
           borderRadius: '50% 40% 60% 30%',
           filter: 'blur(28px)',
         }}

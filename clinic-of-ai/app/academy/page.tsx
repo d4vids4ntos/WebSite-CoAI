@@ -140,7 +140,7 @@ export default function AcademyPage() {
             <p className="section-label mb-5">Industry Executive Cohort</p>
             <h1
               className="page-title mb-8"
-              style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
+              style={{ color: '#000000', letterSpacing: '-0.02em' }}
             >
               <TextType
                 text="AI in Hospitality: 5 weeks for executives who are done experimenting."
@@ -155,7 +155,7 @@ export default function AcademyPage() {
             </h1>
             <p
               className="font-body text-lg leading-relaxed mb-10"
-              style={{ color: '#2d4a4d' }}
+              style={{ color: '#000000' }}
             >
               This is not a generic AI course. It is a focused implementation program for your
               operation: identify priorities, implement in workflow, and build internal capability.
@@ -218,10 +218,10 @@ export default function AcademyPage() {
                 key={course.id}
                 className="rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
                 style={{
-                  backgroundColor: course.highlight ? '#5b6b7e' : '#ffffff',
+                  backgroundColor: course.highlight ? '#FFF59D' : '#ffffff',
                   boxShadow: course.highlight
-                    ? '0 20px 60px rgba(61,74,92,0.15)'
-                    : '0 4px 16px rgba(61,74,92,0.04)',
+                    ? '0 20px 60px rgba(0,0,0,0.15)'
+                    : '0 4px 16px rgba(0,0,0,0.04)',
                   border: course.highlight ? 'none' : '1px solid rgba(200,168,130,0.15)',
                 }}
               >
@@ -240,9 +240,9 @@ export default function AcademyPage() {
                         className="font-label text-xs px-2 py-1 rounded-md"
                         style={{
                           backgroundColor: course.highlight
-                            ? 'rgba(255,248,243,0.1)'
-                            : 'rgba(61,74,92,0.06)',
-                          color: course.highlight ? 'rgba(255,248,243,0.7)' : '#2d4a4d',
+                            ? '#FFF59D'
+                            : '#FFF59D',
+                          color: course.highlight ? 'rgba(0,0,0,0.75)' : '#000000',
                           letterSpacing: '0.08em',
                         }}
                       >
@@ -266,14 +266,14 @@ export default function AcademyPage() {
                   <div>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
-                      style={{ color: course.highlight ? '#fff8f3' : '#3d4a5c' }}
+                      style={{ color: course.highlight ? '#000000' : '#000000' }}
                     >
                       {course.title}
                     </h3>
                     <p
                       className="font-body text-body-sm leading-relaxed"
                       style={{
-                        color: course.highlight ? 'rgba(255,248,243,0.7)' : '#2d4a4d',
+                        color: course.highlight ? 'rgba(0,0,0,0.75)' : '#000000',
                       }}
                     >
                       {course.description}
@@ -295,8 +295,8 @@ export default function AcademyPage() {
                           className="font-body text-body-sm"
                           style={{
                             color: course.highlight
-                              ? 'rgba(255,248,243,0.75)'
-                              : '#2d4a4d',
+                              ? 'rgba(0,0,0,0.8)'
+                              : '#000000',
                           }}
                         >
                           {topic}
@@ -313,13 +313,13 @@ export default function AcademyPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(0,0,0,0.75)' }}>
               <span className="font-label text-xs font-semibold uppercase" style={{ color: '#ff7a32', letterSpacing: '0.15em' }}>Team Lead</span>
-              <span style={{ color: 'rgba(255,248,243,0.2)' }}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span style={{ color: 'rgba(0,0,0,0.25)' }}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
               Led by Philippe Kung, former Head of Data and AI at Crayon AG.
             </p>
             <Link href="/about" className="btn-primary whitespace-nowrap shrink-0">
@@ -354,7 +354,7 @@ export default function AcademyPage() {
           </div>
           <p
             className="font-body text-body-md leading-relaxed mb-10"
-            style={{ color: '#2d4a4d' }}
+            style={{ color: '#000000' }}
           >
             Waitlist members get priority scheduling for upcoming cohorts and early access to
             program briefing details.
@@ -365,7 +365,7 @@ export default function AcademyPage() {
               className="rounded-2xl p-10 text-center"
               style={{
                 backgroundColor: '#ffffff',
-                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
               }}
               role="status"
               aria-live="polite"
@@ -377,11 +377,11 @@ export default function AcademyPage() {
               />
               <h3
                 className="font-headline font-bold text-2xl mb-3"
-                style={{ color: '#3d4a5c' }}
+                style={{ color: '#000000' }}
               >
                 {duplicate ? 'Already on the list.' : 'You are on the list.'}
               </h3>
-              <p className="font-body text-body-md" style={{ color: '#2d4a4d' }}>
+              <p className="font-body text-body-md" style={{ color: '#000000' }}>
                 {duplicate
                   ? 'This email is already registered. We will be in touch when the next cohort opens.'
                   : 'We will be in touch with upcoming cohort dates and next steps.'}
@@ -469,7 +469,7 @@ export default function AcademyPage() {
               </button>
               <p
                 className="font-body text-body-sm mt-4"
-                style={{ color: 'rgba(45,74,77,0.5)' }}
+                style={{ color: 'rgba(0,0,0,0.5)' }}
               >
                 No spam. No third-party sharing. Unsubscribe at any time.
               </p>
@@ -509,7 +509,7 @@ export default function AcademyPage() {
                 className="rounded-xl overflow-hidden"
                 style={{
                   backgroundColor: '#ffffff',
-                  boxShadow: '0 2px 8px rgba(61,74,92,0.04)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
                 }}
               >
                 <button
@@ -521,7 +521,7 @@ export default function AcademyPage() {
                 >
                   <span
                     className="font-body font-semibold text-body-md pr-6"
-                    style={{ color: '#3d4a5c' }}
+                    style={{ color: '#000000' }}
                   >
                     {faq.question}
                   </span>
@@ -544,7 +544,7 @@ export default function AcademyPage() {
                   >
                     <p
                       className="font-body text-body-md leading-relaxed"
-                      style={{ color: '#2d4a4d' }}
+                      style={{ color: '#000000' }}
                     >
                       {faq.answer}
                     </p>

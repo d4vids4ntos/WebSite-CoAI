@@ -11,13 +11,13 @@ To break the "template" look, we employ **Intentional Asymmetry**. Hero sections
 
 ## 2. Colors
 
-The palette is anchored in airy, editorial sophistication — clean warm slates rather than near-black charcoals, punctuated by technical orange accents.
+The palette is **three colors**: beige, orange, and soft lemon. Everything else (ink for type, soft outlines, decorative blobs) sits in support of those three. Beige is the field, orange is the focal point, soft lemon is the supporting warmth.
 
 ### Palette Roles
-*   **Primary (`#3d4a5c` / `#5b6b7e`):** Warm slate. Used for typography, structural strokes, and grounded technical areas. Bright enough to keep compositions breathing.
-*   **Secondary (`#a14000` / `#ff7a32`):** Our "Energetic Orange." Use this for critical CTAs and highlight nodes in circuit motifs.
-*   **Tertiary (`#3d4a5c`):** Warm slate for grounding UI elements — soft ink, never near-black.
-*   **Surface (`#fff8f3`):** The "Off-White Vellum." This is our primary canvas, often paired with the signature grid pattern.
+*   **Beige (`#fff8f3` canvas, with `#fff5e8` / `#fff2e2` / `#efe0cd` as tinted layers):** The "Off-White Vellum." This is the primary canvas for the entire site, often paired with the signature grid pattern. Tinted layers provide tonal layering between cards and sections.
+*   **Orange — deep (`#a14000`) and bright (`#ff7a32`):** Our "Energetic Orange." Deep is the action ink for primary CTAs, label colors, hover states, and emphasis. Bright is the focal accent — diagnostic dots, highlighted nodes in technical diagrams, the bright variant of CTAs and "See more" pills. Use it sparingly: orange is the *single point of interest*, never a wash.
+*   **Soft Lemon (`#FFF59D` primary, `#FFFACD` softest):** Supporting warmth and gentle contrast. Hero-band accents, closing-CTA bands, featured cards, decorative blobs, "See more" pills. Soft lemon acts as a calm alternate surface alongside beige for hero bands and feature cards — quieter than canary yellow, never aggressive. Use as a surface only — not for type.
+*   **Ink (black `#000000`):** Type and structural strokes are rendered in pure black for editorial clarity and maximum contrast against the beige and soft-lemon surfaces.
 
 ### The "No-Line" Rule
 **Prohibit 1px solid borders for sectioning.** Boundaries must be defined through background color shifts. A `surface-container-low` section should sit against a `surface` background to create a clean, modern break without the clutter of "boxes."
@@ -30,7 +30,7 @@ Treat the UI as physical layers.
 Nesting these creates a natural sense of importance. An inner card should use a higher tier than its parent container to "lift" toward the user.
 
 ### The "Glass & Gradient" Rule
-For floating panels or navigation headers, use **Glassmorphism**. Apply `surface` colors at 80% opacity with a `backdrop-blur(12px)`. To add "soul," use subtle gradients from `primary` (`#3d4a5c`) to `primary_container` (`#5b6b7e`) for hero backgrounds — a quiet slate wash, not a moody monitor glow.
+For floating panels or navigation headers, use **Glassmorphism**. Apply `surface` colors at 80% opacity with a `backdrop-blur(12px)`. To add "soul," use subtle gradients from beige (`#fff8f3`) to soft lemon (`#FFF59D` at low opacity) for hero backgrounds — a calm sunlight wash, not a moody monitor glow.
 
 ---
 
@@ -53,7 +53,7 @@ Avoid "Drop Shadows" as a default. Instead, achieve depth through **Tonal Layeri
 Where floating is necessary (e.g., a primary modal), shadows must be:
 *   **Extra-diffused:** Blur radius > 24px.
 *   **Low-opacity:** 4%–8% alpha.
-*   **Tinted:** Use a slightly darker version of the background color (e.g., a slate-tinted shadow on a beige surface) to mimic natural light.
+*   **Tinted:** Use a slightly darker version of the background color (e.g., a soft black-tinted shadow on a beige or soft-lemon surface) to mimic natural light.
 
 ### The "Ghost Border" Fallback
 If accessibility requires a container definition, use a **Ghost Border**: the `outline-variant` token at 15% opacity. Never use 100% opaque, high-contrast lines.
@@ -68,7 +68,7 @@ If accessibility requires a container definition, use a **Ghost Border**: the `o
 *   **Tertiary:** No fill. `label-md` (Space Grotesk) in `primary` with a hexagonal icon suffix.
 
 ### Input Fields
-Avoid the "boxed" look. Use a `surface-variant` background with a bottom-only `outline` at 20% opacity. Upon focus, transition the bottom border to `on_primary_container` (warm slate `#3d4a5c`).
+Avoid the "boxed" look. Use a `surface-variant` background with a bottom-only `outline` at 20% opacity. Upon focus, transition the bottom border to deep orange (`#a14000`) so the focus state inherits the brand action color.
 
 ### Cards & Lists
 **Forbid divider lines.** Separate list items using the Spacing Scale (e.g., `12` or `3rem` gaps) or subtle background alternates. 
@@ -88,5 +88,5 @@ For status indicators or tags, use a clipped hexagonal shape rather than a stand
 
 ### Don’t:
 *   **DON’T** use standard 90-degree corners for large image containers; use the `xl` (0.75rem) roundedness to soften the technical edge.
-*   **DON’T** use pure black (`#000000`) or near-black tones. Always use `primary` (`#3d4a5c`) so type and lines stay airy and editorial.
+*   **DON’T** introduce blue-cool charcoals or off-palette greys. Type and structural lines are pure black (`#000000`) so beige + orange + soft lemon remain the visual identity.
 *   **DON’T** crowd the layout. If in doubt, increase spacing by two increments on the scale. High-end design requires "Oxygen."

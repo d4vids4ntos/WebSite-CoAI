@@ -184,8 +184,8 @@ export default function AboutPage() {
                 key={member.name}
                 className="rounded-2xl overflow-hidden"
                 style={{
-                  backgroundColor: member.featured ? '#3d4a5c' : '#ffffff',
-                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
+                  backgroundColor: member.featured ? '#FFF59D' : '#ffffff',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                 }}
               >
                 <div className="p-8 lg:p-10 flex flex-col gap-6">
@@ -195,7 +195,7 @@ export default function AboutPage() {
                       style={{
                         backgroundColor: member.featured
                           ? 'rgba(161,64,0,0.3)'
-                          : '#3d4a5c',
+                          : '#FFF59D',
                       }}
                     >
                       {member.icon === 'neurology' ? (
@@ -205,7 +205,7 @@ export default function AboutPage() {
                           name={member.icon}
                           style={{
                             fontSize: '24px',
-                            color: member.featured ? '#ff7a32' : '#fff8f3',
+                            color: member.featured ? '#ff7a32' : '#000000',
                           }}
                         />
                       )}
@@ -213,7 +213,7 @@ export default function AboutPage() {
                     <div>
                       <p
                         className="font-headline font-bold text-xl"
-                        style={{ color: member.featured ? '#fff8f3' : '#3d4a5c' }}
+                        style={{ color: member.featured ? '#000000' : '#000000' }}
                       >
                         {member.name}
                       </p>
@@ -221,8 +221,8 @@ export default function AboutPage() {
                         className="font-body text-body-sm"
                         style={{
                           color: member.featured
-                            ? 'rgba(255,248,243,0.6)'
-                            : '#2d4a4d',
+                            ? 'rgba(0,0,0,0.6)'
+                            : '#000000',
                         }}
                       >
                         {member.role}
@@ -247,15 +247,15 @@ export default function AboutPage() {
                     >
                       {member.archetype}
                     </span>
-                    <span className="font-body text-xs" style={{ color: member.featured ? 'rgba(255,248,243,0.4)' : 'rgba(45,74,77,0.4)' }}>
+                    <span className="font-body text-xs" style={{ color: member.featured ? 'rgba(0,0,0,0.4)' : 'rgba(0,0,0,0.4)' }}>
                       &mdash;
                     </span>
                     <span
                       className="font-body text-xs"
                       style={{
                         color: member.featured
-                          ? 'rgba(255,248,243,0.6)'
-                          : 'rgba(45,74,77,0.6)',
+                          ? 'rgba(0,0,0,0.6)'
+                          : 'rgba(0,0,0,0.6)',
                       }}
                     >
                       {member.capability}
@@ -266,8 +266,8 @@ export default function AboutPage() {
                     className="font-body text-body-sm leading-relaxed"
                     style={{
                       color: member.featured
-                        ? 'rgba(255,248,243,0.75)'
-                        : '#2d4a4d',
+                        ? 'rgba(0,0,0,0.75)'
+                        : '#000000',
                     }}
                   >
                     {member.description}
@@ -316,10 +316,10 @@ export default function AboutPage() {
                   <div
                     className="absolute -left-12 top-1 w-8 h-8 rounded-full flex items-center justify-center"
                     style={{
-                      backgroundColor: item.highlight ? '#a14000' : '#3d4a5c',
+                      backgroundColor: item.highlight ? '#a14000' : '#FFF59D',
                       boxShadow: item.highlight
                         ? '0 0 0 4px rgba(161,64,0,0.15)'
-                        : '0 0 0 4px rgba(61,74,92,0.08)',
+                        : '0 0 0 4px rgba(0,0,0,0.08)',
                     }}
                   >
                     {item.icon === 'neurology' ? (
@@ -327,7 +327,7 @@ export default function AboutPage() {
                     ) : (
                       <Icon
                         name={item.icon}
-                        style={{ fontSize: '14px', color: '#fff8f3' }}
+                        style={{ fontSize: '14px', color: '#000000' }}
                       />
                     )}
                   </div>
@@ -336,7 +336,7 @@ export default function AboutPage() {
                     className="rounded-2xl p-7"
                     style={{
                       backgroundColor: item.highlight ? '#fff5e8' : '#ffffff',
-                      boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                       border: item.highlight
                         ? '1px solid rgba(161,64,0,0.15)'
                         : '1px solid rgba(200,168,130,0.1)',
@@ -345,7 +345,7 @@ export default function AboutPage() {
                     <p
                       className="font-label text-xs font-semibold mb-2"
                       style={{
-                        color: item.highlight ? '#a14000' : '#2d4a4d',
+                        color: item.highlight ? '#a14000' : '#000000',
                         letterSpacing: '0.1em',
                       }}
                     >
@@ -353,13 +353,13 @@ export default function AboutPage() {
                     </p>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
-                      style={{ color: '#3d4a5c' }}
+                      style={{ color: '#000000' }}
                     >
                       {item.title}
                     </h3>
                     <p
                       className="font-body text-body-sm leading-relaxed"
-                      style={{ color: '#2d4a4d' }}
+                      style={{ color: '#000000' }}
                     >
                       {item.description}
                     </p>
@@ -401,13 +401,13 @@ export default function AboutPage() {
                 <div>
                   <h3
                     className="font-headline font-bold text-lg mb-1"
-                    style={{ color: '#3d4a5c' }}
+                    style={{ color: '#000000' }}
                   >
                     {value.title}
                   </h3>
                   <p
                     className="font-body text-body-sm leading-relaxed"
-                    style={{ color: '#2d4a4d' }}
+                    style={{ color: '#000000' }}
                   >
                     {value.description}
                   </p>
@@ -427,19 +427,19 @@ export default function AboutPage() {
             className="rounded-2xl p-8 lg:p-10"
             style={{
               backgroundColor: '#ffffff',
-              boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
+              boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
             }}
           >
             <p className="section-label mb-4">Client and Partner Proof</p>
             <h2
               className="font-headline font-bold text-2xl mb-4"
-              style={{ color: '#3d4a5c' }}
+              style={{ color: '#000000' }}
             >
               References can be shared in qualified conversations.
             </h2>
             <p
               className="font-body text-body-md leading-relaxed mb-6"
-              style={{ color: '#2d4a4d' }}
+              style={{ color: '#000000' }}
             >
               Some engagements include confidential operational data. We share named references,
               implementation evidence, and contactable proof during qualification and NDA-aligned
@@ -456,7 +456,7 @@ export default function AboutPage() {
                 <span
                   key={item}
                   className="font-body text-body-sm px-3 py-1.5 rounded-lg"
-                  style={{ backgroundColor: '#fff2e2', color: '#2d4a4d' }}
+                  style={{ backgroundColor: '#fff2e2', color: '#000000' }}
                 >
                   {item}
                 </span>
@@ -468,11 +468,11 @@ export default function AboutPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(0,0,0,0.75)' }}>
               Ready to discuss your operation? 20 minutes, no pitch deck.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">

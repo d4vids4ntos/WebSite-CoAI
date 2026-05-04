@@ -129,7 +129,7 @@ export default function ApproachPage() {
             </div>
             <p
               className="font-body text-body-md leading-relaxed mt-4 max-w-2xl mx-auto"
-              style={{ color: '#2d4a4d' }}
+              style={{ color: '#000000' }}
             >
               A Forward Deployed AI Engineer is not a consultant who delivers slide decks.
               They are an operator who sits inside your business and makes AI work.
@@ -143,7 +143,7 @@ export default function ApproachPage() {
                 className="rounded-2xl overflow-hidden"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
-                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                 }}
               >
                 <div className="p-8 lg:p-10">
@@ -171,13 +171,13 @@ export default function ApproachPage() {
                     <div className="lg:col-span-5 flex flex-col gap-4">
                       <h3
                         className="font-headline font-bold text-2xl"
-                        style={{ color: '#3d4a5c' }}
+                        style={{ color: '#000000' }}
                       >
                         {cap.title}
                       </h3>
                       <p
                         className="font-body text-body-md leading-relaxed"
-                        style={{ color: '#2d4a4d' }}
+                        style={{ color: '#000000' }}
                       >
                         {cap.description}
                       </p>
@@ -194,7 +194,7 @@ export default function ApproachPage() {
                             />
                             <span
                               className="font-body text-body-sm"
-                              style={{ color: '#2d4a4d' }}
+                              style={{ color: '#000000' }}
                             >
                               {detail}
                             </span>
@@ -237,7 +237,7 @@ export default function ApproachPage() {
               </div>
               <p
                 className="font-body text-body-md leading-relaxed"
-                style={{ color: '#2d4a4d' }}
+                style={{ color: '#000000' }}
               >
                 80% of businesses outside the enterprise bubble will never hire an in-house
                 AI department. They shouldn&rsquo;t have to. But buying disconnected tools from
@@ -259,7 +259,7 @@ export default function ApproachPage() {
                     />
                     <span
                       className="font-body text-body-sm"
-                      style={{ color: '#2d4a4d' }}
+                      style={{ color: '#000000' }}
                     >
                       {step}
                     </span>
@@ -278,14 +278,14 @@ export default function ApproachPage() {
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#3d4a5c' }}
+                  style={{ color: '#000000' }}
                 >
                   &ldquo;95% of generative AI pilots at companies fail before reaching
                   production.&rdquo;
                 </p>
                 <p
                   className="font-body text-body-sm mt-3"
-                  style={{ color: '#2d4a4d' }}
+                  style={{ color: '#000000' }}
                 >
                   MIT NANDA Initiative (2025)
                 </p>
@@ -300,14 +300,14 @@ export default function ApproachPage() {
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#3d4a5c' }}
+                  style={{ color: '#000000' }}
                 >
                   &ldquo;42% of companies have abandoned the majority of their AI initiatives,
                   up from 17%.&rdquo;
                 </p>
                 <p
                   className="font-body text-body-sm mt-3"
-                  style={{ color: '#2d4a4d' }}
+                  style={{ color: '#000000' }}
                 >
                   S&amp;P Global Market Intelligence (2025)
                 </p>
@@ -322,14 +322,14 @@ export default function ApproachPage() {
                 </p>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#3d4a5c' }}
+                  style={{ color: '#000000' }}
                 >
                   &ldquo;Enterprise-wide AI initiatives achieve only 5.9% ROI despite requiring
                   10% capital investment.&rdquo;
                 </p>
                 <p
                   className="font-body text-body-sm mt-3"
-                  style={{ color: '#2d4a4d' }}
+                  style={{ color: '#000000' }}
                 >
                   IBM Institute for Business Value (2025)
                 </p>
@@ -368,7 +368,7 @@ export default function ApproachPage() {
               <div className="p-4">
                 <p
                   className="font-label text-xs uppercase font-semibold"
-                  style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.1em' }}
+                  style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.1em' }}
                 >
                   Traditional AI Consulting
                 </p>
@@ -395,11 +395,11 @@ export default function ApproachPage() {
                   <Icon
                     name="close"
                     className="shrink-0"
-                    style={{ fontSize: '16px', color: 'rgba(45,74,77,0.4)' }}
+                    style={{ fontSize: '16px', color: 'rgba(0,0,0,0.4)' }}
                   />
                   <span
                     className="font-body text-body-sm"
-                    style={{ color: 'rgba(45,74,77,0.7)' }}
+                    style={{ color: 'rgba(0,0,0,0.7)' }}
                   >
                     {row.traditional}
                   </span>
@@ -412,7 +412,7 @@ export default function ApproachPage() {
                   />
                   <span
                     className="font-body text-body-sm font-medium"
-                    style={{ color: '#3d4a5c' }}
+                    style={{ color: '#000000' }}
                   >
                     {row.clinic}
                   </span>
@@ -425,11 +425,11 @@ export default function ApproachPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(0,0,0,0.75)' }}>
               20 minutes. No pitch deck. We&rsquo;ll tell you in 5 if we can help.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">

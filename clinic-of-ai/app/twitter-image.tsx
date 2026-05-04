@@ -20,7 +20,7 @@ export default function TwitterImage() {
           gap: 18,
           padding: '56px',
           background: '#fff8f3',
-          color: '#3d4a5c',
+          color: '#000000',
           fontFamily: 'Arial, sans-serif',
         }}
       >

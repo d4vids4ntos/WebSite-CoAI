@@ -165,10 +165,10 @@ export default function Navbar() {
             }`}
             style={{
               backgroundColor: '#fff8f3',
-              border: '1px solid rgba(61, 74, 92, 0.08)',
+              border: '1px solid rgba(0,0,0,0.08)',
               boxShadow: scrolled
-                ? '0 12px 40px rgba(61, 74, 92, 0.10)'
-                : '0 6px 24px rgba(61, 74, 92, 0.06)',
+                ? '0 12px 40px rgba(0,0,0,0.10)'
+                : '0 6px 24px rgba(0,0,0,0.06)',
             }}
           >
             {/* Logo */}
@@ -186,7 +186,7 @@ export default function Navbar() {
               />
               <span
                 className="font-headline font-bold text-xl tracking-tight"
-                style={{ color: '#3d4a5c' }}
+                style={{ color: '#000000' }}
               >
                 Clinic of AI
               </span>
@@ -249,8 +249,8 @@ export default function Navbar() {
                             aria-label={`${link.label} categories`}
                             style={{
                               backgroundColor: '#fff8f3',
-                              border: '1px solid rgba(61, 74, 92, 0.08)',
-                              boxShadow: '0 20px 60px rgba(61,74,92,0.08)',
+                              border: '1px solid rgba(0,0,0,0.08)',
+                              boxShadow: '0 20px 60px rgba(0,0,0,0.08)',
                             }}
                           >
                             <p
@@ -266,7 +266,7 @@ export default function Navbar() {
                                     href={item.href}
                                     role="menuitem"
                                     className="group flex flex-col gap-1 px-3 py-3 rounded-lg transition-colors duration-150"
-                                    style={{ color: '#3d4a5c' }}
+                                    style={{ color: '#000000' }}
                                     onClick={() => setMegaOpen(null)}
                                     onMouseOver={(e) => {
                                       e.currentTarget.style.backgroundColor = '#fff5e8'
@@ -280,7 +280,7 @@ export default function Navbar() {
                                     </span>
                                     <span
                                       className="font-body text-body-sm"
-                                      style={{ color: '#2d4a4d' }}
+                                      style={{ color: '#000000' }}
                                     >
                                       {item.description}
                                     </span>
@@ -358,19 +358,19 @@ export default function Navbar() {
                 className={`block h-0.5 w-6 transition-all duration-300 ${
                   menuOpen ? 'rotate-45 translate-y-2' : ''
                 }`}
-                style={{ backgroundColor: '#3d4a5c' }}
+                style={{ backgroundColor: '#000000' }}
               />
               <span
                 className={`block h-0.5 w-6 transition-all duration-300 ${
                   menuOpen ? 'opacity-0' : ''
                 }`}
-                style={{ backgroundColor: '#3d4a5c' }}
+                style={{ backgroundColor: '#000000' }}
               />
               <span
                 className={`block h-0.5 w-6 transition-all duration-300 ${
                   menuOpen ? '-rotate-45 -translate-y-2' : ''
                 }`}
-                style={{ backgroundColor: '#3d4a5c' }}
+                style={{ backgroundColor: '#000000' }}
               />
             </button>
           </div>
@@ -429,7 +429,7 @@ export default function Navbar() {
                           viewBox="0 0 20 20"
                           fill="none"
                           className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-                          style={{ color: '#3d4a5c' }}
+                          style={{ color: '#000000' }}
                         >
                           <path d="M5 7 L10 12 L15 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -442,7 +442,7 @@ export default function Navbar() {
                             <Link
                               href={item.href}
                               className="font-body font-medium text-body-lg block py-3 transition-colors duration-200 hover:text-secondary"
-                              style={{ color: '#2d4a4d' }}
+                              style={{ color: '#000000' }}
                             >
                               {item.title}
                             </Link>

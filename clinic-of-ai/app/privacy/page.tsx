@@ -16,20 +16,20 @@ export default async function PrivacyPage() {
         <p className="section-label mb-4">Legal</p>
         <h1
           className="page-title mb-8"
-          style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}
+          style={{ color: '#000000', letterSpacing: '-0.02em' }}
         >
           Privacy Policy
         </h1>
         <p
           className="font-body text-body-sm mb-10"
-          style={{ color: 'rgba(45,74,77,0.5)' }}
+          style={{ color: 'rgba(0,0,0,0.5)' }}
         >
           Last updated: March 2025
         </p>
 
-        <div className="flex flex-col gap-8 font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
+        <div className="flex flex-col gap-8 font-body text-body-md leading-relaxed" style={{ color: '#000000' }}>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               1. Information We Collect
             </h2>
             <p>
@@ -37,7 +37,7 @@ export default async function PrivacyPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               2. How We Use Your Information
             </h2>
             <p>
@@ -45,7 +45,7 @@ export default async function PrivacyPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               3. Your Rights
             </h2>
             <p>
@@ -53,7 +53,7 @@ export default async function PrivacyPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               4. Data Retention
             </h2>
             <p>
@@ -62,7 +62,7 @@ export default async function PrivacyPage() {
             </p>
           </div>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               5. Contact
             </h2>
             <p>

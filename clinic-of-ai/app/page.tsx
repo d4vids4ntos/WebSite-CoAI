@@ -40,11 +40,11 @@ export default function HomePage() {
           style={{ opacity: 0.06 }}
         >
           <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M320 0 L320 160 L240 160 L240 80 L160 80 L160 0" stroke="#3d4a5c" strokeWidth="1" fill="none" />
-            <path d="M320 80 L280 80 L280 120 L200 120 L200 40 L320 40" stroke="#3d4a5c" strokeWidth="1" fill="none" />
+            <path d="M320 0 L320 160 L240 160 L240 80 L160 80 L160 0" stroke="#000000" strokeWidth="1" fill="none" />
+            <path d="M320 80 L280 80 L280 120 L200 120 L200 40 L320 40" stroke="#000000" strokeWidth="1" fill="none" />
             <circle cx="240" cy="160" r="4" fill="#a14000" />
             <circle cx="160" cy="80" r="4" fill="#a14000" />
-            <circle cx="280" cy="120" r="3" fill="#3d4a5c" />
+            <circle cx="280" cy="120" r="3" fill="#000000" />
           </svg>
         </div>
 
@@ -117,19 +117,19 @@ export default function HomePage() {
               <div className="flex items-center gap-6 pt-2">
                 <div className="flex items-center gap-2">
                   <Icon name="verified" style={{ color: '#a14000', fontSize: '16px' }} />
-                  <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
+                  <span className="font-label text-xs" style={{ color: '#000000', letterSpacing: '0.08em' }}>
                     Embedded Delivery
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="groups" style={{ color: '#a14000', fontSize: '16px' }} />
-                  <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
+                  <span className="font-label text-xs" style={{ color: '#000000', letterSpacing: '0.08em' }}>
                     Deep Tech Range
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Icon name="schema" style={{ color: '#a14000', fontSize: '16px' }} />
-                  <span className="font-label text-xs" style={{ color: '#2d4a4d', letterSpacing: '0.08em' }}>
+                  <span className="font-label text-xs" style={{ color: '#000000', letterSpacing: '0.08em' }}>
                     Continuity by Design
                   </span>
                 </div>
@@ -158,7 +158,7 @@ export default function HomePage() {
                   className="w-full h-full rounded-full overflow-hidden pointer-events-none absolute inset-0"
                   style={{
                     border: '2px solid rgba(200,168,130,0.3)',
-                    boxShadow: '0 20px 60px rgba(61,74,92,0.1)',
+                    boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
                   }}
                 />
 
@@ -197,20 +197,20 @@ export default function HomePage() {
               className="lg:col-span-5 rounded-2xl p-8 flex flex-col gap-6"
               style={{
                 backgroundColor: '#ffffff',
-                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
               }}
             >
               <div>
                 <p className="section-label mb-3">Problem 01</p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
-                  style={{ color: '#3d4a5c' }}
+                  style={{ color: '#000000' }}
                 >
                   Tool-first pilots
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#2d4a4d' }}
+                  style={{ color: '#000000' }}
                 >
                   Executive sees a demo, IT buys a platform, usage drops when consultants leave. The model was never the problem.
                 </p>
@@ -220,28 +220,28 @@ export default function HomePage() {
             <div
               className="lg:col-span-4 rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
               style={{
-                backgroundColor: '#5b6b7e',
-                boxShadow: '0 20px 60px rgba(61,74,92,0.12)',
+                backgroundColor: '#FFF59D',
+                boxShadow: '0 20px 60px rgba(0,0,0,0.12)',
               }}
             >
               <Icon
                 name="person"
                 className="absolute -right-4 -bottom-4 pointer-events-none select-none"
-                style={{ fontSize: '140px', color: 'rgba(255,248,243,0.04)' }}
+                style={{ fontSize: '140px', color: 'rgba(0,0,0,0.05)' }}
               />
               <div className="relative z-10">
-                <p className="font-label text-xs uppercase tracking-widest mb-3" style={{ color: 'rgba(255,248,243,0.5)', letterSpacing: '0.15em' }}>
+                <p className="font-label text-xs uppercase tracking-widest mb-3" style={{ color: 'rgba(0,0,0,0.55)', letterSpacing: '0.15em' }}>
                   Problem 02
                 </p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
-                  style={{ color: '#fff8f3' }}
+                  style={{ color: '#000000' }}
                 >
                   No workflow adoption
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: 'rgba(255,248,243,0.7)' }}
+                  style={{ color: 'rgba(0,0,0,0.75)' }}
                 >
                   Dashboards do not change outcomes when operators do not trust them. Adoption happens only when solutions are built inside the real workflow.
                 </p>
@@ -252,20 +252,20 @@ export default function HomePage() {
               className="lg:col-span-3 rounded-2xl p-8 flex flex-col gap-6"
               style={{
                 backgroundColor: '#efe0cd',
-                boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
+                boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
               }}
             >
               <div>
                 <p className="section-label mb-3">Problem 03</p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
-                  style={{ color: '#3d4a5c' }}
+                  style={{ color: '#000000' }}
                 >
                   Consultants leave, pilots die
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: '#2d4a4d' }}
+                  style={{ color: '#000000' }}
                 >
                   Most engagements end at handoff. We design continuity from day one so your team owns the system.
                 </p>
@@ -277,16 +277,16 @@ export default function HomePage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <p
               className="font-body text-body-md"
-              style={{ color: 'rgba(255,248,243,0.65)' }}
+              style={{ color: 'rgba(0,0,0,0.75)' }}
             >
               <span className="font-label text-xs font-semibold uppercase" style={{ color: '#a14000', letterSpacing: '0.15em' }}>Executive Cohort</span>
-              <span style={{ color: 'rgba(255,248,243,0.2)' }}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span style={{ color: 'rgba(0,0,0,0.25)' }}>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
               5 weeks. 8-12 executives. Real implementation, not slide decks.
             </p>
             <Link href="/academy" className="btn-primary whitespace-nowrap shrink-0">
@@ -350,22 +350,22 @@ export default function HomePage() {
                 className="rounded-2xl p-8 flex flex-col gap-5"
                 style={{
                   backgroundColor: '#ffffff',
-                  boxShadow: '0 12px 40px rgba(61,74,92,0.06)',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.06)',
                 }}
               >
                 <p
                   className="font-label text-xs uppercase font-semibold"
-                  style={{ color: '#2d4a4d', letterSpacing: '0.12em' }}
+                  style={{ color: '#000000', letterSpacing: '0.12em' }}
                 >
                   {item.industry}
                 </p>
-                <p className="font-headline font-bold text-4xl" style={{ color: '#3d4a5c' }}>
+                <p className="font-headline font-bold text-4xl" style={{ color: '#000000' }}>
                   {item.metric}
                 </p>
                 <p className="font-body text-body-sm" style={{ color: '#a14000' }}>
                   {item.metricLabel}
                 </p>
-                <p className="font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
+                <p className="font-body text-body-md leading-relaxed" style={{ color: '#000000' }}>
                   {item.summary}
                 </p>
               </div>
@@ -373,14 +373,14 @@ export default function HomePage() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-3">
-            <span className="font-label text-xs uppercase font-semibold" style={{ color: '#2d4a4d', letterSpacing: '0.12em' }}>
+            <span className="font-label text-xs uppercase font-semibold" style={{ color: '#000000', letterSpacing: '0.12em' }}>
               Operating contexts
             </span>
             {['Hospitality', 'Manufacturing', 'Professional Services', 'Real Estate', 'Agriculture'].map((context) => (
               <span
                 key={context}
                 className="font-body text-body-sm px-3 py-1.5 rounded-lg"
-                style={{ backgroundColor: '#fff8f3', color: '#2d4a4d' }}
+                style={{ backgroundColor: '#fff8f3', color: '#000000' }}
               >
                 {context}
               </span>
@@ -391,11 +391,11 @@ export default function HomePage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(0,0,0,0.75)' }}>
               20 minutes. No pitch deck. We will tell you in 5 if we can help.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">

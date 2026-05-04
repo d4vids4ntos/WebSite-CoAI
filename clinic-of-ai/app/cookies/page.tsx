@@ -11,16 +11,16 @@ export default function CookiesPage() {
     <section className="pt-32 pb-24" style={{ backgroundColor: '#fff8f3' }}>
       <div className="max-w-narrow mx-auto px-6 lg:px-8">
         <p className="section-label mb-4">Legal</p>
-        <h1 className="page-title mb-8" style={{ color: '#3d4a5c', letterSpacing: '-0.02em' }}>
+        <h1 className="page-title mb-8" style={{ color: '#000000', letterSpacing: '-0.02em' }}>
           Cookie Policy
         </h1>
-        <p className="font-body text-body-sm mb-10" style={{ color: 'rgba(45,74,77,0.5)' }}>
+        <p className="font-body text-body-sm mb-10" style={{ color: 'rgba(0,0,0,0.5)' }}>
           Last updated: April 2026
         </p>
 
-        <div className="flex flex-col gap-8 font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>
+        <div className="flex flex-col gap-8 font-body text-body-md leading-relaxed" style={{ color: '#000000' }}>
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               1. What we use cookies for
             </h2>
             <p>
@@ -30,7 +30,7 @@ export default function CookiesPage() {
           </div>
 
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               2. Analytics cookies
             </h2>
             <p>
@@ -40,7 +40,7 @@ export default function CookiesPage() {
           </div>
 
           <div>
-            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#3d4a5c' }}>
+            <h2 className="font-headline font-bold text-xl mb-3" style={{ color: '#000000' }}>
               3. Managing your preferences
             </h2>
             <p>

@@ -61,8 +61,8 @@ const INDUSTRY_CARD_PALETTES: Record<AccentName, [ColorPair, ColorPair, ColorPai
   ],
 }
 
-const SLATE = '#3d4a5c'
-const SLATE_SOFT = '#5b6b7e'
+const SLATE = '#000000'
+const SLATE_SOFT = '#000000'
 
 interface IndustryPageProps {
   data: IndustryPageData
@@ -299,7 +299,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
 
           {/* Full module card — matches the industry hero accent */}
           <article
-            className="relative overflow-hidden rounded-2xl p-10 lg:p-12 mt-6 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-center cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:brightness-95"
+            className="card-trace relative overflow-hidden rounded-2xl p-10 lg:p-12 mt-6 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8 items-center cursor-pointer transition-all duration-300 ease-out hover:scale-[1.02] hover:brightness-110"
             style={{ backgroundColor: ACCENT_SURFACE[data.heroAccent] }}
           >
             <div className="relative z-10">
@@ -369,7 +369,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
 
           <ol
             className="relative pl-10 space-y-12"
-            style={{ borderLeft: `1px solid rgba(61,74,92,0.15)` }}
+            style={{ borderLeft: `1px solid rgba(0,0,0,0.15)` }}
           >
             {data.steps.map((step, i) => (
               <li key={step.id} className="relative">
@@ -377,7 +377,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
                   className="absolute -left-[52px] top-0 w-10 h-10 grid place-items-center rounded-lg overflow-hidden"
                   style={{
                     backgroundColor: '#ffffff',
-                    border: `1px solid rgba(61,74,92,0.15)`,
+                    border: `1px solid rgba(0,0,0,0.15)`,
                   }}
                 >
                   <Image
@@ -462,7 +462,7 @@ export default function IndustryPage({ data }: IndustryPageProps) {
               aria-hidden="true"
               className="absolute -right-12 bottom-0 w-72 h-72 opacity-60 pointer-events-none"
               style={{
-                backgroundColor: '#f5d99a',
+                backgroundColor: '#FFF59D',
                 borderRadius: '50% 40% 60% 30%',
                 filter: 'blur(28px)',
               }}
@@ -485,7 +485,7 @@ function SolutionCard({
 
   return (
     <article
-      className="relative overflow-hidden rounded-2xl p-8 min-h-[260px] flex flex-col cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:brightness-95"
+      className="card-trace relative overflow-hidden rounded-2xl p-8 min-h-[260px] flex flex-col cursor-pointer transition-all duration-300 ease-out hover:scale-[1.03] hover:brightness-110"
       style={{ backgroundColor: surface }}
     >
       <div className="relative z-10 flex flex-col h-full">

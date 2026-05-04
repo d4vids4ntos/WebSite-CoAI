@@ -151,11 +151,11 @@ export default function IndustriesPage() {
                 className="rounded-2xl p-8 lg:p-10 scroll-mt-24"
                 style={{
                   backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
-                  boxShadow: '0 4px 16px rgba(61,74,92,0.04)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                 }}
               >
                 <div className="mb-6">
-                  <h3 className="font-headline font-bold text-xl" style={{ color: '#3d4a5c' }}>{industry.title}</h3>
+                  <h3 className="font-headline font-bold text-xl" style={{ color: '#000000' }}>{industry.title}</h3>
                   <p className="font-body text-body-sm" style={{ color: '#a14000' }}>{industry.subtitle}</p>
                 </div>
 
@@ -176,12 +176,12 @@ export default function IndustriesPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div>
-                    <p className="font-label text-xs uppercase font-semibold mb-3" style={{ color: 'rgba(45,74,77,0.5)', letterSpacing: '0.08em' }}>Challenges</p>
+                    <p className="font-label text-xs uppercase font-semibold mb-3" style={{ color: 'rgba(0,0,0,0.5)', letterSpacing: '0.08em' }}>Challenges</p>
                     <ul className="flex flex-col gap-2.5">
                       {industry.painPoints.map((point) => (
                         <li key={point} className="flex items-start gap-3">
-                          <Icon name="remove" className="shrink-0 mt-0.5" style={{ fontSize: '16px', color: 'rgba(45,74,77,0.4)' }} />
-                          <span className="font-body text-body-sm" style={{ color: '#2d4a4d' }}>{point}</span>
+                          <Icon name="remove" className="shrink-0 mt-0.5" style={{ fontSize: '16px', color: 'rgba(0,0,0,0.4)' }} />
+                          <span className="font-body text-body-sm" style={{ color: '#000000' }}>{point}</span>
                         </li>
                       ))}
                     </ul>
@@ -189,7 +189,7 @@ export default function IndustriesPage() {
 
                   <div>
                     <p className="font-label text-xs uppercase font-semibold mb-3" style={{ color: '#a14000', letterSpacing: '0.08em' }}>What We Do</p>
-                    <p className="font-body text-body-md leading-relaxed" style={{ color: '#2d4a4d' }}>{industry.solution}</p>
+                    <p className="font-body text-body-md leading-relaxed" style={{ color: '#000000' }}>{industry.solution}</p>
                     <Link
                       href="/contact"
                       className="inline-flex items-center gap-2 mt-4 font-body font-semibold text-body-sm transition-colors duration-200 hover:underline"
@@ -208,11 +208,11 @@ export default function IndustriesPage() {
 
       <section
         className="py-10"
-        style={{ backgroundColor: '#3d4a5c', borderTop: '1px solid rgba(255,248,243,0.06)' }}
+        style={{ backgroundColor: '#FFF59D', borderTop: '1px solid rgba(0,0,0,0.06)' }}
       >
         <div className="max-w-content mx-auto px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="font-body text-body-md" style={{ color: 'rgba(255,248,243,0.65)' }}>
+            <p className="font-body text-body-md" style={{ color: 'rgba(0,0,0,0.75)' }}>
               One trusted partner across your value chain. Start with one product.
             </p>
             <Link href="/contact" className="btn-primary whitespace-nowrap shrink-0">
