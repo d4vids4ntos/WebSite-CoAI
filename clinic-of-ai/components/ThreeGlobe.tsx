@@ -96,7 +96,7 @@ export default function ThreeGlobe({
       const globeMesh = globeRef.current
       if (globeMesh) {
         if (!isDraggingRef.current) {
-          globeMesh.rotation.y += 0.0016 + angularVelocityRef.current.x
+          globeMesh.rotation.y += angularVelocityRef.current.x
           globeMesh.rotation.x += angularVelocityRef.current.y
           angularVelocityRef.current.x *= 0.92
           angularVelocityRef.current.y *= 0.92
