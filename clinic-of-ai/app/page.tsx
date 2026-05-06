@@ -230,9 +230,7 @@ export default function HomePage() {
                 style={{ fontSize: '140px', color: 'rgba(0,0,0,0.05)' }}
               />
               <div className="relative z-10">
-                <p className="font-label text-xs uppercase tracking-widest mb-3" style={{ color: 'rgba(0,0,0,0.55)', letterSpacing: '0.15em' }}>
-                  Problem 02
-                </p>
+                <p className="section-label mb-3">Problem 02</p>
                 <h3
                   className="font-headline font-bold text-2xl mb-3 leading-snug"
                   style={{ color: '#000000' }}
@@ -241,7 +239,7 @@ export default function HomePage() {
                 </h3>
                 <p
                   className="font-body text-body-md leading-relaxed"
-                  style={{ color: 'rgba(0,0,0,0.75)' }}
+                  style={{ color: '#000000' }}
                 >
                   Dashboards do not change outcomes when operators do not trust them. Adoption happens only when solutions are built inside the real workflow.
                 </p>

@@ -304,34 +304,9 @@ export default function AboutPage() {
           </div>
 
           <div className="relative max-w-3xl mx-auto">
-            <div
-              className="absolute left-8 top-0 bottom-0 w-px"
-              style={{ backgroundColor: 'rgba(200,168,130,0.3)' }}
-              aria-hidden="true"
-            />
-
-            <div className="flex flex-col gap-10 pl-20">
+            <div className="flex flex-col gap-10">
               {timeline.map((item, index) => (
                 <div key={index} className="relative">
-                  <div
-                    className="absolute -left-12 top-1 w-8 h-8 rounded-full flex items-center justify-center"
-                    style={{
-                      backgroundColor: item.highlight ? '#a14000' : '#FFF59D',
-                      boxShadow: item.highlight
-                        ? '0 0 0 4px rgba(161,64,0,0.15)'
-                        : '0 0 0 4px rgba(0,0,0,0.08)',
-                    }}
-                  >
-                    {item.icon === 'neurology' ? (
-                      <Image src="/logo.png" alt="Clinic of AI" width={14} height={14} />
-                    ) : (
-                      <Icon
-                        name={item.icon}
-                        style={{ fontSize: '14px', color: '#000000' }}
-                      />
-                    )}
-                  </div>
-
                   <div
                     className="rounded-2xl p-7"
                     style={{

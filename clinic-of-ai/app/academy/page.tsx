@@ -216,33 +216,20 @@ export default function AcademyPage() {
             {courses.map((course) => (
               <div
                 key={course.id}
-                className="rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden"
+                className="rounded-2xl p-8 flex flex-col gap-6 relative overflow-hidden bg-white hover:bg-[#FFF59D] transition-colors duration-300"
                 style={{
-                  backgroundColor: course.highlight ? '#FFF59D' : '#ffffff',
-                  boxShadow: course.highlight
-                    ? '0 20px 60px rgba(0,0,0,0.15)'
-                    : '0 4px 16px rgba(0,0,0,0.04)',
-                  border: course.highlight ? 'none' : '1px solid rgba(200,168,130,0.15)',
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
+                  border: '1px solid rgba(200,168,130,0.15)',
                 }}
               >
-                {course.highlight && (
-                  <div
-                    className="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-10"
-                    style={{ backgroundColor: '#a14000' }}
-                    aria-hidden="true"
-                  />
-                )}
-
                 <div className="relative z-10 flex flex-col gap-5 flex-1">
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-2 flex-wrap justify-end">
                       <span
                         className="font-label text-xs px-2 py-1 rounded-md"
                         style={{
-                          backgroundColor: course.highlight
-                            ? '#FFF59D'
-                            : '#FFF59D',
-                          color: course.highlight ? 'rgba(0,0,0,0.75)' : '#000000',
+                          backgroundColor: '#FFF59D',
+                          color: '#000000',
                           letterSpacing: '0.08em',
                         }}
                       >
@@ -251,10 +238,8 @@ export default function AcademyPage() {
                       <span
                         className="font-label text-xs px-2 py-1 rounded-md"
                         style={{
-                          backgroundColor: course.highlight
-                            ? 'rgba(161,64,0,0.3)'
-                            : 'rgba(161,64,0,0.08)',
-                          color: course.highlight ? '#ff7a32' : '#a14000',
+                          backgroundColor: 'rgba(161,64,0,0.08)',
+                          color: '#a14000',
                           letterSpacing: '0.08em',
                         }}
                       >
@@ -266,15 +251,13 @@ export default function AcademyPage() {
                   <div>
                     <h3
                       className="font-headline font-bold text-xl mb-3"
-                      style={{ color: course.highlight ? '#000000' : '#000000' }}
+                      style={{ color: '#000000' }}
                     >
                       {course.title}
                     </h3>
                     <p
                       className="font-body text-body-sm leading-relaxed"
-                      style={{
-                        color: course.highlight ? 'rgba(0,0,0,0.75)' : '#000000',
-                      }}
+                      style={{ color: '#000000' }}
                     >
                       {course.description}
                     </p>
@@ -288,16 +271,12 @@ export default function AcademyPage() {
                           className="shrink-0 mt-0.5"
                           style={{
                             fontSize: '14px',
-                            color: course.highlight ? '#ff7a32' : '#a14000',
+                            color: '#a14000',
                           }}
                         />
                         <span
                           className="font-body text-body-sm"
-                          style={{
-                            color: course.highlight
-                              ? 'rgba(0,0,0,0.8)'
-                              : '#000000',
-                          }}
+                          style={{ color: '#000000' }}
                         >
                           {topic}
                         </span>

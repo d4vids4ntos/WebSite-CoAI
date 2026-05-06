@@ -137,12 +137,11 @@ export default function ApproachPage() {
           </div>
 
           <div className="flex flex-col gap-5">
-            {capabilities.map((cap, index) => (
+            {capabilities.map((cap) => (
               <div
                 key={cap.number}
-                className="rounded-2xl overflow-hidden"
+                className="rounded-2xl overflow-hidden bg-[#FFF59D] hover:bg-white transition-colors duration-300"
                 style={{
-                  backgroundColor: index % 2 === 0 ? '#ffffff' : '#fff8f3',
                   boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                 }}
               >
