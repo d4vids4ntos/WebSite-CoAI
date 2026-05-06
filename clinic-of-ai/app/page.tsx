@@ -34,6 +34,24 @@ export default function HomePage() {
         style={{ backgroundColor: '#fff8f3' }}
       >
         <div
+          className="hidden lg:block absolute top-0 right-0 h-full w-1/2 pointer-events-none select-none"
+          aria-hidden="true"
+          style={{
+            maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 100%)',
+            opacity: 0.85,
+          }}
+        >
+          <Image
+            src="/images/hero/Gemini_Mountain_Image.png"
+            alt=""
+            fill
+            priority
+            sizes="50vw"
+            style={{ objectFit: 'cover', objectPosition: 'right bottom' }}
+          />
+        </div>
+        <div
           className="absolute top-24 right-0 w-80 h-80 pointer-events-none"
           aria-hidden="true"
           style={{ opacity: 0.06 }}
@@ -47,9 +65,9 @@ export default function HomePage() {
           </svg>
         </div>
 
-        <div className="max-w-content mx-auto px-6 lg:px-8 w-full pt-32 pb-24">
+        <div className="max-w-content mx-auto px-6 lg:px-8 w-full pt-32 pb-24 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-12 flex flex-col gap-8">
+            <div className="lg:col-span-7 flex flex-col gap-8">
               <div>
                 <p
                   className="font-label text-xs font-semibold tracking-widest uppercase mb-5"
